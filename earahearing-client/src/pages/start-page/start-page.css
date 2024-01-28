@@ -1,0 +1,22 @@
+.start-page-wrapper {
+    padding-top: 2em;
+    overflow: hidden;
+    background-color: var(--light-background-200);
+}
+
+.hero--image {
+    margin-bottom: 2em;
+}
+.hero--image > img{
+    width: 100%;
+}
+
+.hero--information * + * {
+    margin-top: 1.5em;
+}
+
+.start-btn {
+    display: grid;
+    justify-content: center;
+    margin-top: 3.5em;
+}
