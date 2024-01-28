@@ -1,12 +1,10 @@
 import React from "react"
 
 import './button.css'
-export type buttonProps = React.ComponentProps<'button'> & {
-    name: string
-}
+export type buttonProps = React.ComponentProps<'button'>
 
-export const Button = ({name, className, ...rest}: buttonProps) => {
+export const Button = ({children, className, ...rest}: buttonProps) => {
     return (
-        <button {...rest} className={`btn ${className}`}>{name}</button>
+        <button {...rest} className={`btn ${className}`}>{children}</button>
     )
 }
