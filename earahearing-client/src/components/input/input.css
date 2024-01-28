@@ -1,0 +1,16 @@
+
+.input {
+    outline: none;
+    padding: 1em .5em;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+}
+
+.input-block {
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: .5em;
+}
