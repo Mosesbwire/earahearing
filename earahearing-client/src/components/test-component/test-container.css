@@ -1,0 +1,7 @@
+
+.test-wrapper {
+    background-color: var(--light-background-200);
+    box-shadow: 6px 10px 25px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 35px;
+    
+}
