@@ -1,0 +1,10 @@
+.headphone-btn {
+    position: relative;
+    width: 40%;
+}
+
+.vol-level {
+    position: absolute;
+    left: 45%;
+    bottom: 10%;
+}
