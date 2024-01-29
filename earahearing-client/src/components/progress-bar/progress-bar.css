@@ -1,3 +1,7 @@
+.progress {
+    justify-content: center;
+}
+
 .progress-bar-container {
     display: grid;
 }
