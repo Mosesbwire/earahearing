@@ -1,0 +1,8 @@
+
+.quiet-test-wrapper {
+    position: relative;
+}
+.quiet-cta {
+    position: absolute;
+    bottom: 0;
+}
