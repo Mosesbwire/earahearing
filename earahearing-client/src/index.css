@@ -16,17 +16,17 @@
 
 .headline {
 	font-family: var(--font-family-headlines);
-	font-size: 2.5em;
+	font-size: 2.5rem;
 	color: var(--dark-text);
 }
 .subheadline {
 	font-family: var(--font-family-sub-headlines);
-	font-size: 1.8em;
+	font-size: 1.8rem;
 }
 
 .text {
 	font-family: var(--font-family-sub-headlines);
-	font-size: 1.5em;	
+	font-size: 1.35rem;	
 }
 
 .text-dark {
@@ -41,6 +41,26 @@
 .text-bold {
 	font-weight: 600;
 }
+
+.text-centered {
+	text-align: center;
+}
+
+.container {
+	width: 94%;
+	margin: 0 auto;
+	
+}
+
+.row {
+	display: flex;
+}
+
+.row > * + * {
+	margin-left: 1.25em;
+}
+
+
 
 
 
