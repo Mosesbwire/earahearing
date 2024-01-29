@@ -1,0 +1,9 @@
+
+.about--btn_choices {
+    display: grid;  
+    gap: 1.5em;
+}
+
+.about--btn_bool {
+    justify-content: center;
+}
