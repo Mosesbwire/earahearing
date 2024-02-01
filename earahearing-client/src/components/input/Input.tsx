@@ -9,7 +9,7 @@ export const Input = ({type, name, label, ...rest}: inputProps) => {
     return (
         <div>
             <label htmlFor={name} className="label text text-dark">{label}</label>
-            <input {...rest} type={type} name={name} className="input"/>
+            <input {...rest} type={type} name={name} autoComplete="true" className="input" id={name}/>
         </div>
     )
 }
