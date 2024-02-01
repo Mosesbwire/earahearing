@@ -1,4 +1,7 @@
 import { About } from "../../components/about/About";
+import { usePageContextCurrentPage } from "../../hooks/usePageContext";
+
+export const TOTAL_QUIZ_PAGES = 5
 
 type questionnaireFormat = {
     question: string,
@@ -44,14 +47,28 @@ const hearingInNoisyPlaces: questionnaireFormatBoolean = {
     question: 'Do you have difficulty understanding speech in a crowd or a noisy resturant?'
 }
 
+interface dataObject {
+    question: string,
+    choices?: string[]
+}
+
+type questionsType = Record<string, dataObject>
+const questions:questionsType = {
+    '1': age,
+    '2': interest,
+    '3': hearingLevel,
+    '4': hearingLevelOne,
+    '5': hearingInNoisyPlaces
+}
+
 const Quiz = () => {
+    const currentPage = usePageContextCurrentPage()
+    const data = questions[currentPage.toString()]
     return (
         <>
-        <About question={age.question} isMultipleChoice={true} choices={age.choices}/>
-        <About question={interest.question} isMultipleChoice={true} choices={interest.choices}/>
-        <About question={hearingLevel.question} isMultipleChoice={true} choices={hearingLevel.choices}/>
-        <About question={hearingLevelOne.question} isMultipleChoice={false}/>
-        <About question={hearingInNoisyPlaces.question} isMultipleChoice={false}/>
+            {currentPage >= 1 && currentPage < 4 && data.choices ? <About choices={data.choices} question={data.question} isMultipleChoice={true}/> : 
+            
+            <About isMultipleChoice={false} question={data.question}/>}
         </>
     )
 }

@@ -1,8 +1,11 @@
+import { usePageContextNext } from "../../hooks/usePageContext"
 import { Logo } from "../../components/logo/Logo"
 import { Button } from "../../components/button/Button"
+import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import heroImage from '../../assets/images.jpg'
 import './start-page.css'
 const Start = () => {
+    const nextPage = usePageContextNext()
     return (
         <section className="start-page-wrapper">
             <header className="container">
@@ -17,9 +20,10 @@ const Start = () => {
                     <h2 className="subheadline text-dark text-centered">Clinically tested and proved to provide accurate hearing test results</h2>
                     <h2 className="subheadline text-dark text-centered">Take our 4 minute hearing test and see your results</h2>
                     <div className="start-btn">
-                        <Button className="btn-primary-rounded">
+                        <Button className="btn-primary-rounded" onClick={nextPage}>
                             Start
                         </Button>
+                        <HeadphoneBtn/>
                     </div>
                 </div>
 
