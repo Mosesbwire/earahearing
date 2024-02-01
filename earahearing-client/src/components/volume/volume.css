@@ -1,0 +1,17 @@
+
+.volume-control {
+    justify-content: space-between;
+}
+
+.volume-control > * {
+    flex: 1;
+}
+
+.vol {
+    align-self: center;
+}
+.vol > p{
+    font-size: 3rem;
+    text-align: center;
+}
+

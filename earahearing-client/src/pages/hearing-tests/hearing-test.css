@@ -1,0 +1,31 @@
+
+.test {
+    background-color: var(--light-background-200);
+}
+
+.test > :first-child > p{
+    margin-top: 1em;
+    font-size: 1.8rem;
+}
+
+.test > * + * {
+    margin-top: 2.5em;
+}
+
+.emphasis {
+    text-decoration: underline;
+}
+
+.emphasis-accented {
+    background-color: var(--accent-color);
+    height: 3px;
+    border-radius: 20px;
+    width: 30%;
+    position: absolute;
+    left: 60%;
+}
+
+.test-instruction-test > p {
+    line-height: 2;
+    text-align: left;
+}
