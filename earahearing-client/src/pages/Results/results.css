@@ -1,0 +1,23 @@
+
+
+.results-form-page {
+    overflow: hidden;
+}
+.banner > img{
+    width: 100%;
+    
+}
+.results-form-text {
+    margin-bottom: 2em;
+}
+.results-form-text > p {
+    line-height: 1.5;
+}
+.results-form-page > form input {
+    margin-bottom: 1.5em;
+    width: 80%;
+}
+
+.results-form-page > form button {
+    margin-top: 1.5em;
+}
