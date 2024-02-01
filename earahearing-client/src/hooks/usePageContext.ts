@@ -25,8 +25,3 @@ export const usePageContextCurrentPage = () =>{
     const context = useGetContext()
     return context[0]
 }
-
-export const usePageContext = () => {
-    const context = useGetContext()
-    return context.slice(-2)
-}
