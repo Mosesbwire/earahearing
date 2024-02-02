@@ -5,6 +5,7 @@ import leftEarImg from '../../assets/LEFT EAR.svg'
 import rightEarImg from '../../assets/RIGHT EAR.svg'
 import { usePageContextCurrentPage } from "../../hooks/usePageContext"
 import React from "react";
+import './hearing-test.css'
 
 
 export type pagesType = Record<string, React.JSX.Element>
@@ -18,9 +19,9 @@ const pages: pagesType = {
 const HearingTest = () => {
     const currentPage = usePageContextCurrentPage()
     return (
-        <>
+        <div className="hearing-test-page container">
             {pages[currentPage.toString()]}
-        </>
+        </div>
     )
 }
 

@@ -1,14 +1,13 @@
 
 .volume-control {
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
-.volume-control > * {
-    flex: 1;
-}
+.volume-control button {
+    padding-top: .75em;
+    padding-bottom: .75em;
 
-.vol {
-    align-self: center;
 }
 .vol > p{
     font-size: 3rem;

@@ -18,13 +18,13 @@ export const About = (props: aboutProps) => {
             <Questionnaire question={props.question}>
                 {props.isMultipleChoice ? <div className="about--btn_choices">
                     {props.choices.map(choice => (
-                        <Button className="btn-primary-outline" key={choice} onClick={next}>{choice}</Button>
+                        <Button className="btn-primary-outline btn-lg btn-txt" key={choice} onClick={next}>{choice}</Button>
                     ))}
                 </div> : 
                 <>
                     <div className="row about--btn_bool">
-                        <Button className="btn-small-light col" onClick={next}>Yes</Button>
-                        <Button className="btn-small-dark col" onClick={next}>No</Button>
+                        <Button className="btn-small btn-light col" onClick={next}>Yes</Button>
+                        <Button className="btn-small btn-dark col" onClick={next}>No</Button>
                     </div>
                 </>}
             </Questionnaire>

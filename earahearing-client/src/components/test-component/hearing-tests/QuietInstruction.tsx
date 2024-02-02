@@ -10,18 +10,18 @@ import './hearingtest.css'
 export const TestQuietPlace = () => {
     const next = usePageContextNext()
     return (
-        <section className="container quiet-test-wrapper">
+        <section className="quiet-test-wrapper">
             <TestContainer>
                 <div>
                     <TestInstruction>
                         <h1 className="headline text-light">Before you get started You will need a quiet environment</h1>
-                        <h2 className="subheadline text-light">Any background noise like the refrigirator, dishwasher or even wind can interfere with the test.</h2>
+                        <h2 className="subheadline text-light">Any background noise like the refrigerator, dishwasher or even wind can interfere with the test.</h2>
                         <div className="quiet-cta">
-                            <Button className="btn-primary-rounded" onClick={next}>I am in a quiet place</Button>
+                            <Button className="btn-primary-rounded btn-md" onClick={next}>I am in a quiet place</Button>
                         </div>
                     </TestInstruction>
                     <TestImage>
-                        <img src={quietPlaceImg} alt="coffee table with mug next to a couch" />
+                        <img src={quietPlaceImg} alt="coffee table with mug next to a couch" className="quiet-img"/>
                     </TestImage>
                 </div>
             </TestContainer>

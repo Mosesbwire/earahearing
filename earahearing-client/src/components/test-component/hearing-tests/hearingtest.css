@@ -2,7 +2,37 @@
 .quiet-test-wrapper {
     position: relative;
 }
+
 .quiet-cta {
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
+    left: 10%;
+}
+
+.quiet-img {
+    width: 70%;
+    margin: auto;
+}
+
+.ear-img {
+    width: 50%;
+    margin: 1em auto;
+
+}
+
+.prep-listening-cta {
+    margin-top: 1em;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 2.5em;
+}
+
+.prep-listening-cta > :first-child {
+    width: 70%;
+    justify-self: center;
+}
+.prep-listening-cta > :last-child {
+    width: 30%;
+    justify-self: center;
+
 }

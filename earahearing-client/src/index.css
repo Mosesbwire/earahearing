@@ -7,6 +7,7 @@
 	--main-color-light: #02718C;
 	--main-light: #F2F2F2;
 	--light-background-200: #F9F9F9;
+	--light-background-400: #dbdbdb;
 	--light-text: var(--main-light);
 	--dark-text: var(--main-color);
 	--highlight-text: var(--accent-color);
@@ -16,17 +17,20 @@
 
 .headline {
 	font-family: var(--font-family-headlines);
-	font-size: 2.5rem;
+	font-size: 1.8rem;
+	line-height: 1.5;
 	color: var(--dark-text);
 }
 .subheadline {
 	font-family: var(--font-family-sub-headlines);
-	font-size: 1.8rem;
+	line-height: 1.5;
+	font-size: 1.5rem;
 }
 
 .text {
 	font-family: var(--font-family-sub-headlines);
 	font-size: 1.35rem;	
+	line-height: 1.5;
 }
 
 .text-dark {

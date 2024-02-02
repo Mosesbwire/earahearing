@@ -1,7 +1,7 @@
 import { About } from "../../components/about/About";
 import { usePageContextCurrentPage } from "../../hooks/usePageContext";
 
-export const TOTAL_QUIZ_PAGES = 5
+export const LAST_QUIZ_PAGE = 5
 
 type questionnaireFormat = {
     question: string,

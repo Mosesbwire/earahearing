@@ -2,6 +2,7 @@
 
 .results-form-page {
     overflow: hidden;
+    padding-bottom: 3em;
 }
 .banner > img{
     width: 100%;
@@ -13,11 +14,19 @@
 .results-form-text > p {
     line-height: 1.5;
 }
-.results-form-page > form input {
+
+.result-form-element {
+    margin-left: 1em;
+    /* border: 2px solid red; */
+
+}
+.result-form-element > form input {
     margin-bottom: 1.5em;
     width: 80%;
 }
 
-.results-form-page > form button {
+.result-form-element > form button {
     margin-top: 1.5em;
+    margin-left: 2.5em;
+    
 }

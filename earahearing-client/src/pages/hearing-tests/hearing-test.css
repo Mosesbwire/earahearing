@@ -1,4 +1,8 @@
 
+.hearing-test-page {
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
 .test {
     background-color: var(--light-background-200);
 }
@@ -28,4 +32,9 @@
 .test-instruction-test > p {
     line-height: 2;
     text-align: left;
+}
+
+.test-direction {
+    justify-content: space-between;
+    margin-top: 3.5em;
 }

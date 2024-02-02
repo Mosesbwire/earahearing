@@ -7,10 +7,8 @@
 
 .btn-primary-rounded {
     color: var(--dark-text);
-    font-size: 1.5em;
     background-color: var(--accent-color);
     border-radius: 4.375em;
-    padding: .75em 4em;
     width: fit-content;
     transition: all 500ms;
 }
@@ -22,37 +20,32 @@
 
 .btn-primary-outline {
     color: var(--dark-text);
-    font-size: 1em;
     background-color: transparent;
     border: 1px solid var(--main-color);
     border-radius: 4.375em;
-    padding: .75em 4em;
-    width: auto;
+    width: fit-content;
     transition: all 500ms;   
 }
 
 .btn-primary-outline:hover {
     background-color: var(--accent-color);
 }
-.btn-small-light {
-    padding: .75em 2em;
+.btn-light {
+    
     border-radius: .5em;
     border: 1px solid var(--dark-text);
-    font-size: 1.5em;
     color: var(--dark-text);
     background-color: var(--main-light);
     box-shadow: 9px 7px 15px 0px rgba(0, 0, 0, .25);
     transition: all 500ms;   
 
 }
-.btn-small-light:hover {
+.btn-light:hover {
     background-color: var(--accent-color);
 }
 
-.btn-small-dark {
-    padding: .75em 2em;
+.btn-dark {
     border-radius: .5em;
-    font-size: 1.5em;
     color: var(--light-text);
     background-color: var(--main-color);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .25);
@@ -61,7 +54,7 @@
 
 }
 
-.btn-small-dark:hover {
+.btn-dark:hover {
     background-color: var(--accent-color);
     color: var(--dark-text);
 }
@@ -69,4 +62,32 @@
 .btn-selected {
     background-color: var(--accent-color);
     color: var(--dark-text);
+}
+
+.btn-lg {
+    font-size: 1.5em;
+    padding: .55em 4em;
+    width: auto;
+
+}
+
+.btn-md {
+    font-size: 1.35em;
+    padding: .5em 2em;
+    width: auto;
+}
+
+.btn-sm {
+    padding: .5em 1.5em;
+    font-size: 1.2em;
+}
+
+.btn-disabled {
+    background-color: var(--light-background-400);
+    color: var(--light-text);
+    border-radius: .5em;
+}
+.btn-txt {
+    font-size: 1.1em;
+    
 }

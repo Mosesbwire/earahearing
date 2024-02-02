@@ -7,7 +7,7 @@ const VolumePanel = () => {
     return (
         <div className="row volume-control">
             <div>
-                <Button className="btn-small-dark">
+                <Button className="btn-dark btn-sm">
                     <img src={plus} alt="plus sign" />
                 </Button>
             </div>
@@ -16,7 +16,7 @@ const VolumePanel = () => {
                 <p className="text-dark text-bold">0</p>
             </div>
             <div>
-                <Button className="btn-small-dark">
+                <Button className="btn-dark btn-sm">
                     <img src={minus} alt="minus sign" />
                 </Button>
             </div>

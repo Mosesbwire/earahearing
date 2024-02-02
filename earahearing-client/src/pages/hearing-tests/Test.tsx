@@ -6,7 +6,7 @@ const Test = () => {
     const next = usePageContextNext()
     const prev = usePageContextPrev()
     return (
-        <div className="test container">
+        <div className="test">
             <div>
                 <h1 className="headline text-centered">Hearing Test Right Ear</h1>
                 <div className="emphasis-accented"></div>
@@ -20,8 +20,8 @@ const Test = () => {
                 <VolumePanel/>
             </div>
             <div className="test-direction row">
-                <Button className="btn-primary-outline" onClick={prev}>Prev</Button>
-                <Button className="btn-primary-rounded" onClick={next}>Next</Button>
+                <Button className="btn-primary-outline btn-sm" onClick={prev}>Prev</Button>
+                <Button className="btn-primary-rounded btn-sm" onClick={next}>Next</Button>
             </div>
         </div>
     )

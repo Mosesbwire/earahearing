@@ -1,7 +1,8 @@
 import blueLogo from '../../assets/eara29-final.png'
 
+
 const styles = {
-    'width': '25%'
+    'width': '15%'
 }
 
 export const Logo = () => {

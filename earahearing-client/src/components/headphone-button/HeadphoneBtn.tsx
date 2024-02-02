@@ -6,7 +6,7 @@ export const HeadphoneBtn = () => {
     return (
         <div className='headphone-btn'>
             <img src={headphone} alt="colored headphone" className='headphone-img' />
-            <p className='text text-dark text-bold vol-level'>1</p>
+            <p className='text-dark text-bold vol-level'>1</p>
         </div>
     )
 }

@@ -1,9 +1,17 @@
-
+.about {
+    padding-top: 2em;
+}
 .about--btn_choices {
     display: grid;  
-    gap: 1.5em;
+    gap: 2em;
 }
 
 .about--btn_bool {
     justify-content: center;
+
+}
+.about--btn_bool > * {
+    width: 30%;
+    padding: .5em 0;
+    font-size: 1.5em;
 }
