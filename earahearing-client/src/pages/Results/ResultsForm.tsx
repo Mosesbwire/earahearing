@@ -19,13 +19,16 @@ const ResultsForm = () => {
             </div>
             <div className="result-form-element">
                 <Form>
-                    <div>
-                        <Input type="text"  name="firstName" label="First Name"/>
-                        <Input type="text" name="lastName" label="Last Name"/>
-                    </div>
-                    <Input type="tel" name="phoneNumber" label="Phone Number"/>
-                    <Input  type="email" name="email" label="Email"/>
-                    <Button className="btn-primary-rounded btn-md">Get Results</Button>
+                   <div className="form-inputs">
+                       <div>
+                           <Input type="text"  name="firstName" label="First Name"/>
+                           <Input type="text" name="lastName" label="Last Name"/>
+                       </div>
+                       <Input type="tel" name="phoneNumber" label="Phone Number"/>
+                       <Input  type="email" name="email" label="Email"/>
+                   </div>
+                    
+                    <div className="form-btn"><Button className="btn-primary-rounded btn-md">Get Results</Button></div>
                 </Form>
             </div>
         </div>

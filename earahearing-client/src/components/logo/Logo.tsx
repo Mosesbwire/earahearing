@@ -1,12 +1,8 @@
 import blueLogo from '../../assets/eara29-final.png'
-
-
-const styles = {
-    'width': '15%'
-}
+import './logo.css'
 
 export const Logo = () => {
     return (
-        <img src={blueLogo} alt="earahearing logo" style={styles}/>
+        <img src={blueLogo} alt="earahearing logo" className='logo'/>
     )
 }

@@ -9,6 +9,7 @@
 .progress-text {
     justify-self: center;
     margin-top: .5em;
+    font-size: 1.2rem;
 }
 .progress-bar {
     min-width: 70px;
@@ -35,3 +36,22 @@
     top: 0;
     left: 0;
 }
+
+@media only screen and (min-width: 760px) {
+    .progress {
+        width: 70%;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    .progress p {
+        font-size: 1.3rem;
+    }
+
+    .progress-bar {
+        min-width: 100px;
+        max-width: 100px;
+        height: 15px;
+    }
+}
+

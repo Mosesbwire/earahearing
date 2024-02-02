@@ -5,8 +5,9 @@
 
 .quiet-cta {
     position: absolute;
-    bottom: 5%;
-    left: 10%;
+    bottom: 15%;
+    left: 0;
+    right: 0;
 }
 
 .quiet-img {
@@ -35,4 +36,21 @@
     width: 30%;
     justify-self: center;
 
+}
+
+@media only screen and (min-width: 760px) {
+
+    .quiet-test-wrapper h2 {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 1em;
+    }
+    .quiet-cta {
+        bottom: 5%
+    }
+    .prep-listening-cta > :first-child {
+        width: 40%;
+        padding-top: .75em;
+        padding-bottom: .75em;
+    }
 }

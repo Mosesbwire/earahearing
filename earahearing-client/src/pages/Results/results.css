@@ -10,23 +10,47 @@
 }
 .results-form-text {
     margin-bottom: 2em;
+    
 }
 .results-form-text > p {
     line-height: 1.5;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
 }
 
 .result-form-element {
     margin-left: 1em;
-    /* border: 2px solid red; */
 
 }
-.result-form-element > form input {
-    margin-bottom: 1.5em;
+
+.form-inputs {
     width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
 }
 
-.result-form-element > form button {
-    margin-top: 1.5em;
-    margin-left: 2.5em;
-    
+
+.form-inputs input {
+    width: 90%;
+    margin-bottom: 1.5em;
+    color: var(--main-color);
+    font-size: 1.1rem;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+.form-inputs  label {
+    font-size: 1.2em;
+}
+
+.form-btn {
+    display: grid;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 760px) {
+
+    .form-btn button {
+        padding: .75em 3.5em;
+    }
 }

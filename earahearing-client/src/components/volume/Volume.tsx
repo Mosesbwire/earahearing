@@ -1,13 +1,13 @@
 import { Button } from "../button/Button";
-import plus from '../../assets/plus.svg'
-import minus from '../../assets/minus.svg'
+import plus from '../../assets/vol-up.svg'
+import minus from '../../assets/vol-down.svg'
 import './volume.css'
 
 const VolumePanel = () => {
     return (
         <div className="row volume-control">
-            <div>
-                <Button className="btn-dark btn-sm">
+            <div className="vol-ctrl">
+                <Button className="btn-dark btn-sm vol-up">
                     <img src={plus} alt="plus sign" />
                 </Button>
             </div>
@@ -15,8 +15,8 @@ const VolumePanel = () => {
             <div className="vol">
                 <p className="text-dark text-bold">0</p>
             </div>
-            <div>
-                <Button className="btn-dark btn-sm">
+            <div className="vol-ctrl">
+                <Button className="btn-dark btn-sm vol-down">
                     <img src={minus} alt="minus sign" />
                 </Button>
             </div>

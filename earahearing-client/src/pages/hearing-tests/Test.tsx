@@ -12,7 +12,7 @@ const Test = () => {
                 <div className="emphasis-accented"></div>
                 <p className="subheadline text-dark text-bold text-centered">500 Hz</p>
             </div>
-            <div className="test-instruction-test">
+            <div className="test-instruction-test text-centered">
                 <p className="text text-dark">Start listening from the <span className="emphasis text-bold">lowest volume setting</span> that you can just <span className="emphasis text-bold">barely</span> hear the sound in your <span className="empahasis text-bold">right</span> ear.</p>
                 <p className="text text-dark">If you do not hear any sound, increase volume unitll you just barely hear the sound.</p>
             </div>
