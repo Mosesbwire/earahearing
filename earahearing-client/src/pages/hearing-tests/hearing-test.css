@@ -8,16 +8,28 @@
     background-color: var(--light-background-200);
     padding-top: 1em;
     height: 100vh;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 
 .test > :first-child > p{
     margin-top: 1em;
-    font-size: 1.8rem;
 }
 
 .test > * + * {
     margin-top: 2.5em;
+}
+
+.instruction-mobile p{
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+
+}
+
+.instruction-desktop {
+    display: none;
 }
 
 .emphasis {
@@ -54,6 +66,19 @@
         padding-top: 3em;
         box-shadow: 6px 10px 25px 0px rgba(0, 0, 0, 0.3);
         height: 80vh;
+    }
+
+    .instruction-desktop {
+        display: block;
+    }
+
+    .instruction-desktop p {
+        font-size: 1.5rem;
+        margin-bottom: 1em;
+    }
+
+    .instruction-mobile {
+        display: none;
     }
 
     .emphasis-accented {

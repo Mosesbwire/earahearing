@@ -15,7 +15,7 @@ const Start = () => {
                     <img src={heroImage} alt="man and woman listening on headphones" />
                 </div>
                 <div className="hero--information container">
-                    <h1 className="headline text-centered">Do you think you have hearing loss?</h1>
+                    <h1 className="headline text-centered text-bold">Do you think you have hearing loss?</h1>
                     <h2 className="subheadline text-dark text-centered">Clinically tested and proved to provide accurate hearing test results</h2>
                     <h2 className="subheadline text-dark text-centered">Take our 4 minute hearing test and see your results</h2>
                     <div className="start-btn">

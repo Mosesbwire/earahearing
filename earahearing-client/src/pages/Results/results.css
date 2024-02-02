@@ -54,3 +54,17 @@
         padding: .75em 3.5em;
     }
 }
+
+@media only screen and (min-width: 980px) {
+    .form-inputs {
+        width: 50%;
+    }
+    .names-row {
+        display: flex;
+        width: 94%;
+        column-gap: 1em;
+    }
+    .names-row > * {
+        width: 100%;
+    }
+}

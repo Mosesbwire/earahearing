@@ -1,7 +1,7 @@
 
 .test-wrapper {
     background-color: var(--light-background-200);
-    box-shadow: 6px 10px 25px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 6px 10px 40px 0px rgba(0, 0, 0, 0.2);
     border-radius: 15px; 
     height: 100vh;
 }
@@ -30,8 +30,19 @@
         height: 80vh;
     }
 
+    
+}
+
+@media only screen and (min-width: 980px) {
+    .test-wrapper {
+        border-radius: 35px;
+    }
+
     .test-instruction {
         padding-block: 5em;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 35px;
     }
 }
 

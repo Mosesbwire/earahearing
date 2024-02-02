@@ -75,6 +75,21 @@
 	.container {
 		width: 88%;
 	}
+
+	.headline {
+		font-size: 2.2rem;
+		line-height: 1;
+	}
+
+	.subheadline {
+		font-size: 1.8rem;
+		line-height: 1;
+	}
+
+	.text {
+		font-size: 1.3rem;
+		line-height: 1;
+	}
 }
 
 

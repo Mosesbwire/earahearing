@@ -20,7 +20,7 @@ const ResultsForm = () => {
             <div className="result-form-element">
                 <Form>
                    <div className="form-inputs">
-                       <div>
+                       <div className="names-row">
                            <Input type="text"  name="firstName" label="First Name"/>
                            <Input type="text" name="lastName" label="Last Name"/>
                        </div>

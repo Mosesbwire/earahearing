@@ -31,3 +31,25 @@
         font-size: 1.5em;
     }
 }
+
+@media only screen and (min-width: 980px) {
+    .about {
+        padding-top: 4em;
+    }
+    .about--btn_choices {
+        width: 50%;
+        margin-top: 2em;
+    }
+    .about--btn_choices button {
+        font-size: 1.25rem;
+        padding: 1em 2em
+    }
+
+    .about--btn_bool {
+        column-gap: 2.5em;
+    }
+    .about--btn_bool > * {
+        width: 15%;
+        padding: .85em 0;
+    }
+}
