@@ -88,6 +88,19 @@
     .sound-panel {
         display: none;
     }
+
+    .sound-panel-desktop {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 5em;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 4em;
+        column-gap: 2em;
+    }
+    .sound-panel-desktop > * {
+        align-self: baseline;
+    }
     .test-instruction-test {
         max-width: 80%;
         margin: 2em auto;
@@ -100,5 +113,20 @@
 
     .test-direction button {
         padding: .75em 2.5em;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .emphasis-accented {
+        width: 10%;
+        left: 53%;
+    }
+    .sound-panel-desktop {
+        grid-template-columns: repeat(10, 1fr);
+        margin-top: 3em;
+        margin-bottom: 6em;
+    }
+    .sound-panel-desktop > * {
+        align-self: baseline;
     }
 }

@@ -1,8 +1,10 @@
 import { Button } from "../../components/button/Button"
+import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
 import { usePageContextNext, usePageContextPrev } from "../../hooks/usePageContext"
 import './hearing-test.css'
 const Test = () => {
+    const volumeSteps = Array(10).fill(true)
     const next = usePageContextNext()
     const prev = usePageContextPrev()
     return (
@@ -24,6 +26,11 @@ const Test = () => {
             </div>
             <div className="sound-panel">
                 <VolumePanel/>
+            </div>
+            <div className="sound-panel-desktop">
+                {volumeSteps.map((vol,idx) => (
+                    <HeadphoneBtn volume={idx + 1} key={vol}/>
+                ))}
             </div>
             <div className="test-direction row">
                 <Button className="btn-primary-outline btn-sm" onClick={prev}>Prev</Button>
