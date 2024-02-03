@@ -1,5 +1,4 @@
 import { usePageContextNext } from "../../hooks/usePageContext"
-import { Logo } from "../../components/logo/Logo"
 import { Button } from "../../components/button/Button"
 import heroImage from '../../assets/images.jpg'
 import './start-page.css'
@@ -7,9 +6,6 @@ const Start = () => {
     const nextPage = usePageContextNext()
     return (
         <section className="start-page-wrapper">
-            <header className="container">
-                <Logo/>
-            </header>
             <div className="hero">
                 <div className="hero--image">
                     <img src={heroImage} alt="man and woman listening on headphones" />
