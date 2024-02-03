@@ -4,6 +4,7 @@ import Test from "./Test"
 import leftEarImg from '../../assets/LEFT EAR.svg'
 import rightEarImg from '../../assets/RIGHT EAR.svg'
 import { usePageContextCurrentPage } from "../../hooks/usePageContext"
+import { ProgressBarContainer } from "../../components/progress-bar/ProgressBar"
 import React from "react";
 import './hearing-test.css'
 
@@ -19,8 +20,11 @@ const pages: pagesType = {
 const HearingTest = () => {
     const currentPage = usePageContextCurrentPage()
     return (
-        <div className="hearing-test-page container">
-            {pages[currentPage.toString()]}
+        <div>
+            <ProgressBarContainer/>
+            <div className="hearing-test-page container">
+                {pages[currentPage.toString()]}
+            </div>
         </div>
     )
 }

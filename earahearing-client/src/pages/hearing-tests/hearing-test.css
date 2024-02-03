@@ -32,6 +32,10 @@
     display: none;
 }
 
+.sound-panel-desktop {
+    display: none;
+}
+
 .emphasis {
     text-decoration: underline;
 }
@@ -54,6 +58,12 @@
 .test-direction {
     justify-content: space-between;
     margin-top: 3.5em;
+}
+
+@media only screen and (max-width: 360px) {
+    .emphasis-accented {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 760px) {
@@ -117,6 +127,9 @@
 }
 
 @media only screen and (min-width: 980px) {
+    .hearing-test-page {
+        align-items: normal;
+    }
     .emphasis-accented {
         width: 10%;
         left: 53%;
