@@ -2,11 +2,17 @@ import { Button } from "../../components/button/Button"
 import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
 import { usePageContextNext, usePageContextPrev } from "../../hooks/usePageContext"
+import { useProgressContextIncrease } from "../../hooks/useProgressContext"
 import './hearing-test.css'
 const Test = () => {
-    const volumeSteps = Array(10).fill(true)
+    const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
     const prev = usePageContextPrev()
+    const incrProgress = useProgressContextIncrease()
+    const nextClickHandler = () => {
+        next()
+        incrProgress()
+    }
     return (
         <div className="test">
             <div>
@@ -29,12 +35,12 @@ const Test = () => {
             </div>
             <div className="sound-panel-desktop">
                 {volumeSteps.map((vol,idx) => (
-                    <HeadphoneBtn volume={idx + 1} key={vol}/>
+                    <HeadphoneBtn volume={idx + 1} key={`${vol+ idx}`}/>
                 ))}
             </div>
             <div className="test-direction row">
                 <Button className="btn-primary-outline btn-sm" onClick={prev}>Prev</Button>
-                <Button className="btn-primary-rounded btn-sm" onClick={next}>Next</Button>
+                <Button className="btn-primary-rounded btn-sm" onClick={nextClickHandler}>Next</Button>
             </div>
         </div>
     )

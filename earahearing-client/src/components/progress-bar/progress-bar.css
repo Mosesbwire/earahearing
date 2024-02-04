@@ -29,12 +29,12 @@
 }
 .step {
     border-radius: inherit;
-    width: 50%;
     height: 100%;
     background-color: var(--accent-color);
     position: absolute;
     top: 0;
     left: 0;
+    transition: all 200ms ease;
 }
 
 @media only screen and (min-width: 760px) {

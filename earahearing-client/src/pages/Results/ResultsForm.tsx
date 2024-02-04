@@ -2,16 +2,14 @@
 import { Form } from "../../components/form/Form";
 import { Input } from "../../components/input/Input";
 import { Button } from "../../components/button/Button";
-import { ProgressBarContainer } from "../../components/progress-bar/ProgressBar";
 import BannerImg from "../../assets/CONGRATULATIONS.png"
 
 import './results.css'
 
-
+export const TOTAL_RESULT_PAGES = 1
 const ResultsForm = () => {
     return (
         <div className="results-form-page container">
-            <ProgressBarContainer/>
             <div className="banner">
                 <img src={BannerImg} alt="congratulations banner" />
             </div>

@@ -7,7 +7,6 @@ type pageContextProviderProps = {
 export default function PageContextProvider({ children }: pageContextProviderProps){
     const [currentPage, setCurrentPage] = useState<number>(0)
     function nextPage(){
-        
         setCurrentPage(page => page + 1)
     }
     function previousPage(){

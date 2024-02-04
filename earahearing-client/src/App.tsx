@@ -1,6 +1,7 @@
 import Home from './pages/home/Home'
 import { Logo } from './components/logo/Logo'
 import PageContextProvider from './context/PageContext'
+import ProgressContextProvider from './context/ProgressContext'
 import './App.css'
 
 
@@ -11,7 +12,9 @@ function App() {
         <Logo/>
       </header>
       <PageContextProvider>
-        <Home/>
+        <ProgressContextProvider>
+          <Home/>
+        </ProgressContextProvider>
       </PageContextProvider>
       
     </main> 

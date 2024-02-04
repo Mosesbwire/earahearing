@@ -3,6 +3,7 @@ import { TestInstruction } from "../TestInstruction"
 import { TestImage } from "../TestInstructionImg"
 import { Button } from "../../button/Button"
 import { usePageContextNext } from "../../../hooks/usePageContext"
+import { useProgressContextIncrease } from "../../../hooks/useProgressContext"
 import './hearingtest.css'
 
 type listeningProps = {
@@ -11,6 +12,12 @@ type listeningProps = {
 }
 export const PrepareListeningTest = ({img, ear}: listeningProps) => {
     const next = usePageContextNext()
+    const incrProgress = useProgressContextIncrease()
+
+    const nextClickHandler = () => {
+        next()
+        incrProgress()
+    } 
     return (
         <div className="">
             <TestContainer>
@@ -25,7 +32,7 @@ export const PrepareListeningTest = ({img, ear}: listeningProps) => {
                         <img src={img} alt="ear image" className="ear-img"/>
                         <div className="prep-listening-cta">
                             <Button className="btn-primary-rounded btn-md">Play sound</Button>
-                            <Button className="btn-sm btn-disabled" disabled={false} onClick={next}>Next</Button>
+                            <Button className="btn-sm btn-disabled" disabled={false} onClick={nextClickHandler}>Next</Button>
                         </div>
                     
                     </TestImage>
