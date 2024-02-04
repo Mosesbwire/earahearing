@@ -10,7 +10,7 @@ import './hearing-test.css'
 
 export type pagesType = Record<string, React.JSX.Element>
 export const LAST_TEST_PAGE = 9
-export const TOTAL_TEST_PAGES = 4
+export const TOTAL_TEST_PAGES = 12
 const pages: pagesType = {
     '6': <TestQuietPlace/>,
     '7': <PrepareListeningTest ear="left" img={leftEarImg}/>,

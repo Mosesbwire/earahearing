@@ -1,24 +1,43 @@
+import { useState } from "react"
 import { Button } from "../../components/button/Button"
 import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
 import { usePageContextNext, usePageContextPrev } from "../../hooks/usePageContext"
 import { useProgressContextIncrease } from "../../hooks/useProgressContext"
 import './hearing-test.css'
+
+
+const frequencies = [500, 1000, 2000, 4000, 8000] as const
+
 const Test = () => {
+    const [ear, setEar] = useState<'Left' | 'Right'>('Right')
+    const [frequency, setFrequency] = useState(0)
     const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
     const prev = usePageContextPrev()
     const incrProgress = useProgressContextIncrease()
+
+    
     const nextClickHandler = () => {
-        next()
         incrProgress()
+        if (frequency === frequencies.length - 1) {
+        setEar('Left')
+        setFrequency(0)
+        } else {
+
+            setFrequency(curr => curr + 1)
+        }   
+        if (ear === 'Left' && frequency === frequencies.length - 1){
+            next()
+        }
     }
+    console.log(frequency)
     return (
         <div className="test">
             <div>
-                <h1 className="headline text-centered">Hearing Test Right Ear</h1>
+                <h1 className="headline text-centered">Hearing Test {ear} Ear</h1>
                 <div className="emphasis-accented"></div>
-                <p className="subheadline text-dark text-bold text-centered">500 Hz</p>
+                <p className="subheadline text-dark text-bold text-centered">{frequencies[frequency]} Hz</p>
             </div>
             <div className="test-instruction-test">
                 <div className="instruction-mobile">
