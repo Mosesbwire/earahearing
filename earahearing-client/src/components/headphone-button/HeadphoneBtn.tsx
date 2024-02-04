@@ -5,11 +5,12 @@ import './headphoneBtn.css'
 type headPhoneProps = {
     volume: number,
     index: number,
-    active: number
+    active: number,
+    next: boolean
     onClick: (idx: number) => void
 }
-export const HeadphoneBtn = ({volume, index, active, onClick}: headPhoneProps) => {
-    const isActive = index === active
+export const HeadphoneBtn = ({volume, index, active, next, onClick}: headPhoneProps) => {
+    const isActive = index === active && !next
     return (
         <div className={`headphone-btn x-${volume}`} onClick={() => onClick(index)}>
             <HeadPhoneBtnSvg className='headphone-img' isActive={isActive}/>

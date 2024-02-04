@@ -49,11 +49,10 @@ export const HeadPhoneBtnSvg = ({isActive, ...rest}: propsType) => {
           </g>
         </g>
         { isActive ? <motion.g id="sound"
-          animate={{opacity: [1, 0.4]}}
+          animate={{opacity: [1, 0.2]}}
           transition={{
-            duration: 1,
+            duration: 1.5,
             repeat: Infinity,
-            ease: 'easeInOut'
           }}
         >
           <path

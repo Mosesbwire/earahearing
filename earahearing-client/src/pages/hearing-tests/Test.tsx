@@ -13,14 +13,15 @@ const Test = () => {
     const [ear, setEar] = useState<'Left' | 'Right'>('Right')
     const [frequency, setFrequency] = useState(0)
     const [playingHeadphone, setPlayingHeadphone] = useState(-1)
+    const [moveToNextFrequency, setMoveToNextFrequency] = useState(false)
     const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
     const prev = usePageContextPrev()
     const incrProgress = useProgressContextIncrease()
 
-    
     const nextClickHandler = () => {
         incrProgress()
+        setMoveToNextFrequency(true)
         if (frequency === frequencies.length - 1) {
         setEar('Left')
         setFrequency(0)
@@ -35,6 +36,7 @@ const Test = () => {
 
     const playHeadphone = (index: number) => {
         setPlayingHeadphone(index)
+        setMoveToNextFrequency(false)
     }
     
     return (
@@ -59,7 +61,7 @@ const Test = () => {
             </div>
             <div className="sound-panel-desktop">
                 {volumeSteps.map((vol,idx) => (
-                    <HeadphoneBtn key={`${vol+ idx}`} volume={idx + 1} index={idx} active={playingHeadphone} onClick={playHeadphone}/>
+                    <HeadphoneBtn key={`${vol+ idx}`} volume={idx + 1} index={idx} active={playingHeadphone} next={moveToNextFrequency} onClick={playHeadphone}/>
                 ))}
             </div>
             <div className="test-direction row">
