@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Button } from "../../components/button/Button"
 import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
@@ -12,6 +12,7 @@ const frequencies = [500, 1000, 2000, 4000, 8000] as const
 const Test = () => {
     const [ear, setEar] = useState<'Left' | 'Right'>('Right')
     const [frequency, setFrequency] = useState(0)
+    const [playingHeadphone, setPlayingHeadphone] = useState(-1)
     const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
     const prev = usePageContextPrev()
@@ -31,7 +32,11 @@ const Test = () => {
             next()
         }
     }
-    console.log(frequency)
+
+    const playHeadphone = (index: number) => {
+        setPlayingHeadphone(index)
+    }
+    
     return (
         <div className="test">
             <div>
@@ -54,7 +59,7 @@ const Test = () => {
             </div>
             <div className="sound-panel-desktop">
                 {volumeSteps.map((vol,idx) => (
-                    <HeadphoneBtn volume={idx + 1} key={`${vol+ idx}`}/>
+                    <HeadphoneBtn key={`${vol+ idx}`} volume={idx + 1} index={idx} active={playingHeadphone} onClick={playHeadphone}/>
                 ))}
             </div>
             <div className="test-direction row">
