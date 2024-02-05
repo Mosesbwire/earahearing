@@ -23,12 +23,12 @@ const Test = () => {
         incrProgress()
         setMoveToNextFrequency(true)
         if (frequency === frequencies.length - 1) {
-        setEar('Left')
-        setFrequency(0)
+            setEar('Left')
+            setFrequency(0)
         } else {
-
             setFrequency(curr => curr + 1)
-        }   
+        } 
+          
         if (ear === 'Left' && frequency === frequencies.length - 1){
             next()
         }
