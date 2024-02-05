@@ -7,6 +7,7 @@ import { usePageContextNext } from "../../../hooks/usePageContext"
 import { useProgressContextIncrease } from "../../../hooks/useProgressContext"
 import { RightSpeaker } from "../../ears-speaker/RightSpeaker"
 import { LeftSpeaker } from "../../ears-speaker/LeftSpeaker"
+import sound from "../../../lib/audio"
 import './hearingtest.css'
 
 type listeningProps = {
@@ -16,14 +17,15 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
     const [isPlaying, setIsPlaying] = useState(false)
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
-
     const nextClickHandler = () => {
+        sound.pause()
         next()
         incrProgress()
         setIsPlaying(false)
     } 
-    const playSound = () => {
+    const playSound = async () => {
         setIsPlaying(true)
+        await sound.play(ear)
     }
     return (
         <div className="">

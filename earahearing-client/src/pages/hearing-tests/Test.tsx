@@ -5,10 +5,19 @@ import VolumePanel from "../../components/volume/Volume"
 import { ArrowSvg } from "../../components/arrow/ArrowSvg"
 import { usePageContextNext } from "../../hooks/usePageContext"
 import { useProgressContextIncrease, useProgressContextDecrease } from "../../hooks/useProgressContext"
+import sound from "../../lib/audio"
+import { frequncyRange } from "../../lib/audio"
 import './hearing-test.css'
 
-
+type freq = Record<string, frequncyRange>
 const frequencies = [500, 1000, 2000, 4000, 8000] as const
+const ranges: freq = {
+    0: 'freq_5',
+    1: 'freq_10',
+    2: 'freq_20',
+    3: 'freq_40',
+    4: 'freq_80'
+}
 
 const Test = () => {
     const [ear, setEar] = useState<'Left' | 'Right'>('Right')
@@ -20,11 +29,13 @@ const Test = () => {
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
     const decrProgress = useProgressContextDecrease()
+    const test = sound.hearingTest(ear, ranges[`${frequency}`])
 
     const nextClickHandler = () => {
         incrProgress()
         setMoveToNextFrequency(true)
         setIsPlaying(false)
+        sound.pause()
         if (frequency === frequencies.length - 1) {
             setEar('Left')
             setFrequency(0)
@@ -56,6 +67,8 @@ const Test = () => {
     }
 
     const playHeadphone = (index: number) => {
+        sound.pause()
+        test.then((fn) => fn(index)).catch(err => console.log(err))
         setPlayingHeadphone(index)
         setMoveToNextFrequency(false)
         setIsPlaying(true)
@@ -78,7 +91,7 @@ const Test = () => {
                 </div>
             </div>
             <div className="sound-panel">
-                <VolumePanel/>
+                <VolumePanel onClick={playHeadphone} nextFreq={moveToNextFrequency}/>
             </div>
             {playingHeadphone === -1 ? <div className="start-arrow">
                 <ArrowSvg className="arrow"/>
