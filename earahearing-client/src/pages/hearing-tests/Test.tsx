@@ -14,6 +14,7 @@ const Test = () => {
     const [frequency, setFrequency] = useState(0)
     const [playingHeadphone, setPlayingHeadphone] = useState(-1)
     const [moveToNextFrequency, setMoveToNextFrequency] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(false)
     const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
     const prev = usePageContextPrev()
@@ -22,9 +23,11 @@ const Test = () => {
     const nextClickHandler = () => {
         incrProgress()
         setMoveToNextFrequency(true)
+        setIsPlaying(false)
         if (frequency === frequencies.length - 1) {
             setEar('Left')
             setFrequency(0)
+           
         } else {
             setFrequency(curr => curr + 1)
         } 
@@ -37,6 +40,7 @@ const Test = () => {
     const playHeadphone = (index: number) => {
         setPlayingHeadphone(index)
         setMoveToNextFrequency(false)
+        setIsPlaying(true)
     }
     
     return (
@@ -66,7 +70,7 @@ const Test = () => {
             </div>
             <div className="test-direction row">
                 <Button className="btn-primary-outline btn-sm" onClick={prev}>Prev</Button>
-                <Button className="btn-primary-rounded btn-sm" onClick={nextClickHandler}>Next</Button>
+                <Button className={`${isPlaying ? 'btn-primary-rounded': 'btn-primary-rounded-disabled'} btn-sm`} disabled={!isPlaying} onClick={nextClickHandler}>Next</Button>
             </div>
         </div>
     )
