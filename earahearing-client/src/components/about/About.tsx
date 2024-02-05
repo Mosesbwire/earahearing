@@ -26,6 +26,7 @@ export const About = (props: aboutProps) => {
         setTimeout(()=> {
             next()
             incrProgress()
+            setSelectedBtn('')
         }, 500)
     }
     const onClickHandlerChoice = (choice: string)=> {

@@ -4,6 +4,7 @@ import heroImage from '../../assets/images.jpg'
 import './start-page.css'
 const Start = () => {
     const nextPage = usePageContextNext()
+    
     return (
         <section className="start-page-wrapper">
             <div className="hero">
