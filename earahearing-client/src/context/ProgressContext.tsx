@@ -43,7 +43,11 @@ export default function ProgressContextProvider( {children}: ProgressContextProp
     }
 
     const decreaseProgress = () => {
-
+        const section = selectSection()
+        const size = 100 / section.totalPages
+        setWidth(wd => wd - size)
+        const updatedWidth = width - size
+        setSectionUpdate({ref: section.section, width: updatedWidth})
     }
 
     return (

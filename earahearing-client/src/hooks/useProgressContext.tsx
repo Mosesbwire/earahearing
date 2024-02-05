@@ -23,3 +23,8 @@ export const useProgressContextIncrease = () => {
     const context = useGetProgressContext()
     return context[1]
 }
+
+export const useProgressContextDecrease = () => {
+    const context = useGetProgressContext()
+    return context[2]
+}

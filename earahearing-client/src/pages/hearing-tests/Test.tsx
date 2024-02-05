@@ -3,7 +3,7 @@ import { Button } from "../../components/button/Button"
 import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
 import { usePageContextNext } from "../../hooks/usePageContext"
-import { useProgressContextIncrease } from "../../hooks/useProgressContext"
+import { useProgressContextIncrease, useProgressContextDecrease } from "../../hooks/useProgressContext"
 import './hearing-test.css'
 
 
@@ -18,6 +18,7 @@ const Test = () => {
     const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
+    const decrProgress = useProgressContextDecrease()
 
     const nextClickHandler = () => {
         incrProgress()
@@ -37,6 +38,7 @@ const Test = () => {
     }
 
     const prevClickHandler = () => {
+
         setMoveToNextFrequency(true)
         if (ear === 'Right' && frequency !== 0){
             setFrequency(curr => curr - 1)
@@ -45,6 +47,10 @@ const Test = () => {
             setFrequency(frequencies.length - 1)
         } else if (ear === 'Left' && frequency !== 0) { 
             setFrequency(curr => curr - 1)
+        }
+
+        if (frequency !== 0 || ear !== 'Right'){
+            decrProgress()
         }
     }
 
