@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { Button } from "../../components/button/Button"
 import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
-import { usePageContextNext, usePageContextPrev } from "../../hooks/usePageContext"
+import { usePageContextNext } from "../../hooks/usePageContext"
 import { useProgressContextIncrease } from "../../hooks/useProgressContext"
 import './hearing-test.css'
 
@@ -17,7 +17,6 @@ const Test = () => {
     const [isPlaying, setIsPlaying] = useState(false)
     const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
-    const prev = usePageContextPrev()
     const incrProgress = useProgressContextIncrease()
 
     const nextClickHandler = () => {
@@ -34,6 +33,18 @@ const Test = () => {
           
         if (ear === 'Left' && frequency === frequencies.length - 1){
             next()
+        }
+    }
+
+    const prevClickHandler = () => {
+        setMoveToNextFrequency(true)
+        if (ear === 'Right' && frequency !== 0){
+            setFrequency(curr => curr - 1)
+        } else if (ear === 'Left' && frequency === 0){
+            setEar('Right')
+            setFrequency(frequencies.length - 1)
+        } else if (ear === 'Left' && frequency !== 0) { 
+            setFrequency(curr => curr - 1)
         }
     }
 
@@ -69,7 +80,7 @@ const Test = () => {
                 ))}
             </div>
             <div className="test-direction row">
-                <Button className="btn-primary-outline btn-sm" onClick={prev}>Prev</Button>
+                <Button className="btn-primary-outline btn-sm" onClick={prevClickHandler}>Prev</Button>
                 <Button className={`${isPlaying ? 'btn-primary-rounded': 'btn-primary-rounded-disabled'} btn-sm`} disabled={!isPlaying} onClick={nextClickHandler}>Next</Button>
             </div>
         </div>
