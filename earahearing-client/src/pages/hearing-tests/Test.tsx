@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Button } from "../../components/button/Button"
 import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
+import { ArrowSvg } from "../../components/arrow/ArrowSvg"
 import { usePageContextNext } from "../../hooks/usePageContext"
 import { useProgressContextIncrease, useProgressContextDecrease } from "../../hooks/useProgressContext"
 import './hearing-test.css'
@@ -63,8 +64,7 @@ const Test = () => {
     return (
         <div className="test">
             <div>
-                <h1 className="headline text-centered">Hearing Test {ear} Ear</h1>
-                <div className="emphasis-accented"></div>
+                <h1 className="headline text-centered">Hearing Test <span className="text-bold">{ear}</span> Ear</h1>
                 <p className="subheadline text-dark text-bold text-centered">{frequencies[frequency]} Hz</p>
             </div>
             <div className="test-instruction-test">
@@ -80,6 +80,12 @@ const Test = () => {
             <div className="sound-panel">
                 <VolumePanel/>
             </div>
+            {playingHeadphone === -1 ? <div className="start-arrow">
+                <ArrowSvg className="arrow"/>
+                <div className="start-text">
+                    <p className="text text-dark text-bold">START</p>
+                </div>
+            </div> : null}
             <div className="sound-panel-desktop">
                 {volumeSteps.map((vol,idx) => (
                     <HeadphoneBtn key={`${vol+ idx}`} volume={idx + 1} index={idx} active={playingHeadphone} next={moveToNextFrequency} onClick={playHeadphone}/>

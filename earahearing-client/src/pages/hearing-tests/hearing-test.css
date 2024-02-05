@@ -60,6 +60,10 @@
     margin-top: 3.5em;
 }
 
+.start-arrow {
+    display: none;
+}
+
 @media only screen and (max-width: 360px) {
     .emphasis-accented {
         display: none;
@@ -99,10 +103,32 @@
         display: none;
     }
 
+    .start-arrow {
+        display: grid;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        top: -3%;
+        left: 11%;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .start-text {
+        position: absolute;
+        top: 200%;
+        left: -10%;
+    }
+    
     .sound-panel-desktop {
         width: 80%;
         margin: 0 auto;
         margin-bottom: 5em;
+        margin-top: 2em;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         row-gap: 4em;
@@ -138,6 +164,12 @@
         grid-template-columns: repeat(10, 1fr);
         margin-top: 3em;
         margin-bottom: 6em;
+    }
+
+    .start-text {
+        position: absolute;
+        top: 220%;
+        left: -30%;
     }
     .sound-panel-desktop > * {
         align-self: baseline;
