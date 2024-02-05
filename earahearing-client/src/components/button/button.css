@@ -13,6 +13,13 @@
     transition: all 500ms;
 }
 
+.btn-primary-rounded-disabled {
+    background-color: var(--light-background-400);
+    color: var(--light-text);
+    border-radius: 4.375em;
+    width: fit-content;
+}
+
 .btn-primary-rounded:hover {
     background-color: var(--main-color);
     color: var(--accent-color);
