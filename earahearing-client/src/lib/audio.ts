@@ -18,6 +18,8 @@ class Sound {
     audioContext: AudioContext
     sourceNode: AudioBufferSourceNode
     isPlaying: boolean
+    BASE_VOL = 0.00007
+    DB_INCREMENTS = 5
     constructor() {
         this.audioContext = new (window.AudioContext)
         this.sourceNode = this.audioContext.createBufferSource()
@@ -25,14 +27,9 @@ class Sound {
     }
     
     async play(side: 'Left'| 'Right') {
-        const panValue = side === 'Left' ? -1 : 1
-        const resp = await fetch(testAudio)
-        const arrayBuffer = await resp.arrayBuffer()
-        const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer)
-        this.sourceNode.buffer = audioBuffer
-        const pan = new StereoPannerNode(this.audioContext, {pan: panValue})
+        await this.initAudio(testAudio)
+        const pan = this.setPanning(side)
         this.sourceNode.connect(pan).connect(this.audioContext.destination)
-        
         return new Promise<void>((resolve) => {
             if (this.audioContext.state === 'running' && !this.isPlaying){
                 resolve()
@@ -50,30 +47,44 @@ class Sound {
         }
     }
 
-    async hearingTest(side: 'Left' | 'Right', freq: frequncyRange) {
-        const panValue = side === 'Left' ? -1 : 1
-        const resp = await fetch(frequencies[freq])
+    async hearingTest(side: 'Left' | 'Right', freq: frequncyRange, gain: number) {
+        const file = frequencies[freq]
+        await this.initAudio(file)
+        const pan = this.setPanning(side)
+        const gainNode = this.audioContext.createGain()
+        this.sourceNode.loop = true
+        this.sourceNode.connect(pan).connect(gainNode).connect(this.audioContext.destination)
+        const increase = gain * this.DB_INCREMENTS
+        const linearIncrease = Math.pow(10, increase/ 20)
+        let vol = this.BASE_VOL * linearIncrease
+        
+    
+        return new Promise<void>((resolve) => {
+            if (this.audioContext.state === 'running' && !this.isPlaying){
+                resolve()
+            }
+            if (gain === 0) vol = 0
+            gainNode.gain.value = vol
+            
+            this.sourceNode.start()
+            this.isPlaying = true
+        })
+       
+    } 
+
+    async initAudio(file:string) {
+        const resp = await fetch(file)
         const arrayBuffer = await resp.arrayBuffer()
         const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer)
         this.sourceNode = this.audioContext.createBufferSource()
         this.sourceNode.buffer = audioBuffer
-        const pan = new StereoPannerNode(this.audioContext, {pan: panValue})
-        this.sourceNode.connect(pan).connect(this.audioContext.destination)
-        const context = this.audioContext
-        const source = this.sourceNode
-
-        function decibel(db: number) {
-            const gainNode = context.createGain()
-            gainNode.gain.value *= Math.pow(10, db/ 20)
-
-            source.connect(gainNode).connect(context.destination)
-            source.start()
-        }
-
-        return decibel
     }
-    
-    
+
+    setPanning(side: 'Left' | 'Right') {
+        const panValue = side === 'Left' ? -1 : 1
+        const pan = new StereoPannerNode(this.audioContext, {pan: panValue})
+        return pan
+    }
 }
 
 const sound = new Sound()

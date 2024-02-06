@@ -5,11 +5,11 @@ import minus from '../../assets/vol-down.svg'
 import './volume.css'
 
 type volProps = {
-    onClick: (index: number) => void,
+    play: (index: number) => void,
     nextFreq: boolean
 }
 
-const VolumePanel = ({onClick, nextFreq}: volProps) => {
+const VolumePanel = ({play, nextFreq}: volProps) => {
     const [volume, setVolume] = useState(0)
     useEffect(()=> {
         if (nextFreq) {
@@ -20,12 +20,13 @@ const VolumePanel = ({onClick, nextFreq}: volProps) => {
 
 
     const volumeUp = () => {
-        if (volume > 10) {
+        if (volume === 10) {
             setVolume(0)
+            play(-1)
             return
         }
-        onClick(volume + 1)
         setVolume(vol => vol + 1)
+        play(volume)
     }
 
     const volumeDown = () => {
@@ -34,8 +35,10 @@ const VolumePanel = ({onClick, nextFreq}: volProps) => {
         } else {
             setVolume(0)
         }
-        onClick(volume)
+        play(volume - 2)
     }
+
+    
 
     
     return (
@@ -50,7 +53,7 @@ const VolumePanel = ({onClick, nextFreq}: volProps) => {
                 <p className="text-dark text-bold">{volume}</p>
             </div>
             <div className="vol-ctrl">
-                <Button className="btn-dark btn-sm vol-down" onClick={volumeDown}>
+                <Button className="btn-dark btn-sm vol-down"  disabled={volume === 0} onClick={volumeDown}>
                     <img src={minus} alt="minus sign" />
                 </Button>
             </div>

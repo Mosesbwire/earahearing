@@ -29,7 +29,7 @@ const Test = () => {
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
     const decrProgress = useProgressContextDecrease()
-    const test = sound.hearingTest(ear, ranges[`${frequency}`])
+    
 
     const nextClickHandler = () => {
         incrProgress()
@@ -50,7 +50,8 @@ const Test = () => {
     }
 
     const prevClickHandler = () => {
-
+        setIsPlaying(false)
+        sound.pause()
         setMoveToNextFrequency(true)
         if (ear === 'Right' && frequency !== 0){
             setFrequency(curr => curr - 1)
@@ -68,7 +69,8 @@ const Test = () => {
 
     const playHeadphone = (index: number) => {
         sound.pause()
-        test.then((fn) => fn(index)).catch(err => console.log(err))
+        sound.hearingTest(ear, ranges[`${frequency}`], index + 1)
+        
         setPlayingHeadphone(index)
         setMoveToNextFrequency(false)
         setIsPlaying(true)
@@ -91,7 +93,7 @@ const Test = () => {
                 </div>
             </div>
             <div className="sound-panel">
-                <VolumePanel onClick={playHeadphone} nextFreq={moveToNextFrequency}/>
+                <VolumePanel play={playHeadphone} nextFreq={moveToNextFrequency}/>
             </div>
             {playingHeadphone === -1 ? <div className="start-arrow">
                 <ArrowSvg className="arrow"/>
