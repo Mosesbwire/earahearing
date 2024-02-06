@@ -8,7 +8,8 @@ import { useProgressContextIncrease } from "../../../hooks/useProgressContext"
 import { RightSpeaker } from "../../ears-speaker/RightSpeaker"
 import { LeftSpeaker } from "../../ears-speaker/LeftSpeaker"
 import sound from "../../../lib/audio"
-import './hearingtest.css'
+// import './hearingtest.css'
+import './prep-listening.css'
 
 type listeningProps = {
     ear: 'Left' | 'Right'
@@ -28,27 +29,30 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
         await sound.play(ear)
     }
     return (
-        <div className="">
             <TestContainer>
-                <div className="test-row">
+                <div className="test-prep-wrapper">
                     <TestInstruction>
-                        <h1 className="headline text-light">Prepare for the test</h1>
-                        <h2 className="subheadline text-light">Let's make sure everything is working</h2>
-                        <h2 className="subheadline text-light">Click <span className="text-accented">play sound</span> to test the {ear} ear</h2>
+                        <div className="prep-instructions">
+                            <h1 className="headline text-light">Prepare for the test</h1>
+                            <h2 className="subheadline text-light">Let's make sure everything is working</h2>
+                            <h2 className="subheadline text-light">Click <span className="text-accented">play sound</span> to test the {ear} ear</h2>
+                        </div>
                     </TestInstruction>
                     <TestImage >
-                        <h1 className="headline text-centered ear-test">{ear.toUpperCase()}</h1>
-                       
-                        {ear === 'Left' ? <LeftSpeaker className="ear-img" isPlaying={isPlaying}/> : <RightSpeaker className="ear-img" isPlaying={isPlaying}/>}
-                        <div className="prep-listening-cta">
-                            <Button className="btn-primary-rounded btn-md" onClick={playSound}>Play sound</Button>
-                            <Button className={`btn-sm ${isPlaying ? 'btn-dark' : 'btn-disabled'}`} disabled={!isPlaying} onClick={nextClickHandler}>Next</Button>
+                        <div className="prep-img">
+                            <h1 className="headline text-centered ear-test">{ear.toUpperCase()}</h1>
+                            <div className="ear-img-wrapper">
+                                {ear === 'Left' ? <LeftSpeaker className="ear-img" isPlaying={isPlaying}/> : <RightSpeaker className="ear-img" isPlaying={isPlaying}/>}
+                            </div>
+                            <div className="prep-listening-cta">
+                                <Button className="btn-primary-rounded btn-md" onClick={playSound}>Play sound</Button>
+                                <Button className={`btn-sm ${isPlaying ? 'btn-dark' : 'btn-disabled'}`} disabled={!isPlaying} onClick={nextClickHandler}>Next</Button>
+                            </div>
                         </div>
                     
                     </TestImage>
                 </div>
             </TestContainer>
-        </div>
     )
 }
 

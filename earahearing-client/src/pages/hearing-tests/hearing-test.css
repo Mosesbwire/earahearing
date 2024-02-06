@@ -1,13 +1,13 @@
 
 .hearing-test-page {
-    padding-top: 2em;
+    padding-top: 1.5em;
     padding-bottom: 4em;
     
 }
 .test {
     background-color: var(--light-background-200);
-    padding-top: 1em;
-    height: 100vh;
+    padding-top: 2em;
+    padding-bottom: 2em;
     padding-left: 1em;
     padding-right: 1em;
 }
@@ -44,7 +44,7 @@
     background-color: var(--accent-color);
     height: 3px;
     border-radius: 20px;
-    width: 30%;
+    width: 25%;
     position: absolute;
     left: 60%;
 }
@@ -74,12 +74,13 @@
     .hearing-test-page {
         display: grid;
         align-items: center;
-        height: 100vh;
     }
     .test {
         padding-top: 3em;
-        box-shadow: 6px 10px 25px 0px rgba(0, 0, 0, 0.3);
-        height: 80vh;
+        padding-bottom: 3em;
+        box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+
     }
 
     .instruction-desktop {
@@ -96,7 +97,7 @@
     }
 
     .emphasis-accented {
-        width: 15%;
+        width: 12%;
         left: 55%;
     }
     .sound-panel {
@@ -109,8 +110,8 @@
         width: 40px;
         height: 40px;
         position: relative;
-        top: -3%;
-        left: 11%;
+        top: -5%;
+        left: 6%;
     }
 
     .arrow {
@@ -125,7 +126,7 @@
     }
     
     .sound-panel-desktop {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         margin-bottom: 5em;
         margin-top: 2em;
@@ -155,21 +156,38 @@
 @media only screen and (min-width: 980px) {
     .hearing-test-page {
         align-items: normal;
+        padding-bottom: 3em;
     }
     .emphasis-accented {
-        width: 10%;
+        width: 8%;
         left: 53%;
+        margin-top: .35em;
+    }
+
+    .instruction-desktop {
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .instruction-desktop > p {
+        line-height: 1.5;
     }
     .sound-panel-desktop {
+        column-gap: 1em;
+        row-gap: 0;
         grid-template-columns: repeat(10, 1fr);
-        margin-top: 3em;
-        margin-bottom: 6em;
+        margin-top: 0;
+        margin-bottom: 4em;
+    }
+
+    .start-arrow {
+        top: -10%;
     }
 
     .start-text {
         position: absolute;
         top: 220%;
-        left: -30%;
+        left: -30%; 
     }
     .sound-panel-desktop > * {
         align-self: baseline;

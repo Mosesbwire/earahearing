@@ -20,10 +20,7 @@
     width: fit-content;
 }
 
-.btn-primary-rounded:hover {
-    background-color: var(--main-color);
-    color: var(--accent-color);
-}
+
 
 .btn-primary-outline {
     color: var(--dark-text);
@@ -34,9 +31,7 @@
     transition: all 500ms;   
 }
 
-.btn-primary-outline:hover {
-    background-color: var(--accent-color);
-}
+
 .btn-light {
     
     border-radius: .5em;
@@ -47,9 +42,7 @@
     transition: all 500ms;   
 
 }
-.btn-light:hover {
-    background-color: var(--accent-color);
-}
+
 
 .btn-dark {
     border-radius: .5em;
@@ -61,10 +54,7 @@
 
 }
 
-.btn-dark:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-text);
-}
+
 
 .btn-selected {
     background-color: var(--accent-color);
@@ -97,4 +87,22 @@
 .btn-txt {
     font-size: 1.1em;
     
+}
+
+@media only screen and (min-width: 980px) {
+    .btn-primary-rounded:hover {
+        background-color: var(--main-color);
+        color: var(--accent-color);
+    }
+    .btn-primary-outline:hover {
+        background-color: var(--accent-color);
+    }
+    .btn-light:hover {
+        background-color: var(--accent-color);
+    }
+    .btn-dark:hover {
+        background-color: var(--accent-color);
+        color: var(--dark-text);
+    }
+
 }

@@ -80,6 +80,7 @@ const Test = () => {
         <div className="test">
             <div>
                 <h1 className="headline text-centered">Hearing Test <span className="text-bold">{ear}</span> Ear</h1>
+                <div className="emphasis-accented"></div>
                 <p className="subheadline text-dark text-bold text-centered">{frequencies[frequency]} Hz</p>
             </div>
             <div className="test-instruction-test">

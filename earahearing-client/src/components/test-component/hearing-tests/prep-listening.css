@@ -1,24 +1,26 @@
-
-.quiet-test-wrapper {
-    position: relative;
+.prep-instructions {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
 }
 
-.quiet-cta {
-    position: absolute;
-    bottom: 15%;
-    left: 0;
-    right: 0;
+.prep-instructions > * + * {
+    margin-top: 1.25em ;
 }
 
-.quiet-img {
-    width: 70%;
-    margin: auto;
+.prep-img {
+    padding-top: 1.5em;
+    padding-bottom: 2.5em;
+}
+
+.ear-img-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
 }
 
 .ear-img {
-    width: 50%;
-    margin: 1em auto;
-
+    width: 60%;
 }
 
 .prep-listening-cta {
@@ -39,15 +41,15 @@
 }
 
 @media only screen and (min-width: 760px) {
+    .ear-img-wrapper {
+        margin-top: 3.5em;
+        margin-bottom: 3.5em;
+    }
 
-    .quiet-test-wrapper h2 {
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 1em;
+    .ear-img {
+        width: 50%;
     }
-    .quiet-cta {
-        bottom: 5%
-    }
+
     .prep-listening-cta > :first-child {
         width: 40%;
         padding-top: .75em;
@@ -56,40 +58,21 @@
 }
 
 @media only screen and (min-width: 980px) {
-    .test-row {
+    .test-prep-wrapper {
         display: grid;
         grid-template-columns: 40% 60%;
-        height: 100%;
-    }
-    .quiet-cta {
-        position: relative;
-        margin-top: 5em;
     }
 
-    .quiet-cta button {
-        font-size: 1.5rem;
-        padding: .65em 2em;
-        border: 2px solid var(--accent-color);
+    .prep-instructions {
+        padding-top: 4em;
     }
-
-    .quiet-test-wrapper h1 {
-        line-height: 1.2;
+    .prep-img {
+        padding-top: 4em;
     }
-    .quiet-test-wrapper h2 {
-        line-height: 1.2;
-    }
-
-    .quiet-img {
-        width: 55%;
-    }
-
     .ear-img {
         width: 40%;
     }
 
-    .prep-listening-cta {
-        row-gap: 0;
-    }
     .prep-listening-cta > :first-child {
         padding: 0em;
         width: 30%;
@@ -98,9 +81,5 @@
     .prep-listening-cta > :last-child {
         width: 15%;
         height: 50px;
-    }
-
-    .ear-test {
-        padding-top: 1.35em;
     }
 }

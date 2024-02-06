@@ -57,7 +57,8 @@
 
 @media only screen and (min-width: 980px) {
     .progress {
-        width: 30%;
+       min-width: 30%;
+       max-width: 40%;
     }
 }
 
