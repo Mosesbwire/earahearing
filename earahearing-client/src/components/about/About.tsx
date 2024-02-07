@@ -27,7 +27,7 @@ export const About = (props: aboutProps) => {
             next()
             incrProgress()
             setSelectedBtn('')
-        }, 500)
+        }, 200)
     }
     const onClickHandlerChoice = (choice: string)=> {
         setSelectedChoice(choice)
