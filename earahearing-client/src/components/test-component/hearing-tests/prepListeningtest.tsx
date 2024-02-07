@@ -25,7 +25,10 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
         setIsPlaying(false)
     } 
     const playSound = async () => {
-        setIsPlaying(true)
+        setTimeout(()=> {
+
+            setIsPlaying(true)
+        },3000)
         await sound.play(ear)
     }
     return (

@@ -29,11 +29,14 @@ class Sound {
     async play(side: 'Left'| 'Right') {
         await this.initAudio(testAudio)
         const pan = this.setPanning(side)
-        this.sourceNode.connect(pan).connect(this.audioContext.destination)
+        const gainNode = this.audioContext.createGain()
+        this.sourceNode.loop = true
+        this.sourceNode.connect(pan).connect(gainNode).connect(this.audioContext.destination)
         return new Promise<void>((resolve) => {
             if (this.audioContext.state === 'running' && !this.isPlaying){
                 resolve()
             }
+            gainNode.gain.value = this.BASE_VOL * 30
             this.sourceNode.start()
             this.isPlaying = true
         })
