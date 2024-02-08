@@ -1,0 +1,99 @@
+
+
+.results-form-page {
+    overflow: hidden;
+    padding-bottom: 3em;
+}
+.banner{
+    background-image: url('../../assets/congrats-banner.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30vh;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 95%;
+    margin-inline: auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.congrats {
+    font-size: 1.5rem;
+    margin-top: 1.5em;
+}
+.results-form-text {
+    margin-bottom: 2em;
+    
+}
+.results-form-text > p {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+.result-form-element {
+    margin-left: 1em;
+
+}
+
+.form-inputs {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+}
+
+
+.form-inputs input {
+    width: 90%;
+    margin-bottom: 1.5em;
+    color: var(--main-color);
+    font-size: 1.1rem;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+.form-inputs  label {
+    font-size: 1.2em;
+}
+
+.form-btn {
+    display: grid;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 760px) {
+
+    .form-btn button {
+        padding: .75em 3.5em;
+    }
+    .banner {
+        background-size: cover;
+
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .form-inputs {
+        width: 50%;
+    }
+    .names-row {
+        display: flex;
+        width: 94%;
+        column-gap: 1em;
+    }
+    .names-row > * {
+        width: 100%;
+    }
+
+    .banner {
+       background-size: cover;
+       width: 50%;
+       height: 35vh;
+    }
+
+    .create-txt {
+        width: 50%;
+        margin-inline: auto;
+    }
+}

@@ -1,0 +1,98 @@
+.quiet-instructions {
+   position: relative;
+   padding-top: 1.5em;
+   padding-bottom: 1.5em;
+}
+
+.quiet-instructions h1 {
+    margin-bottom: 1.8em;
+}
+
+.quiet-instructions h2 {
+    margin-bottom: 1.8em;
+}
+
+.quiet-img-wrapper {
+    padding-top: 1.5em;
+    padding-bottom: 7.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.quiet-img {
+    width: 70%;
+}
+
+.quiet-cta {
+    position: absolute;
+    bottom: -70%;
+    left: 0;
+    right: 0;
+}
+
+@media only screen and (min-width: 760px) {
+
+    .quiet-instructions h2 {
+        width: 80%;
+        margin-inline: auto;
+    }
+    .quiet-img-wrapper {
+        padding-bottom: 6.5em;
+        padding-top: 2.5em;
+    }
+    .quiet-img {
+        width: 60%;
+    }
+
+    .quiet-cta {
+        bottom: -115%;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+
+    .quiet-test-wrapper {
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+
+    .quiet-instructions {
+        padding-left: .65em;
+        padding-right: .65em;
+        padding-top: 3.5em;
+        padding-bottom: 4.5em;
+    }
+
+    .quiet-instructions h2 {
+        width: 90%;
+    }
+
+    .quiet-img-wrapper {
+        padding-top: 5em;
+
+    }
+
+    .quiet-img {
+        width: 50%;
+        margin-top: 5em;
+    }
+
+    .quiet-cta {
+        position: relative;
+    }
+
+    .quiet-cta button {
+        font-size: 1.5rem;
+        padding: .65em 2em;
+        border: 2px solid var(--accent-color);
+    }
+
+    .quiet-test-wrapper h1 {
+        line-height: 1.2;
+    }
+    .quiet-test-wrapper h2 {
+        line-height: 1.5;
+    }
+
+}

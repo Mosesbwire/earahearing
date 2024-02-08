@@ -1,0 +1,28 @@
+
+.test-wrapper {
+    background-color: var(--light-background-200);
+    box-shadow: 5px 5px 40px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; 
+}
+
+.test-instruction {
+    background-color: var(--main-color);
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+@media only screen and (min-width: 980px) {
+    .test-wrapper {
+        border-radius: 35px;
+    }
+
+    .test-instruction {
+        border-top-left-radius: 35px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 35px;
+    }
+}
+
+
+

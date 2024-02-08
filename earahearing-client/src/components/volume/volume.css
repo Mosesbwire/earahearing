@@ -1,0 +1,33 @@
+.volume-control {
+    display: block;
+}
+.vol-ctrl {
+    display: grid;
+    
+}
+
+.vol-ctrl > button{
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+
+}
+
+.vol-down  {
+    display: grid;
+    align-items: center;
+    
+}
+
+.vol-up {
+    display: grid;
+    align-items: center;
+}
+.vol {
+    flex-grow: 1;
+}
+.vol > p{
+    font-size: 3rem;
+    text-align: center;
+}
+
+

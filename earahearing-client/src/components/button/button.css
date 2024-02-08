@@ -1,0 +1,108 @@
+
+.btn {
+    cursor: pointer;
+    padding: .5em 1em;
+    border: none;
+}
+
+.btn-primary-rounded {
+    color: var(--dark-text);
+    background-color: var(--accent-color);
+    border-radius: 4.375em;
+    width: fit-content;
+    transition: all 500ms;
+}
+
+.btn-primary-rounded-disabled {
+    background-color: var(--light-background-400);
+    color: var(--light-text);
+    border-radius: 4.375em;
+    width: fit-content;
+}
+
+
+
+.btn-primary-outline {
+    color: var(--dark-text);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 4.375em;
+    width: fit-content;
+    transition: all 500ms;   
+}
+
+
+.btn-light {
+    
+    border-radius: .5em;
+    border: 1px solid var(--dark-text);
+    color: var(--dark-text);
+    background-color: var(--main-light);
+    box-shadow: 9px 7px 15px 0px rgba(0, 0, 0, .25);
+    transition: all 500ms;   
+
+}
+
+
+.btn-dark {
+    border-radius: .5em;
+    color: var(--light-text);
+    background-color: var(--main-color);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .25);
+    transition: all 500ms;   
+
+
+}
+
+
+
+.btn-selected {
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+}
+
+.btn-lg {
+    font-size: 1.5em;
+    padding: .55em 4em;
+    width: auto;
+
+}
+
+.btn-md {
+    font-size: 1.35em;
+    padding: .5em 2em;
+    width: auto;
+}
+
+.btn-sm {
+    padding: .5em 1.5em;
+    font-size: 1.2em;
+}
+
+.btn-disabled {
+    background-color: var(--light-background-400);
+    color: var(--light-text);
+    border-radius: .5em;
+}
+.btn-txt {
+    font-size: 1.1em;
+    
+}
+
+@media only screen and (min-width: 980px) {
+    .btn-primary-rounded:hover {
+        background-color: var(--main-color);
+        color: var(--accent-color);
+    }
+    .btn-primary-outline:hover {
+        background-color: var(--accent-color);
+    }
+    .btn-light:hover {
+        background-color: var(--accent-color);
+    }
+    .btn-dark:hover {
+        background-color: var(--accent-color);
+        color: var(--dark-text);
+    }
+
+}

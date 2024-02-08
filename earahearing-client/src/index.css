@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+:root {
+	--main-color: #01556A;
+	--accent-color: #FFA73F;
+	--main-color-light: #02718C;
+	--main-light: #F2F2F2;
+	--light-background-200: #F9F9F9;
+	--light-background-400: #dbdbdb;
+	--light-text: var(--main-light);
+	--dark-text: var(--main-color);
+	--highlight-text: var(--accent-color);
+	--font-family-headlines: 'Merriweather', serif;
+	--font-family-sub-headlines: 'Lora', serif; 
+}
+
+.headline {
+	font-family: var(--font-family-headlines);
+	font-size: 1.8rem;
+	line-height: 1.5;
+	color: var(--dark-text);
+}
+.subheadline {
+	font-family: var(--font-family-sub-headlines);
+	line-height: 1.5;
+	font-size: 1.5rem;
+}
+
+.text {
+	font-family: var(--font-family-sub-headlines);
+	font-size: 1rem;	
+	line-height: 1.5;
+}
+
+.text-dark {
+	color: var(--dark-text);
+}
+.text-accented {
+	color: var(--highlight-text);
+}
+.text-light {
+	color: var(--light-text);
+}
+.text-bold {
+	font-weight: 600;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.container {
+	width: 94%;
+	margin: 0 auto;
+	
+}
+
+.row {
+	display: flex;
+}
+
+.row > * + * {
+	margin-left: 1.25em;
+}
+
+
+@media only screen and (min-width: 760px) {
+	.container {
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 980px) {
+	.container {
+		width: 88%;
+	}
+
+	.headline {
+		font-size: 2rem;
+		line-height: 1.1;
+	}
+
+	.subheadline {
+		font-size: 1.7rem;
+		line-height: 1.1;
+	}
+
+	.text {
+		font-size: 1.2rem;
+		line-height: 1.2;
+	}
+}
+
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+

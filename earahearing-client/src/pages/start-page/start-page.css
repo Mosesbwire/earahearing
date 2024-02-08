@@ -1,0 +1,63 @@
+.start-page-wrapper {
+    padding-bottom: 2.5em;
+    overflow: hidden;
+    background-color: var(--light-background-200);
+}
+
+.hero--image {
+    margin-bottom: 2em;
+}
+.hero--image > img{
+    width: 100%;
+}
+
+.hero--information * + * {
+    margin-top: 1.5em;
+}
+
+.start-btn {
+    display: grid;
+    justify-content: center;
+    margin-top: 3.5em;
+}
+
+
+@media only screen and (min-width: 980px) {
+    
+	.hero {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 3em;
+    }
+
+    .hero--information {
+        align-self: center;
+    }
+
+    .hero--information h1{
+        text-align: center;
+        line-height: 1.3;
+    }
+    .hero--information h2 {
+        text-align: center;
+    }
+    .hero--information * + * {
+        margin-top: 1.25em;
+    }
+
+    .hero--image img {
+        width: 80%;
+    }
+
+    .start-btn {
+        justify-content: center;
+        margin-top: 3em;
+    }
+
+    .start-btn button {
+        padding: .75em 4em;
+    }
+    
+
+}

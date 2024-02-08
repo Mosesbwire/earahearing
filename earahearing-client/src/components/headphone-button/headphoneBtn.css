@@ -1,0 +1,77 @@
+.headphone-btn {
+    position: relative;
+    cursor: pointer;
+}
+
+.vol-level {
+    position: absolute;
+    bottom: 15%;
+}
+.heaphone-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 50%;
+}
+
+.vol-1 {
+    left: 38%;
+}
+.vol-2 {
+    left: 40%;
+}
+.vol-3 {
+    left: 40%;  
+} 
+.vol-4 {
+    left: 42%;
+}
+.vol-5 {
+    left: 42%;
+}
+.vol-6 {
+    left: 42%;
+}
+.vol-7 {
+    left: 42%;
+}
+.vol-8 {
+    left: 43%;
+}
+.vol-9 {
+    left: 43%;
+}
+.vol-10 {
+    left: 38%;
+}
+
+.x-1 {
+    width: 60px;
+}
+.x-2 {
+    width: 65px;
+}
+.x-3 {
+    width: 70px;
+}
+.x-4 {
+    width: 75px;
+}
+.x-5 {
+    width: 80px;
+}
+.x-6 {
+    width: 85px;
+}
+.x-7 {
+    width: 90px;
+}
+.x-8 {
+    width: 95px;
+}
+.x-9 {
+    width: 100px;
+}
+.x-10 {
+    width: 105px;
+}
