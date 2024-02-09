@@ -56,7 +56,7 @@ const Test = () => {
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
     const decrProgress = useProgressContextDecrease()
-
+    const visited = selectedFrequencies[ear][ranges[frequency]]
     useEffect(()=> {
         if(data){
             const currFreq = ranges[frequency]
@@ -153,7 +153,7 @@ const Test = () => {
                 </div>
             </div>
             <div className="sound-panel">
-                <VolumePanel play={playHeadphone} nextFreq={moveToNextFrequency}/>
+                <VolumePanel play={playHeadphone} nextFreq={moveToNextFrequency} selected={visited}/>
             </div>
             <div className={`start-arrow ${playingHeadphone !== -1 ? 'toggle-arrow' : ''}`}>
                 <ArrowSvg className="arrow"/>
