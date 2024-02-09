@@ -1,9 +1,9 @@
 import testAudio from '../assets/audio/audio-test.mp3'
-import freq_500_Hz from '../assets/audio/freq-500.wav'
-import freq_1000_Hz from '../assets/audio/freq-1000.wav'
-import freq_2000_Hz from '../assets/audio/freq-2000.wav'
-import freq_4000_Hz from '../assets/audio/freq-4000.wav'
-import freq_8000_Hz from '../assets/audio/freq-8000.wav'
+import freq_500_Hz from '../assets/audio/freq-500.mp3'
+import freq_1000_Hz from '../assets/audio/freq-1000.mp3'
+import freq_2000_Hz from '../assets/audio/freq-2000.mp3'
+import freq_4000_Hz from '../assets/audio/freq-4000.mp3'
+import freq_8000_Hz from '../assets/audio/freq-8000.mp3'
 
 const frequencies = {
     freq_5: freq_500_Hz,
@@ -36,7 +36,7 @@ class Sound {
             if (this.audioContext.state === 'running' && !this.isPlaying){
                 resolve()
             }
-            gainNode.gain.value = this.BASE_VOL * 30
+            gainNode.gain.value = this.BASE_VOL * 50
             this.sourceNode.start()
             this.isPlaying = true
         })

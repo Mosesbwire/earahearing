@@ -1,8 +1,10 @@
 
 .test-wrapper {
     background-color: var(--light-background-200);
-    box-shadow: 5px 5px 40px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
     border-radius: 15px; 
+
+
 }
 
 .test-instruction {
@@ -15,12 +17,18 @@
 @media only screen and (min-width: 980px) {
     .test-wrapper {
         border-radius: 35px;
+        height: 100%;
+    }
+
+    .test-image {
+        height: 100%;
     }
 
     .test-instruction {
         border-top-left-radius: 35px;
         border-top-right-radius: 0;
         border-bottom-left-radius: 35px;
+        height: 100%;
     }
 }
 

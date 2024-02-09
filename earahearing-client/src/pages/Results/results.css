@@ -5,9 +5,10 @@
     padding-bottom: 3em;
 }
 .banner{
-    background-image: url('../../assets/congrats-banner.png');
+    background-image: url('../../assets/congratulations.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     height: 30vh;
     margin-top: 1em;
     margin-bottom: 1em;

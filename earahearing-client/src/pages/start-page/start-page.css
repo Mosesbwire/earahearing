@@ -21,6 +21,10 @@
     margin-top: 3.5em;
 }
 
+.btn-desktop {
+    display: none;
+}
+
 
 @media only screen and (min-width: 980px) {
     
@@ -56,7 +60,14 @@
     }
 
     .start-btn button {
-        padding: .75em 4em;
+        padding: .75em 1.5em;
+    }
+    .btn-desktop {
+        display: block;  
+    }
+
+    .btn-mobile {
+        display: none;
     }
     
 

@@ -17,7 +17,7 @@ const age: questionnaireFormat = {
         '18 - 40 years old',
         '41 - 60 years old',
         '61 - 75 years old',
-        '76 - 90 years old'
+        '76+'
     ]
 }
 
@@ -36,7 +36,7 @@ const hearingLevel: questionnaireFormat = {
         'I have excellent hearing',
         'I have good hearing',
         'I have a little trouble hearing',
-        'I have a lot of trouble hearing well',
+        'I have a lot of trouble hearing',
         'I do not hear well'
     ]
 }

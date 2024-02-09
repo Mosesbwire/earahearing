@@ -41,7 +41,7 @@ export const LeftSpeaker = ({isPlaying, ...rest}: propTypes) => (
       />
       <g id="volume-bars-left">
         <motion.path
-          animate={isPlaying &&{ opacity: [1, 0]}}
+          animate={isPlaying ? {opacity: [1, 0]}: {opacity: [1, 1]}}
           
           transition={{
             delay: 0,
@@ -58,7 +58,7 @@ export const LeftSpeaker = ({isPlaying, ...rest}: propTypes) => (
           strokeLinecap="round"
         />
         <motion.path
-          animate={isPlaying && {opacity: [1, 0]}}
+          animate={isPlaying ? {opacity: [1, 0]}: {opacity: [1, 1]}}
           transition={{
             delay: 0.6,
             duration: 1,
@@ -73,7 +73,7 @@ export const LeftSpeaker = ({isPlaying, ...rest}: propTypes) => (
           strokeLinecap="round"
         />
         <motion.path
-          animate={isPlaying && {opacity: [1, 0]}}
+          animate={isPlaying ? {opacity: [1, 0]}: {opacity: [1, 1]}}
           transition={{
             delay: 1,
             duration: 1,

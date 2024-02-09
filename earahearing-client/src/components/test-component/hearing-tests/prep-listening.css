@@ -1,10 +1,16 @@
 .prep-instructions {
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
 }
 
 .prep-instructions > * + * {
     margin-top: 1.25em ;
+}
+
+.caution {
+    width: 98%;
+    margin-inline: auto;
+
 }
 
 .prep-img {
@@ -41,6 +47,9 @@
 }
 
 @media only screen and (min-width: 760px) {
+    .caution {
+        width: 80%;
+    }
     .ear-img-wrapper {
         margin-top: 3.5em;
         margin-bottom: 3.5em;
@@ -58,9 +67,14 @@
 }
 
 @media only screen and (min-width: 980px) {
+    .caution {
+        font-size: .5rem;
+        display: block;
+        margin-top: 6rem;
+    }
     .test-prep-wrapper {
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 50% 50%;
     }
 
     .prep-instructions {

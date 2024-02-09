@@ -1,7 +1,7 @@
 .quiet-instructions {
-   position: relative;
    padding-top: 1.5em;
    padding-bottom: 1.5em;
+   padding-inline: .5em;
 }
 
 .quiet-instructions h1 {
@@ -13,22 +13,15 @@
 }
 
 .quiet-img-wrapper {
-    padding-top: 1.5em;
-    padding-bottom: 7.5em;
-    display: flex;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    display: grid;
+    row-gap: 1.5em;
     justify-content: center;
-    align-items: center;    
 }
 
-.quiet-img {
-    width: 70%;
-}
-
-.quiet-cta {
-    position: absolute;
-    bottom: -70%;
-    left: 0;
-    right: 0;
+.quiet-cta-desktop {
+    display: none;
 }
 
 @media only screen and (min-width: 760px) {
@@ -37,17 +30,6 @@
         width: 80%;
         margin-inline: auto;
     }
-    .quiet-img-wrapper {
-        padding-bottom: 6.5em;
-        padding-top: 2.5em;
-    }
-    .quiet-img {
-        width: 60%;
-    }
-
-    .quiet-cta {
-        bottom: -115%;
-    }
 }
 
 @media only screen and (min-width: 980px) {
@@ -55,8 +37,29 @@
     .quiet-test-wrapper {
         display: grid;
         grid-template-columns: 40% 60%;
+        
+        height: 100%;
     }
 
+    .quiet-img-wrapper {
+        display: block;
+    }
+
+    .quiet-img-wrapper > :first-child {
+        width: 60%;
+        margin-inline: auto;
+        margin-top: 5em;
+    }
+
+    .quiet-cta-mobile {
+        display: none;
+    }
+
+    .quiet-cta-desktop {
+        display: block;
+    }
+
+   
     .quiet-instructions {
         padding-left: .65em;
         padding-right: .65em;
@@ -68,20 +71,7 @@
         width: 90%;
     }
 
-    .quiet-img-wrapper {
-        padding-top: 5em;
-
-    }
-
-    .quiet-img {
-        width: 50%;
-        margin-top: 5em;
-    }
-
-    .quiet-cta {
-        position: relative;
-    }
-
+    
     .quiet-cta button {
         font-size: 1.5rem;
         padding: .65em 2em;
