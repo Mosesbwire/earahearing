@@ -52,6 +52,7 @@ const Test = () => {
     const [data, addData, getData] = useLocalStorage<dataType>()
     const [moveToNextFrequency, setMoveToNextFrequency] = useState(false)
     const [isPlaying, setIsPlaying] = useState(false)
+    const [isClickPending, setIsClickPending] = useState(false)
     const volumeSteps = Array(10).fill('vol')
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
@@ -119,6 +120,9 @@ const Test = () => {
     }
 
     const playHeadphone = (index: number) => {
+        if (isClickPending) return
+
+        setIsClickPending(true)
         sound.pause()
         sound.hearingTest(ear, ranges[`${frequency}`], index + 1)
         setIsSelected(-1)
@@ -130,6 +134,9 @@ const Test = () => {
         currEar[currFreq] = index
         
         addData('freq', selectedFrequencies)
+        setTimeout(()=> {
+            setIsClickPending(false)
+        }, 1000)
         
     }
     
@@ -153,7 +160,7 @@ const Test = () => {
                 </div>
             </div>
             <div className="sound-panel">
-                <VolumePanel play={playHeadphone} nextFreq={moveToNextFrequency} selected={visited}/>
+                <VolumePanel play={playHeadphone} nextFreq={moveToNextFrequency} selected={visited} pendingClick={isClickPending}/>
             </div>
             <div className={`start-arrow ${playingHeadphone !== -1 ? 'toggle-arrow' : ''}`}>
                 <ArrowSvg className="arrow"/>

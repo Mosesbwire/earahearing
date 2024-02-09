@@ -36,7 +36,7 @@ class Sound {
             if (this.audioContext.state === 'running' && !this.isPlaying){
                 resolve()
             }
-            gainNode.gain.value = this.BASE_VOL * 50
+            gainNode.gain.value = this.BASE_VOL * 30
             this.sourceNode.start()
             this.isPlaying = true
         })

@@ -7,10 +7,11 @@ import './volume.css'
 type volProps = {
     play: (index: number) => void,
     nextFreq: boolean,
-    selected: number
+    selected: number,
+    pendingClick: boolean
 }
 
-const VolumePanel = ({play, nextFreq, selected}: volProps) => {
+const VolumePanel = ({play, nextFreq, selected, pendingClick}: volProps) => {
     const [volume, setVolume] = useState(0)
     useEffect(()=> {
         if (nextFreq) {
@@ -21,6 +22,7 @@ const VolumePanel = ({play, nextFreq, selected}: volProps) => {
 
 
     const volumeUp = () => {
+        if (pendingClick) return
         if (volume === 10) {
             setVolume(0)
             play(-1)
@@ -31,6 +33,7 @@ const VolumePanel = ({play, nextFreq, selected}: volProps) => {
     }
 
     const volumeDown = () => {
+        if (pendingClick) return
         if (volume > 0) {
             setVolume(vol => vol -1)
         } else {
