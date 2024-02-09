@@ -61,10 +61,21 @@ const Test = () => {
         if(data){
             const currFreq = ranges[frequency]
             const currEar = selectedFrequencies[ear]
+            const visited = currEar[currFreq]
+            if (visited === -1) {
+                setIsPlaying(false)
+            }
+        }
+    }, [data, frequency, ear])
+    useEffect(()=> {
+        if(data){
+            const currFreq = ranges[frequency]
+            const currEar = selectedFrequencies[ear]
             const selected = currEar[currFreq]
             setIsSelected(selected)
         }
     }, [data, frequency, ear])
+
 
     if (isSelected === -1 && !data){
         addData('freq', selectedFrequencies)
@@ -73,21 +84,16 @@ const Test = () => {
     const nextClickHandler = () => {
         incrProgress()
         setMoveToNextFrequency(true)
-        setIsPlaying(false)
         sound.pause()
         setPlayingHeadphone(-1)
-        const currFreq = ranges[frequency]
-        const currEar = selectedFrequencies[ear]
-        currEar[currFreq] = playingHeadphone
-        addData('freq', selectedFrequencies)
+        
         if (frequency === frequencies.length - 1) {
             setEar('Left')
             setFrequency(0)
            
         } else {
             setFrequency(curr => curr + 1)
-        } 
-          
+        }  
         if (ear === 'Left' && frequency === frequencies.length - 1){
             next()
         }
@@ -119,6 +125,12 @@ const Test = () => {
         setPlayingHeadphone(index)
         setMoveToNextFrequency(false)
         setIsPlaying(true)
+        const currFreq = ranges[frequency]
+        const currEar = selectedFrequencies[ear]
+        currEar[currFreq] = index
+        
+        addData('freq', selectedFrequencies)
+        
     }
     
     return (
