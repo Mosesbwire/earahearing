@@ -4,6 +4,14 @@
     padding-bottom: 4em;
     
 }
+
+.curr-frequency {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 3px;
+}
 .test {
     background-color: var(--light-background-200);
     padding-top: 2em;
@@ -40,13 +48,16 @@
     text-decoration: underline;
 }
 
-.emphasis-accented {
-    background-color: var(--accent-color);
-    height: 3px;
-    border-radius: 20px;
-    width: 25%;
-    position: absolute;
-    left: 60%;
+.emphasis-text-accented {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+}
+
+.emphasis-text-main-color {
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+    text-decoration-thickness: 2px;
 }
 
 .test-instruction-test > p {
@@ -96,10 +107,6 @@
         display: none;
     }
 
-    .emphasis-accented {
-        width: 12%;
-        left: 55%;
-    }
     .sound-panel {
         display: none;
     }
@@ -112,6 +119,10 @@
         position: relative;
         top: -5%;
         left: 6%;
+    }
+
+    .toggle-arrow {
+        visibility: hidden;
     }
 
     .arrow {
@@ -158,10 +169,8 @@
         align-items: normal;
         padding-bottom: 3em;
     }
-    .emphasis-accented {
-        width: 8%;
-        left: 53%;
-        margin-top: .35em;
+    .test {
+        padding-top: 1.5em;
     }
 
     .instruction-desktop {
