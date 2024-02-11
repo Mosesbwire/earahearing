@@ -92,6 +92,13 @@
         border-radius: 15px;
         padding-top: 2em;
         padding-bottom: 2em;
+        margin-bottom: 1.5em;
+        
+    }
+
+    .check-devices {
+    
+        margin-top: 0;
     }
 
     .numbered-step {

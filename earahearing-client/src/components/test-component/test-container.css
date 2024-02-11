@@ -17,6 +17,7 @@
     .test-wrapper {
         border-radius: 35px;
         height: 100%;
+        margin-top: 2em;
     }
 
     .test-image {
@@ -29,6 +30,7 @@
         border-bottom-left-radius: 35px;
         height: 100%;
     }
+
 }
 
 
