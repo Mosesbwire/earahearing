@@ -14,12 +14,14 @@ const frequencies = {
 }
 
 export type frequncyRange = keyof typeof  frequencies
+
 class Sound {
     audioContext: AudioContext
     sourceNode: AudioBufferSourceNode
     isPlaying: boolean
-    BASE_VOL = 0.00007
-    DB_INCREMENTS = 5
+    // BASE_VOL = 0.00007
+    BASE_VOL = 0.0001
+    DB_INCREMENTS = 10
     constructor() {
         this.audioContext = new (window.AudioContext)
         this.sourceNode = this.audioContext.createBufferSource()

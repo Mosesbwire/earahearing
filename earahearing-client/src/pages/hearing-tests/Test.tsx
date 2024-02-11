@@ -136,7 +136,7 @@ const Test = () => {
         addData('freq', selectedFrequencies)
         setTimeout(()=> {
             setIsClickPending(false)
-        }, 1000)
+        }, 600)
         
     }
     
@@ -148,9 +148,9 @@ const Test = () => {
             </div>
             <div className="test-instruction-test">
                 <div className="instruction-mobile">
-                    <p className="text text-dark">Start at 0</p>
+                    <p className="text text-dark">Start at 1</p>
                     <p className="text text-dark">Sound is now playing.</p>
-                    <p className="text text-dark">Push the +  sign untill you can barely <span className="emphasis-text-accented text-bold">hear</span> the sound in your <span className="text-bold emphasis-text-main-color">{ear}</span></p>
+                    <p className="text text-dark">Push the +  sign until you can barely <span className="emphasis-text-accented text-bold">hear</span> the sound in your <span className="text-bold emphasis-text-main-color">{ear} ear</span></p>
                     <p className="text text-dark">If you do not hear any sound, click the + sign untill 10.</p>
                     <p className="text text-dark">Then click Next.</p>
                 </div>

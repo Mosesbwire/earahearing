@@ -1,22 +1,21 @@
+
 .quiet-instructions {
    padding-top: 1.5em;
-   padding-bottom: 1.5em;
+   padding-bottom: 1em;
    padding-inline: .5em;
 }
 
 .quiet-instructions h1 {
-    margin-bottom: 1.8em;
+    margin-bottom: 1em;
+    font-size: 1.5rem;
 }
 
-.quiet-instructions h2 {
-    margin-bottom: 1.8em;
-}
 
 .quiet-img-wrapper {
-    padding-top: 2.5em;
+    padding-top: 1.5em;
     padding-bottom: 2.5em;
     display: grid;
-    row-gap: 1.5em;
+    row-gap: 1em;
     justify-content: center;
 }
 
@@ -37,7 +36,6 @@
     .quiet-test-wrapper {
         display: grid;
         grid-template-columns: 40% 60%;
-        
         height: 100%;
     }
 
@@ -57,6 +55,7 @@
 
     .quiet-cta-desktop {
         display: block;
+        margin-top: 2em;
     }
 
    
@@ -68,7 +67,7 @@
     }
 
     .quiet-instructions h2 {
-        width: 90%;
+        width: 100%;
     }
 
     

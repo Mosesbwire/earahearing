@@ -47,9 +47,10 @@ const VolumePanel = ({play, nextFreq, selected, pendingClick}: volProps) => {
     
     return (
         <div className="row volume-control">
+            
             <div className="vol-ctrl">
-                <Button className="btn-dark btn-sm vol-up" onClick={volumeUp}>
-                    <img src={plus} alt="plus sign" />
+                <Button className="btn-dark btn-sm vol-down"  disabled={volume === 0} onClick={volumeDown}>
+                    <img src={minus} alt="minus sign" />
                 </Button>
             </div>
 
@@ -57,8 +58,8 @@ const VolumePanel = ({play, nextFreq, selected, pendingClick}: volProps) => {
                 <p className="text-dark text-bold">{volume}</p>
             </div>
             <div className="vol-ctrl">
-                <Button className="btn-dark btn-sm vol-down"  disabled={volume === 0} onClick={volumeDown}>
-                    <img src={minus} alt="minus sign" />
+                <Button className="btn-dark btn-sm vol-up" onClick={volumeUp}>
+                    <img src={plus} alt="plus sign" />
                 </Button>
             </div>
         </div>

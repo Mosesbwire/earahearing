@@ -1,8 +1,6 @@
 
 .hearing-test-page {
-    padding-top: 1.5em;
-    padding-bottom: 4em;
-    
+    padding-bottom: 4em;    
 }
 
 .curr-frequency {
@@ -14,7 +12,7 @@
 }
 .test {
     background-color: var(--light-background-200);
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 2em;
     padding-left: 1em;
     padding-right: 1em;
@@ -22,17 +20,17 @@
 
 
 .test > :first-child > p{
-    margin-top: 1em;
+    margin-top: .75em;
 }
 
 .test > * + * {
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 
 .instruction-mobile p{
-    font-size: 1.3rem;
-    line-height: 1.6;
-    margin-bottom: 1em;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: .85em;
 
 }
 
@@ -89,6 +87,7 @@
     .test {
         padding-top: 3em;
         padding-bottom: 3em;
+        margin-top: 2em;
         box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
         border-radius: 15px;
 
@@ -133,7 +132,7 @@
     .start-text {
         position: absolute;
         top: 200%;
-        left: -10%;
+        left: -15%;
     }
     
     .sound-panel-desktop {
@@ -196,7 +195,7 @@
     .start-text {
         position: absolute;
         top: 220%;
-        left: -30%; 
+        left: -25%; 
     }
     .sound-panel-desktop > * {
         align-self: baseline;

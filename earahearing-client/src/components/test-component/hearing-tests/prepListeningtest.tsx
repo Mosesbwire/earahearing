@@ -20,6 +20,7 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
     const [isPaused, setIsPaused] = useState(true)
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
+
     const nextClickHandler = () => {
         sound.pause()
         next()
@@ -46,7 +47,7 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
                         <div className="prep-instructions">
                             <h1 className="headline text-light">Prepare for the test</h1>
                             <h2 className="subheadline text-light">Let's make sure everything is working</h2>
-                            <h2 className="subheadline text-light">Click <span className="text-accented">play sound</span> to test the {ear} ear</h2>
+                            <h2 className="subheadline text-light">Click <span className="text-accented">Play Sound</span> to test the {ear} ear</h2>
                             {ear === 'Left' ?<p className="text text-light caution">* Don't hear the sound? Your media volume may be low, play the sound and then try increasing the volume on your device.</p> : ''}
                         </div>
                     </TestInstruction>

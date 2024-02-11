@@ -6,22 +6,23 @@
 .vol-level {
     position: absolute;
     bottom: 15%;
+    left: 40%;
 }
 .heaphone-img {
     position: absolute;
     top: 0;
-    right: 0;
-    left: 50%;
+    left: 0;
+
 }
 
 .vol-1 {
-    left: 38%;
+    left: 40%;
 }
 .vol-2 {
     left: 40%;
 }
 .vol-3 {
-    left: 40%;  
+    left: 40.5%;  
 } 
 .vol-4 {
     left: 42%;
@@ -39,10 +40,10 @@
     left: 43%;
 }
 .vol-9 {
-    left: 43%;
+    left: 44%;
 }
 .vol-10 {
-    left: 38%;
+    left: 37.5%;
 }
 
 .x-1 {

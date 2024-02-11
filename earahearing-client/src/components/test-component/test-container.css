@@ -3,8 +3,7 @@
     background-color: var(--light-background-200);
     box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
     border-radius: 15px; 
-
-
+    margin-top: 1em;
 }
 
 .test-instruction {
