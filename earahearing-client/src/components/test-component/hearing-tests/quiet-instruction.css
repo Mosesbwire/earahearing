@@ -7,7 +7,12 @@
 
 .quiet-instructions h1 {
     margin-bottom: 1em;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+}
+
+
+.quiet-instructions h2 {
+    font-size: 1.25rem;
 }
 
 
@@ -66,10 +71,16 @@
         padding-bottom: 4.5em;
     }
 
+    .quiet-instructions h1 {
+        margin-bottom: 2em;
+        font-size: 1.8rem;
+    }
+    
+    
     .quiet-instructions h2 {
+        font-size: 1.5rem;
         width: 100%;
     }
-
     
     .quiet-cta button {
         font-size: 1.5rem;
