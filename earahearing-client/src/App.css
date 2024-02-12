@@ -1,4 +1,10 @@
 
 .header {
-    padding: 1em 0;
+    padding: .5em 0;
+}
+
+@media only screen and (min-width: 980px){
+    .header {
+        padding: 1em 0;
+    }
 }
