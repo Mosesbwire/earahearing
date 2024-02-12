@@ -24,8 +24,8 @@ const VolumePanel = ({play, nextFreq, selected, pendingClick}: volProps) => {
     const volumeUp = () => {
         if (pendingClick) return
         if (volume === 10) {
-            setVolume(0)
-            play(-1)
+            setVolume(10)
+            play(10)
             return
         }
         setVolume(vol => vol + 1)
