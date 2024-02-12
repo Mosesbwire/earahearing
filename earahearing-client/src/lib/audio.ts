@@ -20,8 +20,8 @@ class Sound {
     sourceNode: AudioBufferSourceNode
     isPlaying: boolean
     // BASE_VOL = 0.00007
-    BASE_VOL = 0.0001
-    DB_INCREMENTS = 10
+    BASE_VOL = 0.00009
+    DB_INCREMENTS = 5
     constructor() {
         this.audioContext = new (window.AudioContext)
         this.sourceNode = this.audioContext.createBufferSource()
