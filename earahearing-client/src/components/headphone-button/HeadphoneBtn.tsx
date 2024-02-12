@@ -1,5 +1,5 @@
 
-import { HeadphoneSvg } from './HeadphoneSvg'
+import HeadphoneNormal from './HeadphoneSvgNormal'
 import './headphoneBtn.css'
 
 type headPhoneProps = {
@@ -16,8 +16,8 @@ export const HeadphoneBtn = ({volume, index, active, selected, next, onClick}: h
     
     return (
         <div className={`headphone-btn x-${volume}`} onClick={() => onClick(index)}>
-            <HeadphoneSvg className='headphone-img' isActive={isActive} isSelected={isSelected}/>
-            <p className={`text-dark text-bold vol-level vol-${volume}`}>{volume}</p>
+            <HeadphoneNormal className='headphone-img' isActive={isActive} isSelected={isSelected} volume={volume}/>
+           
         </div>
     )
 }
