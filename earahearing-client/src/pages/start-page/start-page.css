@@ -5,20 +5,22 @@
 }
 
 .hero--image {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+
 }
 .hero--image > img{
     width: 100%;
 }
 
 .hero--information * + * {
-    margin-top: 1.5em;
+    margin-top: 1em;
+
 }
 
 .start-btn {
     display: grid;
     justify-content: center;
-    margin-top: 3.5em;
+    margin-top: 1.5em;
 }
 
 .btn-desktop {
@@ -27,6 +29,9 @@
 
 
 @media only screen and (min-width: 980px) {
+    .start-page-wrapper {
+        height: 100vh;
+    }
     
 	.hero {
         display: flex;
