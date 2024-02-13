@@ -1,8 +1,9 @@
 import Start from "../start-page/Start";
+import TestLayout from "../../layouts/TestLayout";
 import Quiz, {LAST_QUIZ_PAGE} from "../quiz/Quiz";
 import HearingTest, {LAST_TEST_PAGE} from "../hearing-tests/HearingTest";
 import ResultsForm from "../Results/ResultsForm";
-import { ProgressBarContainer } from "../../components/progress-bar/ProgressBar";
+// import { ProgressBarContainer } from "../../components/progress-bar/ProgressBar";
 import { usePageContextCurrentPage } from "../../hooks/usePageContext";
 
 export default function Home(){
@@ -21,8 +22,9 @@ export default function Home(){
         return <Start/>
     } else {
         return <>
-            <ProgressBarContainer/>
-            {nextPage()}
+            <TestLayout>
+                {nextPage()}
+            </TestLayout>
         </>
     }
 }
