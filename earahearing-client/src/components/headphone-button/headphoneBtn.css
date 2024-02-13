@@ -1,48 +1,5 @@
 .headphone-btn {
-    position: relative;
     cursor: pointer;
-}
-
-.vol-level {
-    position: absolute;
-    bottom: 15%;
-}
-.heaphone-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 50%;
-}
-
-.vol-1 {
-    left: 38%;
-}
-.vol-2 {
-    left: 40%;
-}
-.vol-3 {
-    left: 40%;  
-} 
-.vol-4 {
-    left: 42%;
-}
-.vol-5 {
-    left: 42%;
-}
-.vol-6 {
-    left: 42%;
-}
-.vol-7 {
-    left: 42%;
-}
-.vol-8 {
-    left: 43%;
-}
-.vol-9 {
-    left: 43%;
-}
-.vol-10 {
-    left: 38%;
 }
 
 .x-1 {
@@ -75,3 +32,4 @@
 .x-10 {
     width: 105px;
 }
+

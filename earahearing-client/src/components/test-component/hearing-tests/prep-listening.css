@@ -1,26 +1,45 @@
+
 .prep-instructions {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+    padding-inline: .25em;
+    
+}
+
+.prep-instructions h1 {
+    font-size: 1.6rem;
+}
+
+.prep-instructions h2 {
+    font-size: 1.25rem;
 }
 
 .prep-instructions > * + * {
-    margin-top: 1.25em ;
+    margin-top: .65em ;
+
 }
 
+.caution {
+    width: 98%;
+    margin-inline: auto;
+
+}
+
+
 .prep-img {
-    padding-top: 1.5em;
-    padding-bottom: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .ear-img-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 2.5em;
-    margin-bottom: 2.5em;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
 }
 
 .ear-img {
-    width: 60%;
+    width: 40%;
 }
 
 .prep-listening-cta {
@@ -41,13 +60,23 @@
 }
 
 @media only screen and (min-width: 760px) {
+    .test-prep-wrapper {
+       height: 100%;
+    }   
+
+    .prep-instructions {
+        padding-bottom: 2.5em;
+    }
+    .caution {
+        width: 80%;
+    }
     .ear-img-wrapper {
         margin-top: 3.5em;
         margin-bottom: 3.5em;
     }
 
     .ear-img {
-        width: 50%;
+        width: 40%;
     }
 
     .prep-listening-cta > :first-child {
@@ -58,16 +87,35 @@
 }
 
 @media only screen and (min-width: 980px) {
+    .caution {
+        font-size: .5rem;
+        display: block;
+        margin-top: 6rem;
+        width: 90%;
+    }
     .test-prep-wrapper {
         display: grid;
         grid-template-columns: 40% 60%;
+    
+
     }
 
     .prep-instructions {
         padding-top: 4em;
     }
+
+    .prep-instructions h1 {
+        margin-bottom: 2em;
+        font-size: 1.8rem;
+    }
+    
+    .prep-instructions h2 {
+        font-size: 1.5rem;
+        width: 100%;
+    }
     .prep-img {
         padding-top: 4em;
+
     }
     .ear-img {
         width: 40%;

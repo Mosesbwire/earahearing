@@ -12,24 +12,33 @@ import sound from "../../../lib/audio"
 import './prep-listening.css'
 
 type listeningProps = {
-    ear: 'Left' | 'Right'
+    ear: 'Left' | 'Right',
+
 }
 export const PrepareListeningTest = ({ear}: listeningProps) => {
     const [isPlaying, setIsPlaying] = useState(false)
+    const [isPaused, setIsPaused] = useState(true)
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
+
     const nextClickHandler = () => {
         sound.pause()
         next()
         incrProgress()
         setIsPlaying(false)
+        setIsPaused(true)
     } 
     const playSound = async () => {
-        setTimeout(()=> {
-
-            setIsPlaying(true)
-        },3000)
-        await sound.play(ear)
+        if (isPlaying){
+            setIsPlaying(false)
+            sound.pause()
+        } else {
+            setTimeout(()=> {
+                setIsPlaying(true) 
+                setIsPaused(false)
+            },500)
+            await sound.play(ear)
+        }
     }
     return (
             <TestContainer>
@@ -38,7 +47,8 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
                         <div className="prep-instructions">
                             <h1 className="headline text-light">Prepare for the test</h1>
                             <h2 className="subheadline text-light">Let's make sure everything is working</h2>
-                            <h2 className="subheadline text-light">Click <span className="text-accented">play sound</span> to test the {ear} ear</h2>
+                            <h2 className="subheadline text-light">Click <span className="text-accented">Play Sound</span> to test the {ear} ear</h2>
+                            {ear === 'Left' ?<p className="text text-light caution">* Don't hear the sound? Your media volume may be low, play the sound and then try increasing the volume on your device.</p> : ''}
                         </div>
                     </TestInstruction>
                     <TestImage >
@@ -48,8 +58,8 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
                                 {ear === 'Left' ? <LeftSpeaker className="ear-img" isPlaying={isPlaying}/> : <RightSpeaker className="ear-img" isPlaying={isPlaying}/>}
                             </div>
                             <div className="prep-listening-cta">
-                                <Button className="btn-primary-rounded btn-md" onClick={playSound}>Play sound</Button>
-                                <Button className={`btn-sm ${isPlaying ? 'btn-dark' : 'btn-disabled'}`} disabled={!isPlaying} onClick={nextClickHandler}>Next</Button>
+                                <Button className="btn-primary-rounded btn-md" onClick={playSound}>{isPlaying ? 'Pause' : 'Play Sound'}</Button>
+                                <Button className={`btn-sm ${isPaused ? 'btn-disabled' : 'btn-dark'}`} disabled={isPaused} onClick={nextClickHandler}>Next</Button>
                             </div>
                         </div>
                     

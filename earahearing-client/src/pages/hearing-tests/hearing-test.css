@@ -1,12 +1,18 @@
 
 .hearing-test-page {
-    padding-top: 1.5em;
-    padding-bottom: 4em;
-    
+    padding-bottom: 4em;    
+}
+
+.curr-frequency {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 3px;
 }
 .test {
     background-color: var(--light-background-200);
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 2em;
     padding-left: 1em;
     padding-right: 1em;
@@ -14,17 +20,17 @@
 
 
 .test > :first-child > p{
-    margin-top: 1em;
+    margin-top: .75em;
 }
 
 .test > * + * {
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 
 .instruction-mobile p{
-    font-size: 1.3rem;
-    line-height: 1.6;
-    margin-bottom: 1em;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: .85em;
 
 }
 
@@ -40,13 +46,16 @@
     text-decoration: underline;
 }
 
-.emphasis-accented {
-    background-color: var(--accent-color);
-    height: 3px;
-    border-radius: 20px;
-    width: 25%;
-    position: absolute;
-    left: 60%;
+.emphasis-text-accented {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+}
+
+.emphasis-text-main-color {
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+    text-decoration-thickness: 2px;
 }
 
 .test-instruction-test > p {
@@ -78,6 +87,7 @@
     .test {
         padding-top: 3em;
         padding-bottom: 3em;
+        margin-top: 2em;
         box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
         border-radius: 15px;
 
@@ -96,10 +106,6 @@
         display: none;
     }
 
-    .emphasis-accented {
-        width: 12%;
-        left: 55%;
-    }
     .sound-panel {
         display: none;
     }
@@ -114,6 +120,10 @@
         left: 6%;
     }
 
+    .toggle-arrow {
+        visibility: hidden;
+    }
+
     .arrow {
         position: absolute;
         top: 0;
@@ -122,7 +132,7 @@
     .start-text {
         position: absolute;
         top: 200%;
-        left: -10%;
+        left: -15%;
     }
     
     .sound-panel-desktop {
@@ -158,10 +168,8 @@
         align-items: normal;
         padding-bottom: 3em;
     }
-    .emphasis-accented {
-        width: 8%;
-        left: 53%;
-        margin-top: .35em;
+    .test {
+        padding-top: 1.5em;
     }
 
     .instruction-desktop {
@@ -187,7 +195,7 @@
     .start-text {
         position: absolute;
         top: 220%;
-        left: -30%; 
+        left: -25%; 
     }
     .sound-panel-desktop > * {
         align-self: baseline;

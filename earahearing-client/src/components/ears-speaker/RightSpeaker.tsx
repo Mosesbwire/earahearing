@@ -22,7 +22,7 @@ export const RightSpeaker = ({isPlaying, ...rest}: propsType) => (
       />
       <g id="volume-bars-right">
         <motion.path
-            animate={isPlaying && {opacity: [1, 0]}}
+            animate={isPlaying ? {opacity: [1, 0]}: {opacity: [1, 1]}}
             transition={{
               delay: 0,
               duration: 1,
@@ -37,7 +37,7 @@ export const RightSpeaker = ({isPlaying, ...rest}: propsType) => (
           strokeLinecap="round"
         />
         <motion.path
-            animate={isPlaying && {opacity: [1, 0]}}
+            animate={isPlaying ? {opacity: [1, 0]}: {opacity: [1, 1]}}
             transition={{
               delay: 0.6,
               duration: 1,
@@ -52,7 +52,7 @@ export const RightSpeaker = ({isPlaying, ...rest}: propsType) => (
           strokeLinecap="round"
         />
         <motion.path
-            animate={isPlaying && {opacity: [1, 0]}}
+            animate={isPlaying ? {opacity: [1, 0]}: {opacity: [1, 1]}}
             transition={{
               delay: 1,
               duration: 1,

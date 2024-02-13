@@ -6,23 +6,26 @@ import './volume.css'
 
 type volProps = {
     play: (index: number) => void,
-    nextFreq: boolean
+    nextFreq: boolean,
+    selected: number,
+    pendingClick: boolean
 }
 
-const VolumePanel = ({play, nextFreq}: volProps) => {
+const VolumePanel = ({play, nextFreq, selected, pendingClick}: volProps) => {
     const [volume, setVolume] = useState(0)
     useEffect(()=> {
         if (nextFreq) {
-            setVolume(0)
-        }
+            setVolume(selected + 1)
+        } 
+    }, [nextFreq, selected])
 
-    }, [nextFreq])
 
 
     const volumeUp = () => {
+        if (pendingClick) return
         if (volume === 10) {
-            setVolume(0)
-            play(-1)
+            setVolume(10)
+            play(10)
             return
         }
         setVolume(vol => vol + 1)
@@ -30,6 +33,7 @@ const VolumePanel = ({play, nextFreq}: volProps) => {
     }
 
     const volumeDown = () => {
+        if (pendingClick) return
         if (volume > 0) {
             setVolume(vol => vol -1)
         } else {
@@ -43,9 +47,10 @@ const VolumePanel = ({play, nextFreq}: volProps) => {
     
     return (
         <div className="row volume-control">
+            
             <div className="vol-ctrl">
-                <Button className="btn-dark btn-sm vol-up" onClick={volumeUp}>
-                    <img src={plus} alt="plus sign" />
+                <Button className="btn-dark btn-sm vol-down"  disabled={volume === 0} onClick={volumeDown}>
+                    <img src={minus} alt="minus sign" />
                 </Button>
             </div>
 
@@ -53,8 +58,8 @@ const VolumePanel = ({play, nextFreq}: volProps) => {
                 <p className="text-dark text-bold">{volume}</p>
             </div>
             <div className="vol-ctrl">
-                <Button className="btn-dark btn-sm vol-down"  disabled={volume === 0} onClick={volumeDown}>
-                    <img src={minus} alt="minus sign" />
+                <Button className="btn-dark btn-sm vol-up" onClick={volumeUp}>
+                    <img src={plus} alt="plus sign" />
                 </Button>
             </div>
         </div>
