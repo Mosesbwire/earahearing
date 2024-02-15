@@ -16,7 +16,7 @@ export const ConfrimDevice = () => {
                     <div className="explainer-wrapper">
                         <div className="grid-row">
                             <p className="numbered-step">1</p>
-                            <p className="text text-dark instruction instruction-earbud">You will need headphones or earbuds to listen</p>
+                            <p className="text text-dark instruction instruction-earbud">You will need headphones or earbuds to listen.</p>
                             
 
                         </div>
@@ -27,7 +27,7 @@ export const ConfrimDevice = () => {
                     <div className="explainer-wrapper">
                         <div className="grid-row">
                             <p className="numbered-step">2</p>
-                            <p className="text text-dark instruction">Be sure to turn up the volume of your device to maximum volume setting</p>
+                            <p className="text text-dark instruction">Be sure to turn up the volume of your device to the maximum volume setting.</p>
                         </div>
                         <div className="explainer-img volume-bars">
                             <VolumeBars/>
@@ -36,7 +36,7 @@ export const ConfrimDevice = () => {
                     <div className="explainer-wrapper">
                         <div className="grid-row">
                             <p className="numbered-step">3</p>
-                            <p className="text text-dark instruction">Put your headphone or earbuds on and connect them to your device</p>
+                            <p className="text text-dark instruction">Put your headphones or earbuds on and connect them to your device.</p>
                         </div>
                         <div className="explainer-img">
                             <img src={personHeadphones} alt="girl wearing headphones on an orange background" className="wearing-headphones"/>

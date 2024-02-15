@@ -5,7 +5,7 @@ import VolumePanel from "../../components/volume/Volume"
 import { ArrowSvg } from "../../components/arrow/ArrowSvg"
 import { usePageContextNext } from "../../hooks/usePageContext"
 import { useProgressContextIncrease, useProgressContextDecrease } from "../../hooks/useProgressContext"
-import { useLocalStorage } from "../../hooks/useLocalStorage"
+import { useSessionStorage } from "../../hooks/useSessionStorage"
 import sound from "../../lib/audio"
 import { frequncyRange } from "../../lib/audio"
 import './hearing-test.css'
@@ -21,35 +21,14 @@ const ranges: freq = {
     4: 'freq_80'
 }
 
-type selectedFreqType = Record<frequncyRange, number>
-
-type dataType = {
-    Left: selectedFreqType,
-    Right: selectedFreqType
-}
-const selectedFrequencies: dataType = {
-    Left: {
-        freq_5: -1,
-        freq_10: -1,
-        freq_20: -1,
-        freq_40: -1,
-        freq_80: -1
-    },
-    Right: {
-        freq_5: -1,
-        freq_10: -1,
-        freq_20: -1,
-        freq_40: -1,
-        freq_80: -1
-    }
-}
 
 const Test = () => {
     const [ear, setEar] = useState<'Left' | 'Right'>('Right')
     const [frequency, setFrequency] = useState(0)
     const [playingHeadphone, setPlayingHeadphone] = useState(-1)
+    const key = `${ear}_freq_${frequency}`
+    const setSelectedHeadphone = useSessionStorage(key, -1)[1]
     const [isSelected, setIsSelected] = useState(-1)
-    const [data, addData, getData] = useLocalStorage<dataType>()
     const [moveToNextFrequency, setMoveToNextFrequency] = useState(false)
     const [isPlaying, setIsPlaying] = useState(false)
     const [isClickPending, setIsClickPending] = useState(false)
@@ -57,37 +36,25 @@ const Test = () => {
     const next = usePageContextNext()
     const incrProgress = useProgressContextIncrease()
     const decrProgress = useProgressContextDecrease()
-    const visited = selectedFrequencies[ear][ranges[frequency]]
-    useEffect(()=> {
-        if(data){
-            const currFreq = ranges[frequency]
-            const currEar = selectedFrequencies[ear]
-            const visited = currEar[currFreq]
-            if (visited === -1) {
-                setIsPlaying(false)
-            }
+
+    
+    useEffect(() => {
+        if (sessionStorage.getItem(key)) {
+            setIsSelected(Number(sessionStorage.getItem(key)))
+    
+        } else {
+            setIsSelected(-1)
+            setIsPlaying(false)
         }
-    }, [data, frequency, ear])
-    useEffect(()=> {
-        if(data){
-            const currFreq = ranges[frequency]
-            const currEar = selectedFrequencies[ear]
-            const selected = currEar[currFreq]
-            setIsSelected(selected)
-        }
-    }, [data, frequency, ear])
+    }, [key])
 
-
-    if (isSelected === -1 && !data){
-        addData('freq', selectedFrequencies)
-    }
-
+    
     const nextClickHandler = () => {
         incrProgress()
         setMoveToNextFrequency(true)
         sound.pause()
         setPlayingHeadphone(-1)
-        
+
         if (frequency === frequencies.length - 1) {
             setEar('Left')
             setFrequency(0)
@@ -98,6 +65,7 @@ const Test = () => {
         if (ear === 'Left' && frequency === frequencies.length - 1){
             next()
         }
+        
     }
 
     const prevClickHandler = () => {
@@ -116,7 +84,7 @@ const Test = () => {
         if (frequency !== 0 || ear !== 'Right'){
             decrProgress()
         }
-        getData('freq')   
+  
     }
 
     const playHeadphone = (index: number) => {
@@ -125,15 +93,13 @@ const Test = () => {
         setIsClickPending(true)
         sound.pause()
         sound.hearingTest(ear, ranges[`${frequency}`], index + 1)
-        setIsSelected(-1)
+
         setPlayingHeadphone(index)
         setMoveToNextFrequency(false)
         setIsPlaying(true)
-        const currFreq = ranges[frequency]
-        const currEar = selectedFrequencies[ear]
-        currEar[currFreq] = index
-        
-        addData('freq', selectedFrequencies)
+        setSelectedHeadphone(index)
+        setIsSelected(-1)
+
         setTimeout(()=> {
             setIsClickPending(false)
         }, 600)
@@ -155,12 +121,12 @@ const Test = () => {
                     <p className="text text-dark">Then click Next.</p>
                 </div>
                 <div className="instruction-desktop">
-                    <p className="text text-dark">Select the <span className="emphasis text-bold">lowest number headphone</span> that you can just <span className="emphasis text-bold">barely</span> hear the sound in your <span className="empahasis text-bold">right</span> ear.</p>
+                    <p className="text text-dark">Select the headphones with the <span className="emphasis text-bold">lowest number</span> that you can <span className="emphasis text-bold">just barely</span> hear the sound in your <span className="empahasis text-bold">right</span> ear.</p>
                     <p className="text text-dark">If you do not hear any sound, select the highest number headphone.</p>
                 </div>
             </div>
             <div className="sound-panel">
-                <VolumePanel play={playHeadphone} nextFreq={moveToNextFrequency} selected={visited} pendingClick={isClickPending}/>
+                <VolumePanel play={playHeadphone} nextFreq={moveToNextFrequency} selected={isSelected} pendingClick={isClickPending}/>
             </div>
             <div className={`start-arrow ${playingHeadphone !== -1 ? 'toggle-arrow' : ''}`}>
                 <ArrowSvg className="arrow"/>
