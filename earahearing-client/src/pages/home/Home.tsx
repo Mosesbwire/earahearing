@@ -3,16 +3,23 @@ import TestLayout from "../../layouts/TestLayout";
 import Quiz, {LAST_QUIZ_PAGE} from "../quiz/Quiz";
 import HearingTest, {LAST_TEST_PAGE} from "../hearing-tests/HearingTest";
 import ResultsForm from "../Results/ResultsForm";
-// import { ProgressBarContainer } from "../../components/progress-bar/ProgressBar";
 import { usePageContextCurrentPage } from "../../hooks/usePageContext";
 
 export default function Home(){
     const currentPage = usePageContextCurrentPage()
+    
     const nextPage = () => {
         if (currentPage > 0 && currentPage <= LAST_QUIZ_PAGE) {
-            return <Quiz/>
+        
+            return <TestLayout>
+                <Quiz/>
+            </TestLayout>
+                
         } else if (currentPage > LAST_QUIZ_PAGE && currentPage <= LAST_TEST_PAGE){
-            return <HearingTest/>
+            return <TestLayout>
+                    <HearingTest/>
+                </TestLayout>
+                
         } else {
             return <ResultsForm/>
         }
@@ -21,10 +28,6 @@ export default function Home(){
     if (currentPage === 0){
         return <Start/>
     } else {
-        return <>
-            <TestLayout>
-                {nextPage()}
-            </TestLayout>
-        </>
+        return nextPage()
     }
 }

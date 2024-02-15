@@ -19,6 +19,16 @@
 
 }
 
+.text-btn-display {
+    padding: .25em 1em;
+    background-color: var(--accent-color);
+    color: var(--main-color);
+    border-radius: 25px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: var(--font-family-headlines);
+}
+
 .caution {
     width: 98%;
     margin-inline: auto;
@@ -88,14 +98,15 @@
 
 @media only screen and (min-width: 980px) {
     .caution {
-        font-size: .5rem;
-        display: block;
         margin-top: 6rem;
-        width: 90%;
+        width: 95%;
+    }
+    .caution p {
+        margin-bottom: .64em;
     }
     .test-prep-wrapper {
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 50% 50%;
     
 
     }
@@ -112,6 +123,7 @@
     .prep-instructions h2 {
         font-size: 1.5rem;
         width: 100%;
+        margin-bottom: 2em;
     }
     .prep-img {
         padding-top: 4em;

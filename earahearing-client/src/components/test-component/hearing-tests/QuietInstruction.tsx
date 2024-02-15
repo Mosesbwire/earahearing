@@ -22,7 +22,7 @@ export const TestQuietPlace = () => {
                 
                     <TestInstruction>
                         <div className="quiet-instructions">
-                            <h1 className="headline text-light">Before we begin, you will need to be in a quiet environment</h1>
+                            <h1 className="headline text-light">Before we begin, you will need to be in a quiet environment.</h1>
                             <h2 className="subheadline text-light">Any background noise like the refrigerator, dishwasher or even wind can interfere with the test.</h2>
                             <div className="quiet-cta quiet-cta-desktop">
                                 <Button className="btn-primary-rounded btn-md" onClick={onClickHandler}>I am in a quiet place</Button>
