@@ -1,5 +1,6 @@
 import { About } from "../../components/about/About";
 import { usePageContextCurrentPage } from "../../hooks/usePageContext";
+import { useSessionStorage } from "../../hooks/useSessionStorage";
 
 export const LAST_QUIZ_PAGE = 5
 export const TOTAL_QUIZ_PAGES = 5
@@ -62,14 +63,25 @@ const questions:questionsType = {
     '5': hearingInNoisyPlaces
 }
 
+const create_key = (question: string): string => {
+    return question.split(' ').join('_').slice(0, question.length - 1)
+}
+
+type answerType = Record<string, unknown>
 const Quiz = () => {
     const currentPage = usePageContextCurrentPage()
     const data = questions[currentPage.toString()]
+    const [sessionData ,storeDataSessionStorage] = useSessionStorage<answerType>('hearing_level', {} as answerType)
+
+    const getUserAnswer = (answer: string) => {
+        sessionData[create_key(data.question)] = answer
+        storeDataSessionStorage(sessionData)   
+    }
     return (
         <>
-            {currentPage >= 1 && currentPage < 4 && data.choices ? <About choices={data.choices} question={data.question} isMultipleChoice={true}/> : 
+            {currentPage >= 1 && currentPage < 4 && data.choices ? <About choices={data.choices} question={data.question} isMultipleChoice={true} handler={getUserAnswer}/> : 
             
-            <About isMultipleChoice={false} question={data.question}/>}
+            <About isMultipleChoice={false} question={data.question} handler={getUserAnswer}/>}
         </>
     )
 }
