@@ -57,7 +57,7 @@
 
 .form-inputs input {
     width: 90%;
-    margin-bottom: 1.5em;
+    margin-bottom: .5em;
     color: var(--main-color);
     font-size: 1.1rem;
     padding-top: .75em;
@@ -66,6 +66,11 @@
 
 .form-inputs  label {
     font-size: 1.1rem;
+}
+
+.inputs {
+
+    margin-bottom: 1em;
 }
 
 .form-btn {
@@ -79,6 +84,12 @@
     margin-block-start: 1.5em;
     line-height: 1.5;
     font-size: .8rem;
+}
+
+.error-msg {
+    color: red;
+    font-size: .85rem;
+    display: block;
 }
 
 @media only screen and (min-width: 760px) {
@@ -112,6 +123,9 @@
     }
     .form-inputs  label {
         font-size: 1.2rem;
+    }
+    .inputs {
+        margin-bottom: 1.5em;
     }
     .names-row {
         display: flex;
