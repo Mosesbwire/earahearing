@@ -1,16 +1,19 @@
-
+import React from "react";
 import { Form } from "../../components/form/Form";
 import { Input } from "../../components/input/Input";
 import { Button } from "../../components/button/Button";
 
-
 import './results.css'
+
+
 
 export const TOTAL_RESULT_PAGES = 1
 const ResultsForm = () => {
 
-    const scroll = () => {
-        window.scrollTo({top: 500, behavior: 'smooth'})
+    const submit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        
+
     }
     return (
         <div className="results-form-page container">
@@ -21,11 +24,11 @@ const ResultsForm = () => {
                 <p className="text text-dark create-txt">Let's create a quick profile so you can keep record of your hearing test results</p>
             </div>
             <div className="result-form-element">
-                <Form>
+                <Form onSubmit={submit}>
                    <div className="form-inputs">
                        <div className="names-row">
-                           <Input type="text"  name="firstName" label="First Name" onClick={scroll}/>
-                           <Input type="text" name="lastName" label="Last Name" onClick={scroll}/>
+                           <Input type="text"  name="firstName" label="First Name"/>
+                           <Input type="text" name="lastName" label="Last Name"/>
                        </div>
                        <Input type="tel" name="phoneNumber" label="Phone Number"/>
                        <Input  type="email" name="email" label="Email"/>
