@@ -8,10 +8,12 @@ import './about.css'
 export type aboutProps = {
     isMultipleChoice: true,
     choices: string[],
-    question: string
+    question: string,
+    handler: (ans: string) => void
 } | {
     isMultipleChoice: false,
-    question: string
+    question: string,
+    handler: (ans: string) => void
 }
 export const About = (props: aboutProps) => {
     const [selectedChoice, setSelectedChoice] = useState<string>('')
@@ -31,11 +33,15 @@ export const About = (props: aboutProps) => {
     }
     const onClickHandlerChoice = (choice: string)=> {
         setSelectedChoice(choice)
+        
+        props.handler(choice)
+        
         timeOut()
     }
 
     const onClickHandlerBtn = (e: React.MouseEvent) => {
         setSelectedBtn(e.currentTarget.id)
+        props.handler(e.currentTarget.id)
         timeOut()
     }
     return (
