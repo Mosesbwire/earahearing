@@ -2,9 +2,10 @@ import React from "react"
 
 export type formProps = React.ComponentProps<'form'>
 
-export const Form = ({children}: formProps) => {
+
+export const Form = ({children, ...rest}: formProps) => {
     return (
-        <form action="">
+        <form {...rest}>
             {children}
         </form>
     )
