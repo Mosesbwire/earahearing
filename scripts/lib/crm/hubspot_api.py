@@ -39,8 +39,8 @@ class HubspotCrm:
                 properties={"email": kwargs.get("email"), "phone": kwargs.get("phone_number"), "firstname": kwargs.get("first_name"), "lastname": kwargs.get("last_name")})
             response = self.client.crm.contacts.basic_api.create(
                 simple_public_object_input_for_create=contact)
-            resp_obj = json.loads(response)
-            return resp_obj.get("id")
+
+            return response.to_dict().get("id")
         except ApiException as e:
             raise ApplicationError(e.reason, True)
 
@@ -69,10 +69,12 @@ class HubspotCrm:
         headers = {'Authorization': f'Bearer {self.access_token}'}
 
         response = requests.post(full_url, headers=headers, files=file_data)
-        if response.status_code != 201:
+
+        if response.status_code != 200:
+
             raise ApplicationError('Failed to upload file', True)
 
-        return response.json().get("id")
+        return response.json().get("objects")[0].get("id")
 
     def attach_note_with_attachments_to_contact(self, contact_id: str, attachment_ids: list[str]):
         timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
@@ -101,7 +103,7 @@ class HubspotCrm:
         try:
             response = self.client.crm.objects.notes.basic_api.create(
                 simple_public_object_input_for_create=note)
-            resp = json.loads(response)
-            return resp.get("id")
+
+            return response.to_dict().get("id")
         except ApiException as e:
             raise ApplicationError(e.reason, True)
