@@ -74,3 +74,13 @@ class Pdf:
 
         pdfkit.from_string(output, fullname, configuration=config, options={
                            "enable-local-file-access": ""})
+
+    def remove_files(self, files: list[str]):
+
+        for file in files:
+            path = os.path.abspath(f'./{file}')
+
+            try:
+                os.remove(path=path)
+            except FileNotFoundError:
+                pass
