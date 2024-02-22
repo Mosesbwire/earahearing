@@ -5,15 +5,18 @@ from datetime import datetime
 import json
 from hubspot import HubSpot
 from hubspot.crm.contacts import SimplePublicObjectInputForCreate
-from hubspot.crm.contacts.exceptions import ApiException, ApiKeyError
-from hubspot.files.files import ImportFromUrlInput
+from hubspot.crm.contacts.exceptions import ApiException
 import requests
-from utils.exception import ClientInputError
+from utils.exception import ClientInputError, ApplicationError
 
 
 class HubspotCrm:
     BASE_URL = 'https://api.hubapi.com'
     NOTES_TO_CONTACTS_ASSOCIATION_ID = 202
+    upload_folder = {
+        "audiogram": "client audiograms",
+        "test_results": "client test results"
+    }
 
     def __init__(self, token: str):
         self.client = HubSpot(access_token=token)
@@ -36,14 +39,18 @@ class HubspotCrm:
                 properties={"email": kwargs.get("email"), "phone": kwargs.get("phone_number"), "firstname": kwargs.get("first_name"), "lastname": kwargs.get("last_name")})
             response = self.client.crm.contacts.basic_api.create(
                 simple_public_object_input_for_create=contact)
-            return response
-        except ApiKeyError as e:
-            print('ApiKeyError occured when creating contact: %s\n' % e)
+            resp_obj = json.loads(response)
+            return resp_obj.get("id")
         except ApiException as e:
-            print('Error occured when creating contact: %s\n' % e)
+            raise ApplicationError(e.reason, True)
 
-    def upload_file(self, file_name: str):
+    def upload_file(self, file_name: str, destination_folder: str):
         """upload pdf files to hubspot cms"""
+        folder = HubspotCrm.upload_folder.get(destination_folder, None)
+
+        if folder == None:
+            raise ValueError(
+                f'{destination_folder} is not a valid folder. Existing folders are {HubspotCrm.upload_folder}')
         url = 'filemanager/api/v3/files/upload'
         full_url = f'{HubspotCrm.BASE_URL}/{url}'
 
@@ -57,12 +64,15 @@ class HubspotCrm:
         file_data = {
             'file': (file_name, open(file_name, 'rb'), 'application/octet-stream'),
             'options': (None, json.dumps(file_options), 'text/strings'),
-            'folderPath': (None, '/CLIENT_TEST_RESULTS', 'text/strings')
+            'folderPath': (None, f'/{folder}', 'text/strings')
         }
         headers = {'Authorization': f'Bearer {self.access_token}'}
-        resp = requests.post(full_url, headers=headers, files=file_data)
-        print(resp.content)
-        return resp
+
+        response = requests.post(full_url, headers=headers, files=file_data)
+        if response.status_code != 201:
+            raise ApplicationError('Failed to upload file', True)
+
+        return response.json().get("id")
 
     def attach_note_with_attachments_to_contact(self, contact_id: str, attachment_ids: list[str]):
         timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
@@ -89,8 +99,9 @@ class HubspotCrm:
         note = SimplePublicObjectInputForCreate(
             associations=associations, properties=properties)
         try:
-            resp = self.client.crm.objects.notes.basic_api.create(
+            response = self.client.crm.objects.notes.basic_api.create(
                 simple_public_object_input_for_create=note)
-            return resp
+            resp = json.loads(response)
+            return resp.get("id")
         except ApiException as e:
-            print('Error occured when attaching note to contact: %s\n' % e)
+            raise ApplicationError(e.reason, True)
