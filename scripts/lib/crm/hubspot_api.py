@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 """Handles interaction with the hubspot crm"""
+from datetime import datetime
 import json
 from hubspot import HubSpot
 from hubspot.crm.contacts import SimplePublicObjectInputForCreate
@@ -12,6 +13,7 @@ from utils.exception import ClientInputError
 
 class HubspotCrm:
     BASE_URL = 'https://api.hubapi.com'
+    NOTES_TO_CONTACTS_ASSOCIATION_ID = 202
 
     def __init__(self, token: str):
         self.client = HubSpot(access_token=token)
@@ -60,3 +62,35 @@ class HubspotCrm:
         headers = {'Authorization': f'Bearer {self.access_token}'}
         resp = requests.post(full_url, headers=headers, files=file_data)
         print(resp.content)
+        return resp
+
+    def attach_note_with_attachments_to_contact(self, contact_id: str, attachment_ids: list[str]):
+        timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+        properties = {
+            "hs_note_body": "",
+            "hs_timestamp": timestamp,
+            "hs_attachment_ids": ";".join(attachment_ids)
+
+        }
+        associations = [
+            {
+                "types": [
+                    {
+                        "associationCategory": "HUBSPOT_DEFINED",
+                        "associationTypeId": HubspotCrm.NOTES_TO_CONTACTS_ASSOCIATION_ID
+                    }
+                ],
+                "to": {
+                    "id": contact_id
+                }
+            }
+        ]
+
+        note = SimplePublicObjectInputForCreate(
+            associations=associations, properties=properties)
+        try:
+            resp = self.client.crm.objects.notes.basic_api.create(
+                simple_public_object_input_for_create=note)
+            return resp
+        except ApiException as e:
+            print('Error occured when attaching note to contact: %s\n' % e)
