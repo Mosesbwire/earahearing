@@ -8,6 +8,7 @@ class ClientInputError(Exception):
 
     def __init__(self, message: str, errors=None):
         super().__init__(message)
+        self.message = message
         self.errors = errors
 
 
@@ -16,4 +17,5 @@ class ApplicationError(Exception):
 
     def __init__(self, message: str, isOperational: bool):
         super().__init__(message)
+        self.message = message
         self.isOperational = isOperational

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 """Handles interaction with the hubspot crm"""
+
+import aiohttp
 from datetime import datetime
 import json
 from hubspot import HubSpot
-from hubspot.crm.contacts import SimplePublicObjectInputForCreate
+from hubspot.crm.contacts import SimplePublicObjectInputForCreate, BatchReadInputSimplePublicObjectId
 from hubspot.crm.contacts.exceptions import ApiException
 import requests
 from utils.exception import ClientInputError, ApplicationError
@@ -22,7 +24,7 @@ class HubspotCrm:
         self.client = HubSpot(access_token=token)
         self.access_token = token
 
-    def create_contact(self, **kwargs):
+    async def create_contact(self, **kwargs):
         """creates a contact in hubspot crm"""
 
         if 'email' not in kwargs:
@@ -42,10 +44,22 @@ class HubspotCrm:
 
             return response.to_dict().get("id")
         except ApiException as e:
-            raise ApplicationError(e.reason, True)
+            raise e
+
+    async def get_contact_by_email(self, email: str):
+        """ Fetch contact by email return contact id"""
+        contact = BatchReadInputSimplePublicObjectId(
+            id_property="email", inputs=[{"id": email}])
+        try:
+            resp = self.client.crm.contacts.batch_api.read(
+                contact, archived=False)
+            return resp.to_dict().get("results")[0].get("id")
+        except ApiException as e:
+            raise e
 
     def upload_file(self, file_name: str, destination_folder: str):
         """upload pdf files to hubspot cms"""
+
         folder = HubspotCrm.upload_folder.get(destination_folder, None)
 
         if folder == None:
@@ -77,6 +91,7 @@ class HubspotCrm:
         return response.json().get("objects")[0].get("id")
 
     def attach_note_with_attachments_to_contact(self, contact_id: str, attachment_ids: list[str]):
+
         timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
         properties = {
             "hs_note_body": "",
@@ -106,4 +121,4 @@ class HubspotCrm:
 
             return response.to_dict().get("id")
         except ApiException as e:
-            raise ApplicationError(e.reason, True)
+            raise e

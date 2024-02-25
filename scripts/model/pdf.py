@@ -5,6 +5,7 @@ import jinja2
 from matplotlib.backends.backend_pdf import PdfPages
 import os
 import pdfkit
+from utils.exception import ClientInputError
 
 
 class Pdf:
@@ -24,11 +25,12 @@ class Pdf:
             split) == VALID_LENGTH else f'{file}.pdf'
         return fullname
 
-    def create_audiogram_pdf(self, file_name: str, plt):
+    async def create_audiogram_pdf(self, file_name: str, plt):
         fullname = self.file_name(file_name)
         with PdfPages(fullname) as pdf:
             pdf.savefig()
             plt.close()
+        return fullname
 
     def validate_template_data(self, data: dict, required_fields: list[str]) -> bool:
 
@@ -39,7 +41,7 @@ class Pdf:
                 return False
         return True
 
-    def create_test_result_pdf(self, data: dict, file_name: str):
+    async def create_test_result_pdf(self, data: dict, file_name: str):
         required_fields = [
             "qn_1",
             "qn_2",
@@ -51,13 +53,13 @@ class Pdf:
             "ans_3",
             "ans_4",
             "ans_5",
-            "name",
+            "first_name",
+            "last_name",
             "email",
             "phone_number"
         ]
         if not self.validate_template_data(data, required_fields):
-            raise ValueError(
-                f'missing key or invalid data. data is required to have {required_fields}')
+            raise ClientInputError('InvalidTestData')
 
         fullname = self.file_name(file_name)
         today = datetime.today().strftime("%d %b, %Y")
@@ -74,6 +76,7 @@ class Pdf:
 
         pdfkit.from_string(output, fullname, configuration=config, options={
                            "enable-local-file-access": ""})
+        return fullname
 
     def remove_files(self, files: list[str]):
 
