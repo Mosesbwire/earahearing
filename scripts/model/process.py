@@ -2,6 +2,7 @@
 
 import asyncio
 from hubspot.crm.contacts import ApiException
+import json
 from model.audiogram import Audiogram
 from model.user import User
 from model.pdf import Pdf
@@ -28,9 +29,13 @@ async def process(data: dict):
     user = User()
 
     right = data.get("right")
+
     left = data.get("left")
+
     user_data = data.get("user")
-    test_results = data.get("test_data")
+
+    test_results = json.loads(data.get("test_data"))
+
     test_data = {**user_data, **test_results}
 
     plot = build_audiogram(right, left)

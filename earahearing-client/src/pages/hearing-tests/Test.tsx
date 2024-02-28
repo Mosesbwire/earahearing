@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Button } from "../../components/button/Button"
 import { HeadphoneBtn } from "../../components/headphone-button/HeadphoneBtn"
 import VolumePanel from "../../components/volume/Volume"
 import { ArrowSvg } from "../../components/arrow/ArrowSvg"
-import { usePageContextNext } from "../../hooks/usePageContext"
 import { useProgressContextIncrease, useProgressContextDecrease } from "../../hooks/useProgressContext"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
 import sound from "../../lib/audio"
@@ -33,12 +33,13 @@ const Test = () => {
     const [isPlaying, setIsPlaying] = useState(false)
     const [isClickPending, setIsClickPending] = useState(false)
     const volumeSteps = Array(10).fill('vol')
-    const next = usePageContextNext()
+    const navigate = useNavigate()
     const incrProgress = useProgressContextIncrease()
     const decrProgress = useProgressContextDecrease()
 
     
     useEffect(() => {
+        
         if (sessionStorage.getItem(key)) {
             setIsSelected(Number(sessionStorage.getItem(key)))
     
@@ -55,6 +56,10 @@ const Test = () => {
         sound.pause()
         setPlayingHeadphone(-1)
 
+        if (ear === 'Left' && frequency === frequencies.length - 1){
+            navigate('/form')
+        }
+
         if (frequency === frequencies.length - 1) {
             setEar('Left')
             setFrequency(0)
@@ -62,9 +67,7 @@ const Test = () => {
         } else {
             setFrequency(curr => curr + 1)
         }  
-        if (ear === 'Left' && frequency === frequencies.length - 1){
-            next()
-        }
+
         
     }
 
@@ -97,6 +100,7 @@ const Test = () => {
         setPlayingHeadphone(index)
         setMoveToNextFrequency(false)
         setIsPlaying(true)
+        
         setSelectedHeadphone(index)
         setIsSelected(-1)
 

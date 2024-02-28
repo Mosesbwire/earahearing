@@ -7,8 +7,10 @@ import matplotlib.pyplot as plt
 
 class Audiogram:
     """ Creates an audiogram """
-    MAX_DB = 70
-    MIN_DB = 0
+    MAX_RANGE = 70
+    MIN_RANGE = 0
+    MAX_DB = 65
+    MIN_DB = 20
 
     def __init__(self, data: dict, frequencies: list):
         self.frequencies = frequencies
@@ -64,7 +66,8 @@ class Audiogram:
             self.plot.title(title)
         self.plot.xlabel(xlabel)
         self.plot.ylabel(ylabel)
-        self.plot.yticks(range(Audiogram.MIN_DB, Audiogram.MAX_DB + 5, 5))
+        self.plot.yticks(
+            range(Audiogram.MIN_RANGE, Audiogram.MAX_RANGE + 5, 5))
         self.plot.xscale('linear')
         self.plot.gca().invert_yaxis()
         self.plot.tick_params(axis='x', top=True, labeltop=True,

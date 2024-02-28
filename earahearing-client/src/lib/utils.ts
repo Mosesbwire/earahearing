@@ -21,3 +21,28 @@ export const getHearingTestData = () => {
 
     return {right, left}
 }
+
+export const getTestQuizData = () => {
+    return sessionStorage.getItem("test_data")
+}
+
+export const hearingFrequenciesData = () => {
+    const {right, left} = getHearingTestData()
+    const BASE_DECIBEL = 20
+    const INCREMENTS = 5
+    const BASE_VALUE = 0
+
+    for (const key in right) {
+        let value = Number(right[key])
+        
+        value = (value - BASE_VALUE) * INCREMENTS + BASE_DECIBEL
+        right[key] = value
+    }
+    for (const key in left) {
+        let value = Number(left[key])
+        value = (value - BASE_VALUE) * INCREMENTS + BASE_DECIBEL
+        left[key] = value
+    }
+
+    return {right, left}
+}

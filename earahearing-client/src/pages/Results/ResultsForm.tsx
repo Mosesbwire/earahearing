@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup'
 import { useForm } from "../../hooks/useForm";
 import { Form } from "../../components/form/Form";
 import { Input } from "../../components/input/Input";
 import { Button } from "../../components/button/Button";
+import { getTestQuizData, hearingFrequenciesData } from "../../lib/utils";
+import { createUser } from "../../services/apiService";
 
 import './results.css'
 export const TOTAL_RESULT_PAGES = 1
@@ -12,6 +15,7 @@ type Inputs = Record<string, string>
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 const ResultsForm = () => {
 
+    const navigate = useNavigate()
     const validationSchema = Yup.object().shape({
         firstName: Yup.string().trim().min(1, 'Name must be more than one character long').required('First Name is required'),
         lastName: Yup.string().trim().min(1, 'Name must be more than one character long ').required('Last Name is required'),
@@ -51,8 +55,34 @@ const ResultsForm = () => {
     const submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         
-        validationSchema.validate(values, {abortEarly: false}).then(valid => {
-            console.log(valid)
+        validationSchema.validate(values, {abortEarly: false}).then(async valid => {
+            // TODO COLLECT ALL DATA HERE
+            const hearingTestData = hearingFrequenciesData()
+            const testQUizData = getTestQuizData()
+            const data = {
+                user: {
+                    first_name: valid.firstName,
+                    last_name: valid.lastName,
+                    email: valid.email,
+                    phone_number: valid.phoneNumber
+                },
+                test_data: testQUizData,
+                right: hearingTestData.right,
+                left: hearingTestData.left
+            }
+           
+            const resp = await createUser(data)
+            if (resp.status === 400) {
+                // show errors on page
+                return
+            }
+
+            if (resp.status === 500) {
+                // navigate to server error page
+                return
+            }
+
+            navigate('/results')
             resetForm()
         }).catch((validationError: Yup.ValidationError) => {
             const errors: Record<string, string> = {}

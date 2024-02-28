@@ -18,8 +18,7 @@ export default function Home(){
         } else if (currentPage > LAST_QUIZ_PAGE && currentPage <= LAST_TEST_PAGE){
             return <TestLayout>
                     <HearingTest/>
-                </TestLayout>
-                
+                </TestLayout>       
         } else {
             return <ResultsForm/>
         }
