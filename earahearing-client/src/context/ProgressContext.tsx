@@ -24,7 +24,6 @@ export default function ProgressContextProvider( {children}: ProgressContextProp
     const [currentSection, setCurrentSection] = useState(0)
     const [sectionUpdate, setSectionUpdate] = useState({ref: appSections[currentSection].section, width})
 
-    
     if (width >= 100) {
         setWidth(0)
         setCurrentSection(curr => curr + 1)

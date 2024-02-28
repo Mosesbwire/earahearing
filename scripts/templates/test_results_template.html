@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href="http://localhost:5500"> -->
+    <!-- <link rel="stylesheet" href="test_results_template.css"> -->
+    <title>Document</title>
+</head>
+<style>
+
+body {
+    padding: 1em 2em
+}
+.logo {
+    width: 70px;
+}
+
+.logo img {
+    width: 100%
+}
+
+.title {
+    text-transform: uppercase;
+    color: #01556A;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.details-row {
+    
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.right {
+    font-weight: bold;
+    width: 50%;
+}
+
+.sub-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #01556A;
+}
+
+.question {
+    font-size: 1.2em;
+
+}
+.answer {
+    font-size: 1.2em;
+    padding-left: 2em
+}
+</style>
+<body>
+
+    
+    <div class="logo">
+        <img src="/home/moses/client-projects/earahearing/scripts/assets/eara29-final.png" alt="logo">
+    </div>
+    <hr>
+    <div>
+        <p class="title">Hearing test results</p>
+    </div>
+    <div class="client-details">
+        <div class="details-row">
+            <p>Client Name</p>
+            <div class="right">
+                <p><span>{{first_name}}</span> <span>{{last_name}}</span></p>
+            </div>
+        </div>
+        <div class="details-row">
+            <p>Phone Number</p>
+            <div class="right">
+                <p>{{phone_number}}</p>
+            </div>
+        </div>
+        <div class="details-row">
+            <p>Email</p>
+            <div class="right">
+                <p>{{email}}</p>
+            </div>
+        </div>
+        <div class="details-row">
+            <p>Generated on</p>
+            <div class="right">
+                <p>{{date}}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class="sub-title">Test answers</p>
+        <hr>
+        <div>
+            <p class="question">{{qn_1}}</p>
+            <p class="answer">{{ans_1}}</p>
+        </div>
+        <div>
+            <p class="question">{{qn_2}}</p>
+            <p class="answer">{{ans_2}}</p>
+        </div>
+        <div>
+            <p class="question">{{qn_3}}</p>
+            <p class="answer">{{ans_3}}</p>
+        </div>
+        <div>
+            <p class="question">{{qn_4}}</p>
+            <p class="answer">{{ans_4}}</p>
+        </div>
+        <div>
+            <p class="question">{{qn_5}}</p>
+            <p class="answer">{{ans_5}}</p>
+        </div>
+    </div>
+
+</body>
+</html>

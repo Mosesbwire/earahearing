@@ -1,0 +1,45 @@
+body {
+    padding: 1em 2em
+}
+.logo {
+    width: 70px;
+}
+
+.logo img {
+    width: 100%
+}
+
+.title {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.details-row {
+    
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.right {
+    font-weight: bold;
+    width: 50%;
+}
+
+.sub-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em
+}
+
+.question {
+    font-size: 1.2em;
+
+}
+.answer {
+    font-size: 1.2em;
+    padding-left: 2em
+}

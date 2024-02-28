@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { About } from "../../components/about/About";
 import { usePageContextCurrentPage } from "../../hooks/usePageContext";
+import { useSessionStorage } from "../../hooks/useSessionStorage";
 
 export const LAST_QUIZ_PAGE = 5
 export const TOTAL_QUIZ_PAGES = 5
@@ -62,14 +64,25 @@ const questions:questionsType = {
     '5': hearingInNoisyPlaces
 }
 
+type answerType = Record<string, unknown>
 const Quiz = () => {
     const currentPage = usePageContextCurrentPage()
+    const [current_qna, setCurrent_qns] = useState(1)
     const data = questions[currentPage.toString()]
+    const [sessionData ,storeDataSessionStorage] = useSessionStorage<answerType>('test_data', {} as answerType)
+
+    const getUserAnswer = (answer: string) => {
+        
+        sessionData[`qn_${current_qna}`] = data.question
+        sessionData[`ans_${current_qna}`] = answer
+        storeDataSessionStorage(sessionData)
+        setCurrent_qns(curr => curr += 1)
+    }
     return (
         <>
-            {currentPage >= 1 && currentPage < 4 && data.choices ? <About choices={data.choices} question={data.question} isMultipleChoice={true}/> : 
+            {currentPage >= 1 && currentPage < 4 && data.choices ? <About choices={data.choices} question={data.question} isMultipleChoice={true} handler={getUserAnswer}/> : 
             
-            <About isMultipleChoice={false} question={data.question}/>}
+            <About isMultipleChoice={false} question={data.question} handler={getUserAnswer}/>}
         </>
     )
 }
