@@ -59,7 +59,7 @@ class Pdf:
             "phone_number"
         ]
         if not self.validate_template_data(data, required_fields):
-            raise ClientInputError('InvalidTestData')
+            raise ClientInputError('InvalidBiometricData')
 
         fullname = self.file_name(file_name)
         today = datetime.today().strftime("%d %b, %Y")

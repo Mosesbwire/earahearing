@@ -1,0 +1,59 @@
+.chart {
+    height: 60vh;
+}
+
+.capability {
+    margin-bottom: 1em
+}
+
+.capability > h1 {
+    margin-bottom: .5em;
+}
+
+.cap__text {
+    line-height: 1.5 !important;
+}
+
+.hearing-aid-wrapper {
+    overflow: hidden;
+    display: grid;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.hearing-aid-img {
+    width: 100%;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 760px) {
+    .hearing-aid-wrapper > button {
+        width: 40%;
+        justify-self: center;
+    }
+    
+    .hearing-aid-img {
+        width: 40%;
+        margin-inline: auto;
+
+    }
+}
+
+
+@media only screen and (min-width: 980px) {
+    .chart {
+        height: 70vh;
+    }
+
+    .capability-wrapper {
+        width: 80%;
+        margin-inline: auto;
+    }
+    .cap__text {
+        line-height: 1.9 !important;
+    }
+
+    .hearing-aid-wrapper > button {
+        width: 30%;
+    }
+}

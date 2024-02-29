@@ -7,6 +7,8 @@ import { Input } from "../../components/input/Input";
 import { Button } from "../../components/button/Button";
 import { getTestQuizData, hearingFrequenciesData } from "../../lib/utils";
 import { createUser } from "../../services/apiService";
+import Loading from "../../components/loading/Loading";
+import ServerError from "../../components/error/ServerError";
 
 import './results.css'
 export const TOTAL_RESULT_PAGES = 1
@@ -14,7 +16,9 @@ export const TOTAL_RESULT_PAGES = 1
 type Inputs = Record<string, string>
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 const ResultsForm = () => {
-
+    const [isLoading, setIsLoading] = useState(false)
+    const [serverError, setServerError] = useState(false)
+    const [clientError, setClientError] = useState(false)
     const navigate = useNavigate()
     const validationSchema = Yup.object().shape({
         firstName: Yup.string().trim().min(1, 'Name must be more than one character long').required('First Name is required'),
@@ -70,20 +74,35 @@ const ResultsForm = () => {
                 right: hearingTestData.right,
                 left: hearingTestData.left
             }
-           
-            const resp = await createUser(data)
-            if (resp.status === 400) {
-                // show errors on page
+
+            setIsLoading(true)
+            document.title = 'Loading'
+            try {
+
+                const resp = await createUser(data)
+
+                if (resp.status === 400) {
+                    
+                    setIsLoading(false)
+                    setClientError(true)
+                    return
+                }
+    
+                if (resp.status === 500) {
+                    document.title = 'error'
+                    setIsLoading(false)
+                    setServerError(true)
+                    return
+                }
+                setIsLoading(false)
+                resetForm()
+                navigate('/results')
+            } catch (err) {
+                document.title = 'error'
+                setIsLoading(false)
+                setServerError(true)
                 return
             }
-
-            if (resp.status === 500) {
-                // navigate to server error page
-                return
-            }
-
-            navigate('/results')
-            resetForm()
         }).catch((validationError: Yup.ValidationError) => {
             const errors: Record<string, string> = {}
             validationError.inner.forEach(error => {
@@ -92,13 +111,23 @@ const ResultsForm = () => {
                 }
             })
             setFormErrors(errors)
+            setIsLoading(false)
         })
         
     }
     
+    if (serverError){    
+        return <ServerError/>
+    }
+    
     return (
         <div className="results-form-page container">
-    
+            {isLoading ? <Loading/> : null}
+            {clientError ? <div className="error-banner">
+                
+                <p className="close-btn" onClick={() => setClientError(false)}>x</p>
+                <p className="text text-dark">Hearing test data or biometric quiz data is missing or answers are invalid. <a href="/">Click here to start test.</a></p>
+            </div>: null}
             <div className="results-form-text text-centered">
                 <h1 className="headline text-bold banner-text">Congratulations !</h1>
                 <p className="text text-dark ">You have completed the hearing test.</p>

@@ -1,0 +1,28 @@
+.gauge-chart-img {
+    display: grid;
+    justify-content: center;
+    margin-block: .65em;
+}
+.cap-text {
+    line-height: 1.5 !important;
+}
+@media only screen and (min-width: 760px) {
+    .gauge-chart-img {
+        margin-block: 1em;
+    }
+    .gauge-chart-img > img{
+        
+        width: 300px;
+    }
+
+    .cap-text {
+        line-height: 1.9 !important;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .gauge-chart-img > img{
+        
+        width: 350px;
+    }
+}

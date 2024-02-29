@@ -16,11 +16,14 @@ pdf_maker = Pdf()
 
 def build_audiogram(right: dict, left: dict):
     frequencies = [500, 1000, 2000, 4000, 8000]
-
-    audiogram = Audiogram({"right": right, "left": left}, frequencies)
-    plot = audiogram.create_audiogram(
-        'Frequency(Hz)', 'Decibel (db)', 'Frequency(Hz)')
-    return plot
+    try:
+        audiogram = Audiogram({"right": right, "left": left}, frequencies)
+        plot = audiogram.create_audiogram(
+            'Frequency(Hz)', 'Decibel (db)', 'Frequency(Hz)')
+        return plot
+    except ValueError as e:
+        print(e.args)
+        raise ClientInputError('InvalidHearingTestData')
 
 
 async def process(data: dict):

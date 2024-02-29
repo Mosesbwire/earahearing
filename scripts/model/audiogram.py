@@ -26,7 +26,7 @@ class Audiogram:
         """Validate test data is within correct range """
         test_data = ear.values()
         for x in test_data:
-            if x > Audiogram.MAX_DB or x <= Audiogram.MIN_DB:
+            if x > Audiogram.MAX_DB or x < Audiogram.MIN_DB:
                 return False
 
         return True
