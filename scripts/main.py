@@ -16,6 +16,6 @@ import threading
 
 if __name__ == "__main__":
 
-    data = asyncio.run(
-        HubspotClient.get_contact_by_email("mosesbwire@gmail.com"))
-    print(data)
+    p = os.path.abspath("./templates")
+
+    print(p)

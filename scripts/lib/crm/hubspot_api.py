@@ -2,7 +2,7 @@
 
 """Handles interaction with the hubspot crm"""
 
-import aiohttp
+
 from datetime import datetime
 import json
 from hubspot import HubSpot

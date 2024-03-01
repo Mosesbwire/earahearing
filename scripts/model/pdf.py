@@ -65,7 +65,7 @@ class Pdf:
         today = datetime.today().strftime("%d %b, %Y")
         data["date"] = today
 
-        template_dir = os.path.abspath('../scripts/templates')
+        template_dir = os.path.abspath('./templates')
 
         template_loader = jinja2.FileSystemLoader(template_dir)
         template_env = jinja2.Environment(loader=template_loader)
