@@ -23,9 +23,23 @@ def process_request(request):
                 "message": 'User input validation error',
                 "errors": e.errors
             }}), 400)
+        if e.message == 'InvalidHearingTestData':
+            return make_response(jsonify({
+                "error": {
+                    "message": 'Hearing test data is missing/ invalid',
+                    "errors": []
+                }
+            }), 400)
+        if e.message == 'InvalidBiometricData':
+            return make_response(jsonify({
+                "error": {
+                    "message": 'Hearing Test Quiz answers are missing / invalid answers',
+                    "errors": []
+                }
+            }), 400)
 
     except ApplicationError as e:
         return make_response(jsonify({"error": {
-            "message": "Server Error Ocuured. Try again later",
+            "message": "Server Error Occured. Try again later",
             "errors": []
         }}), 500)

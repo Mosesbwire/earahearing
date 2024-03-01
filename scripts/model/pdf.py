@@ -59,13 +59,13 @@ class Pdf:
             "phone_number"
         ]
         if not self.validate_template_data(data, required_fields):
-            raise ClientInputError('InvalidTestData')
+            raise ClientInputError('InvalidBiometricData')
 
         fullname = self.file_name(file_name)
         today = datetime.today().strftime("%d %b, %Y")
         data["date"] = today
 
-        template_dir = os.path.abspath('../scripts/templates')
+        template_dir = os.path.abspath('./templates')
 
         template_loader = jinja2.FileSystemLoader(template_dir)
         template_env = jinja2.Environment(loader=template_loader)
