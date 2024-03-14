@@ -4,6 +4,7 @@
 :root {
 	--main-color: #01556A;
 	--accent-color: #FFA73F;
+	--accent-color-secondary: #3F97FF;
 	--main-color-light: #02718C;
 	--main-light: #F2F2F2;
 	--light-background-200: #F9F9F9;
@@ -13,6 +14,10 @@
 	--highlight-text: var(--accent-color);
 	--font-family-headlines: 'Merriweather', serif;
 	--font-family-sub-headlines: 'Lora', serif; 
+}
+
+body {
+	/* overflow: hidden; */
 }
 
 .headline {
@@ -62,6 +67,10 @@
 
 .row > * + * {
 	margin-left: 1.25em;
+}
+
+.underline {
+	text-decoration: underline;
 }
 
 

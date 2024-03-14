@@ -46,3 +46,16 @@ export const hearingFrequenciesData = () => {
 
     return {right, left}
 }
+
+export const clearTestFrequencyResults = () => {
+    const TOTAL_FREQ = 5
+    
+    for (let freq = 0; freq < TOTAL_FREQ; freq ++) {
+        const right_key = `Right_freq_${freq}`
+        const left_key = `Left_freq_${freq}`
+        sessionStorage.setItem(right_key, '-1')
+        sessionStorage.setItem(left_key, '-1')
+
+    }
+
+}

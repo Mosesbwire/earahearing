@@ -1,0 +1,181 @@
+nav {
+    /* overflow: hidden; */
+    position: relative;
+    
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-wrapper {
+   margin-bottom: 2em;
+}
+
+.nav-logo-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    
+    width: 40%;
+    padding-top: .85em;
+}
+
+
+.nav-logo > :first-child {
+    width: 40%;
+}
+
+
+.menu-btn {
+    width: 40%;
+    cursor: pointer;
+}
+
+.menu-btn > img {
+    width: 30%;
+    float: right;
+}
+
+.nav {
+    background-color: var(--main-color-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+.open {
+    display: block;
+}
+
+.close {
+    display: none;
+}
+.nav_links {
+    margin-top: 3.5em;
+}
+
+.nav_links > li {
+    border-top: 1px solid wheat;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em; 
+
+}
+
+
+.nav_links a {
+    color: white;
+    font-family: var(--font-family-sub-headlines);
+    padding-left: 1em;
+}
+
+.nav_links button {
+   
+    margin-left: 1em;
+}
+
+
+
+.menu-close-btn-wrapper {
+    cursor: pointer;
+    height: 50px;
+    float: right;
+}
+
+.menu-close-btn {
+    width: 60px;
+}
+
+@media only screen and (min-width: 760px) {
+
+    nav {
+        position: fixed;
+        top: 0;
+        transition: background-color 500ms ease;
+        z-index: 99;
+    }
+
+    .scrolled {
+        background-color: wheat;
+        box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, .2);
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .close {
+        display: block;
+    }
+
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 2em;
+        padding-block: 2em;
+    }
+
+    .nav-wrapper > :first-child {
+        width: 20%;
+    }
+    .nav-logo {
+        width: 100%;
+        padding-top: 0;
+    }
+    .nav {
+        
+        position: relative;
+        height: 0;
+        width: 100%;
+        
+    }
+
+
+    .menu-close-btn-wrapper {
+        display: none;
+    }
+
+    .nav_links {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 0;
+    }
+
+    .nav_links > li {
+        border-top: none;
+        padding: 0;
+    }
+
+    .nav_links a {
+        color: var(--main-color-light);
+        padding: 0;
+    }
+
+    .nav_links button {
+        margin-left: 0;
+        margin-top: -.5em;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    
+    .nav_links > li {
+        font-weight: 500;
+        font-size: 1.15em;
+    }
+    .nav_links a {
+        transition: color 300ms ease;
+    }
+    .nav_links a:hover {
+        color: var(--accent-color);
+    }
+}
+

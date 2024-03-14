@@ -1,8 +1,11 @@
-import preloader from "../../assets/preloader.gif"
+import preloader from "../../assets/preloader.svg"
 import './loading.css'
 const Loading = ()=> {
     return <div className="loading">
-        <img src={preloader} alt="loading"  className="preloader"/>
+        <div className="loading-wrapper">
+            <img src={preloader} alt="loading"  className="preloader"/>
+            <small className="text">Your results are on the way.</small>
+        </div>
     </div>
 }
 

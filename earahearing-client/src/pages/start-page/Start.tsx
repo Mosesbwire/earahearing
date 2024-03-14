@@ -1,10 +1,12 @@
 import { usePageContextNext } from "../../hooks/usePageContext"
 import { Button } from "../../components/button/Button"
 import heroImage from '../../assets/images.webp'
+import { clearTestFrequencyResults } from "../../lib/utils"
+
 import './start-page.css'
 const Start = () => {
     const nextPage = usePageContextNext()
-    
+    clearTestFrequencyResults()
     return (
         <section className="start-page-wrapper">
             <div className="hero">
