@@ -2,8 +2,7 @@ import { StackedAreaChart } from "../../components/charts/areaChart"
 import { hearingFrequenciesData } from "../../lib/utils"
 import { Button } from "../../components/button/Button"
 import HearingCapability from "../../components/hearing-capability/HearingCapability"
-import hearingAidFramed from "../../assets/hearing-aid-framed.png"
-import hearingAid from "../../assets/hearing_aid-bg.png"
+import hearingAid from "../../assets/hearing-aids.png"
 import bluetoothIcon from "../../assets/bluetooth-ic.svg"
 import batteryIcon from "../../assets/battery-ic.svg"
 import selfFittingAppIcon from "../../assets/self-fitting-app.svg"
@@ -66,14 +65,8 @@ const TestResults = () => {
             </div>
             <div className="container ">
                 <div className="user-hearing">
-                    <div className="capability capability-wrapper">
-                        <h1 className="headline text-centered" >Right Ear</h1>
-                        <HearingCapability state={rightEarCapability}/>
-                    </div>
-                    <div className="capability capability-wrapper">
-                        <h1 className="headline text-centered">Left Ear</h1>
-                        <HearingCapability state={leftEarCapability}/>
-                    </div>
+
+                    <HearingCapability right={rightEarCapability} left={leftEarCapability} isSameHearingCapability={rightEarCapability === leftEarCapability}/>
                 </div>
                 {rightEarCapability !== 'normal' || leftEarCapability !== 'normal' ? <div className="capability-wrapper">
                     <p className="text text-dark cap__text">
@@ -88,21 +81,13 @@ const TestResults = () => {
                     <p className="text text-light">So why not keep your brain strong and your mind healthy? It’s easy to hear better.</p>
                     <p className="text text-light"><span className="text-bold text-accented">Eara Explore Li+</span> hearing aids are the answer.</p>
                 </div>
-                <div className="banner-ad">
-                   
-                </div>
             </div>
             <div className="eara-explainer">
                 <div className="container">
-                    <p className="text text-dark cap__text">Eara Explore Li+ are the first OTC AI hearing aids on the market. These little hearing aids are small, and designed for clarity. New AI technology and dome construction allows for new features that are better than ever for fit and sound quality. Just like the $4000 hearing aids, the open fit style is also found in Eara Explore Li+. This gives the user a natural, crystal clear sound quality with only the push of a button. The user simply takes a 2 minute hearing test, Eara Explore Li+ programs themselves and then the user can make independent adjustments of one ear or both ears at any frequency. Read more about them here!</p>
+                    <p className="text text-dark cap__text">Eara Explore Li+ are the first Self-Fitting, Bluetooth hearing aids available! These small devices are crafted for clarity thanks to advanced AI technology and dome construction. They boast new features that enhance fit and sound quality. Similar to expensive $4000 hearing aids, Eara Explore Li+ also features an open-fit style, providing users with natural, crystal-clear sound quality at the touch of a button. Users can easily take a quick 3-minute hearing test, allowing Eara Explore Li+ to automatically program itself. Additionally, users can independently adjust one or both ears at any frequency. Learn more about them here!</p>
                 </div>
                 <div className="eara-explainer__image-wrapper">
-                    <div className="explainer-banner">
-                        <p className="text text-dark">Natural, crystal clear sound quality on the push of a button.</p>
-                    </div>
-                    <div className="explainer__img__wrapper">
-                        <img src={hearingAidFramed} alt="hearing aid with sunflower in the background"/>
-                    </div>
+                    
                 </div>
             </div>
             <div className="eara-features">
@@ -134,12 +119,12 @@ const TestResults = () => {
                             <div className="image_ic_wrapper">
                                 <img src={audiologistIcon} alt="" />
                             </div>
-                            <p className="text text-dark">Step by step instructions from an audiologist</p>
+                            <p className="text text-dark">Step-by-step instructions from an audiologist</p>
                         </div>
                 </div>
                 </div>
                 <div className="eara-features_cta">
-                    <Button className="btn-secondary-outline btn-md">Shop Now</Button>
+                    <Button className="btn-secondary-rounded btn-md">Shop Now</Button>
                 </div>
             </div>
             <div className="audiologist-consultation container">
@@ -148,24 +133,30 @@ const TestResults = () => {
                         <div className="consultation-icon-wrapper">
                             <img src={questionMark} alt="" />
                         </div>
-                        <p className="text text-bold text-dark">Questions about your results?</p>
+                        <p className="text text-dark">Questions about your results?</p>
                     </div>
                     <div className="consultation">
                         <div className="consultation-icon-wrapper">
                             <img src={questionMark} alt="" />
                         </div>
-                        <p className="text text-bold text-dark">Want to schedule a complimentary appointment with the doctor?</p>
+                        <p className="text text-dark">Want to schedule a complimentary appointment with the doctor?</p>
                     </div>
                     <div className="consultation">
                         <div className="consultation-icon-wrapper">
                             <img src={phoneIcon} alt="" />
                         </div>
-                        <p className="text text-bold text-dark">Call now for your <span className="underline">free consultation</span> <br /> (800) 933-0885</p>
+                        <p className="text text-dark">Call now for your <span className="underline">free consultation</span> <br /> (800) 933-0885</p>
                     </div>
                 </div>
                 <div className="consultation-img-wrapper">
                     <img src={docImg} alt="doctor holding eara hearing aids" />
                 </div>
+            </div>
+            <div className="eara-policy container">
+                <p className="text text-dark">At Eara Hearing, your hearing health is our priority. If you have any questions or concerns about your hearing test or your results, don't hesitate to reach out to us.</p>
+                <p className="text text-dark">Our dedicated team of proffesionals is here to assist you.</p>
+                <p className="text text-dark">Feel free to email us at <span className="underline">info@earahearing.com</span></p>
+                <p className="text text-dark">Our experienced doctors will be happy to address any inquiries you may have. Your satisfaction and comfort are important to us, and we're committed to providing you with the best possible care.</p>
             </div>
         </div>
 }

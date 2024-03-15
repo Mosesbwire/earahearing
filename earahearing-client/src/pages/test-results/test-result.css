@@ -16,16 +16,12 @@
     
 }
 
-.capability {
-    margin-bottom: 1em
-}
-
-.capability > h1 {
-    margin-bottom: .5em;
-}
-
 .cap__text {
     line-height: 1.5 !important;
+}
+
+.user-hearing {
+    margin-top: 2em;
 }
 
 .ad-section {
@@ -44,15 +40,6 @@
     font-size: 1.3em;
 }
 
-.banner-ad {
-    width: 100%;
-    height: 30vh;
-    background-image: url('../../assets/ad-banner.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
 .eara-explainer {
     padding-top: 2em;
 }
@@ -61,7 +48,7 @@
     width: 100%;
     height: 40vh;
     position: relative;
-    background-image: url('../../assets/happy-user.png');
+    background-image: url('../../assets/man_wearing_ha.jpeg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -139,6 +126,8 @@
     margin-bottom: 1em;
 }
 
+
+
 .consultation-icon-wrapper {
 
     width: 100%;
@@ -155,6 +144,10 @@
     width: 100%;
 }
 
+.eara-policy {
+    padding-bottom: 2em;
+}
+
 @media only screen and (min-width: 760px) {
     .results-page-headline {
         padding-top: 5em;
@@ -162,10 +155,6 @@
     }
    .ad-section-wrapper {
         padding-block: 3em;
-   }
-
-   .banner-ad {
-        background-size: cover;
    }
 
    .ad-section-wrapper p {
@@ -210,14 +199,18 @@
    .consultation p {
         font-size: 1.2em !important;
    }
+
+   .eara-policy p {
+        font-size: 1.2em !important;
+
+   }
 }
+
 
 
 @media only screen and (min-width: 980px) {
 
     .user-hearing {
-        display: flex;
-        column-gap: 5em;
         margin-top: 5em;
     }
     .cap__text {
@@ -233,11 +226,7 @@
     .ad-section-wrapper p {
         text-align: center;
     }
-    .banner-ad {
-        height: 30vh;
-        background-size: contain;
-   }
-
+    
    .eara-explainer__image-wrapper {
         height: 70vh;
         z-index: 1;
@@ -278,9 +267,19 @@
     .consultation {
         margin-bottom: 2em;
     }
+    .consultation p {
+        font-size: 1.3em !important;
+    }
 
     .consultation-img-wrapper {
         width: 70%;
     }
+
+    .eara-policy p {
+        line-height: 1.5 !important;
+
+   }
+
+
 
 }

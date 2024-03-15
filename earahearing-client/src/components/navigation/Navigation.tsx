@@ -8,6 +8,7 @@ import './navigation.css'
 
 const Navigation = () => {
     const [isMenuOpen, toggleOpenMenu] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
     const nav = useRef<HTMLElement>(null)
     
 
@@ -18,8 +19,10 @@ const Navigation = () => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             nav.current?.classList.add('scrolled')
+            setIsScrolled(true)
         } else if (window.scrollY <= 50) {
             nav.current?.classList.remove('scrolled')
+            setIsScrolled(false)
         }
     })
     return <nav ref={nav}>
@@ -27,7 +30,7 @@ const Navigation = () => {
                 <div className="nav-wrapper">
                     <div className="nav-logo-container container">
                         <div className="nav-logo">
-                            <Logo/>
+                            <Logo logoType={isScrolled ? 'light' : 'dark'}/>
                         </div>
                         <div className="menu-btn" onClick={toggleMenu}>
                             <img src={mobileMenu} alt="mobile menu icon" />
@@ -38,10 +41,10 @@ const Navigation = () => {
                             <img className='menu-close-btn' src={closeBtn} alt="cross button"/>
                         </div>
                         <div className="nav_links">
-                            <li><a href="">Hearing Aids</a></li>
-                            <li><a href="">Self-fitting App</a></li>
-                            <li><a href="">Hearing Test</a></li>
-                            <Button className="btn-primary-rounded btn-sm">Shop Now</Button>
+                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="">Hearing Aids</a></li>
+                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="">Self-fitting App</a></li>
+                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="">Hearing Test</a></li>
+                            <Button className="btn-primary-rounded-scale btn-sm">Shop Now</Button>
                         </div>
                     </div>
                 </div>

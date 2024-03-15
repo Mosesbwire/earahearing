@@ -1,11 +1,8 @@
-import mildHearingChart from "../../assets/gauge-chart-mild.svg"
+
 import './hearing-capability.css'
 const Mild = () => {
     return <div>
-        <h1 className="subheadline text-centered text-dark">Mild hearing loss</h1>
-        <div className="gauge-chart-img">
-            <img src={mildHearingChart} alt="gauge chart indicating mild hearing loss"/>
-        </div>
+
         <p className="text text-dark cap-text">
         Mild hearing loss indicates you will have difficulty hearing in different listening situations, mainly in noisy places like crowds of people. It is not uncommon to increase the television volume or put the telephone on speaker to hear it clearly with this type of hearing loss. Patients will often say, “I can hear people talking, but I just don’t understand what they’re saying sometimes- it’s not clear”. 
         For example: you may hear the word “cat” instead of the word “cap”. This happens because the clarity of speech is missing in a mild hearing loss. 

@@ -6,7 +6,7 @@ import { Logo } from "../components/logo/Logo"
 const MainLayout = () => {
     return <div>
         <header className="container header">
-            <Logo/>
+            <Logo logoType="dark"/>
         </header>
         <Outlet/>
     </div>
