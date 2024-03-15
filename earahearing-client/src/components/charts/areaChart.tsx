@@ -37,7 +37,7 @@ export const StackedAreaChart = ({right, left}: propType) => {
                 type: 'scatter',
                 pointStyle: 'circle',
                 data: right,
-                backgroundColor: 'orange',
+                backgroundColor: 'red',
                 pointRadius: 10,
                 datalabels: {
                     formatter: function() {
@@ -112,7 +112,7 @@ export const StackedAreaChart = ({right, left}: propType) => {
             {
                 fill: true,
                 data: [70, 70, 70, 70, 70, 70, 70, 70],
-                backgroundColor: 'rgba(255, 0, 0, 1)',
+                backgroundColor: 'rgba(255, 0, 0, .4)',
                 labels: 'Moderately Severe',
                 label: 'Moderately Severe',
     
