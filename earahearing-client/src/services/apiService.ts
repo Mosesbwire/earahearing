@@ -1,6 +1,6 @@
 
 //const BASE_URL = 'http://127.0.0.1:8000'
-const BASE_URL = 'https://earahearing-backend-api.onrender.com'
+const BASE_URL = import.meta.env.VITE_BACKEND_API_URL
 
 async function sendRequest(url: string, options: RequestInit) {
     const response = await fetch(url, options)
