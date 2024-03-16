@@ -24,7 +24,7 @@ function App() {
             </ProgressContextProvider>
           </PageContextProvider>
         <Routes>
-          <Route path='/results' element={<TestResults/>}/>
+          <Route path='/hearing-test-results' element={<TestResults/>}/>
         </Routes>
       </main> 
     </BrowserRouter>

@@ -124,7 +124,9 @@ const TestResults = () => {
                 </div>
                 </div>
                 <div className="eara-features_cta">
-                    <Button className="btn-secondary-rounded btn-md">Shop Now</Button>
+                    <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
+                        <Button className="btn-secondary-rounded btn-md">Shop Now</Button>
+                    </a>
                 </div>
             </div>
             <div className="audiologist-consultation container">

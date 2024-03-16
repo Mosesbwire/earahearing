@@ -41,10 +41,12 @@ const Navigation = () => {
                             <img className='menu-close-btn' src={closeBtn} alt="cross button"/>
                         </div>
                         <div className="nav_links">
-                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="">Hearing Aids</a></li>
-                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="">Self-fitting App</a></li>
-                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="">Hearing Test</a></li>
-                            <Button className="btn-primary-rounded-scale btn-sm">Shop Now</Button>
+                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">Hearing Aids</a></li>
+                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="https://earahearing.com/explore-li/">Self-fitting App</a></li>
+                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="/">Hearing Test</a></li>
+                            <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
+                                <Button className="btn-primary-rounded-scale btn-sm">Shop Now</Button>
+                            </a>
                         </div>
                     </div>
                 </div>
