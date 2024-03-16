@@ -9,5 +9,21 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.loading-wrapper {
+    display: grid;
+    align-items: center;
+}
+
+.loading-wrapper > small {
+    text-align: center;
+    color: var(--light-background-400);
+    
+}
+
+.preloader {
+    justify-self: center;
+    margin-bottom: 1em;
 }

@@ -6,6 +6,10 @@
 .cap-text {
     line-height: 1.5 !important;
 }
+
+.hearing-capability {
+    padding-block: 2em;
+}
 @media only screen and (min-width: 760px) {
     .gauge-chart-img {
         margin-block: 1em;
@@ -21,6 +25,11 @@
 }
 
 @media only screen and (min-width: 980px) {
+    .hearing-capability-wrapper {
+        display: flex;
+        justify-content: space-around;
+        column-gap: 4em;
+    }
     .gauge-chart-img > img{
         
         width: 350px;

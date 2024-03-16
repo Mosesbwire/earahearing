@@ -1,11 +1,7 @@
-import severeHearingChart from "../../assets/gauge-chart-severe.svg"
+
 import './hearing-capability.css'
 const Severe = () => {
     return <div>
-        <h1 className="subheadline text-centered text-dark">Moderately severe hearing loss</h1>
-        <div className="gauge-chart-img">
-            <img src={severeHearingChart} alt="gauge chart indicating severe hearing loss"/>
-        </div>
         <p className="text text-dark cap-text">
         A severe hearing loss indicates you have difficulty in many different listening situations like one-on-one conversations, group settings, television or phone calls.  
         Patients with severe hearing loss will miss conversation at a normal volume, the telephone ringing at a normal volume or the doorbell should someone knock on the front door. 

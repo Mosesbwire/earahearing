@@ -12,6 +12,21 @@
     width: fit-content;
     transition: all 500ms;
 }
+.btn-primary-rounded-scale {
+    color: var(--dark-text);
+    background-color: var(--accent-color);
+    border-radius: 4.375em;
+    width: fit-content;
+    transition: all 500ms;
+}
+
+.btn-secondary-rounded {
+    color: var(--main-light);
+    background-color: var(--main-color);
+    border-radius: 4.375em;
+    width: fit-content;
+    transition: all 500ms;
+}
 
 .btn-primary-rounded-disabled {
     background-color: var(--light-background-400);
@@ -23,6 +38,14 @@
 
 
 .btn-primary-outline {
+    color: var(--dark-text);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 4.375em;
+    width: fit-content;
+    transition: all 500ms;   
+}
+.btn-secondary-outline {
     color: var(--dark-text);
     background-color: transparent;
     border: 1px solid var(--main-color);
@@ -94,8 +117,21 @@
         background-color: var(--main-color);
         color: var(--accent-color);
     }
+    .btn-primary-rounded-scale:hover {
+        scale: 1.1;
+    }
+
+    .btn-secondary-rounded:hover {
+        color: var(--accent-color);
+        scale: 1.1;
+    }
     .btn-primary-outline:hover {
         background-color: var(--accent-color);
+    }
+
+    .btn-secondary-outline:hover {
+        background-color: var(--main-color);
+        color: var(--accent-color);
     }
     .btn-light:hover {
         background-color: var(--accent-color);

@@ -1,59 +1,285 @@
+.results-page {
+    overflow: hidden;
+}
+
 .chart {
+    /* height: 60vh; */
+}
+
+.chart-wrapper {
     height: 60vh;
+    margin-bottom: 1em;
 }
 
-.capability {
-    margin-bottom: 1em
-}
-
-.capability > h1 {
-    margin-bottom: .5em;
+.results-page-headline > * {
+    line-height: 1.5 !important;
+    
 }
 
 .cap__text {
     line-height: 1.5 !important;
 }
 
-.hearing-aid-wrapper {
-    overflow: hidden;
-    display: grid;
-    justify-content: center;
-    margin-bottom: 3em;
+.user-hearing {
+    margin-top: 2em;
 }
 
-.hearing-aid-img {
+.ad-section {
+    background:linear-gradient(90deg, #3C3D3F, #515254,#424344);
+}
+
+.ad-section-wrapper {
+    padding-block: 1em;
+}
+
+.ad-section-wrapper p {
+    line-height: 1.5 !important;
+}
+
+.ad-section-wrapper > :last-child span {
+    font-size: 1.3em;
+}
+
+.eara-explainer {
+    padding-top: 2em;
+}
+
+.eara-explainer__image-wrapper {
     width: 100%;
-    cursor: pointer;
+    height: 40vh;
+    position: relative;
+    background-image: url('../../assets/man_wearing_ha.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 1em;
+}
+
+.explainer-banner {
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    padding-block: .5em;
+    padding-inline: .3em;
+    width: 80%;
+    margin-inline: auto;
+}
+
+.explainer__img__wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+}
+
+.explainer__img__wrapper img {
+    width: 20%;
+}
+
+
+
+.eara-features {
+    background-color: var(--accent-color);
+    padding-block: 2.5em;
+}
+
+.eara-features__hearing-aid {
+    width: 100%;
+}
+
+.eara-features__hearing-aid img {
+    width: 100%;
+}
+
+.image_ic_wrapper {
+    padding-block: 1em;
+    width: 15%;
+}
+.image_ic_wrapper img {
+    width: 100%;
+}
+
+.hearing-aid-feature {
+    align-items: center;
+}
+.eara-features_cta {
+    display: grid;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.audiologist-consultation {
+
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
+    border-radius: 20px;
+    background-color: var(--light-background-200);
+    padding-block: 2em;
+    padding-inline-start: .65em;
+}
+
+
+.consultation {
+    display: grid;
+    grid-template-columns: 12% 88%;
+    align-items: center;
+    column-gap: 1em;
+    margin-bottom: 1em;
+}
+
+
+
+.consultation-icon-wrapper {
+
+    width: 100%;
+}
+.consultation-icon-wrapper img {
+    width: 100%;
+}
+
+
+.consultation-img-wrapper {
+    width: 100%;
+} 
+.consultation-img-wrapper img {
+    width: 100%;
+}
+
+.eara-policy {
+    padding-bottom: 2em;
 }
 
 @media only screen and (min-width: 760px) {
-    .hearing-aid-wrapper > button {
-        width: 40%;
-        justify-self: center;
+    .results-page-headline {
+        padding-top: 5em;
+        
     }
-    
-    .hearing-aid-img {
-        width: 40%;
-        margin-inline: auto;
+   .ad-section-wrapper {
+        padding-block: 3em;
+   }
 
-    }
+   .ad-section-wrapper p {
+        font-size: 1.2em !important;
+   }
+
+   .eara-explainer__image-wrapper {
+        height: 60vh;
+   }
+
+   .explainer-banner {
+        width: 50%;
+        position: absolute;
+        top: 7%;
+        left: 25%;
+   }
+
+   
+   .eara-features__hearing-aid {
+        width: 60%;
+        margin-inline: auto;
+   }
+
+   .image_ic_wrapper {
+        width: 7%;
+   }
+   .hearing-aid-feature p {
+        font-size: 1.2em !important;
+   }
+
+   .audiologist-consultation {
+        padding-inline: 2em;
+   }
+
+   .consultation {
+        column-gap: .5em;
+   }
+
+   .consultation-icon-wrapper {
+        width: 50%;
+   }
+   .consultation p {
+        font-size: 1.2em !important;
+   }
+
+   .eara-policy p {
+        font-size: 1.2em !important;
+
+   }
 }
 
 
-@media only screen and (min-width: 980px) {
-    .chart {
-        height: 70vh;
-    }
 
-    .capability-wrapper {
-        width: 80%;
-        margin-inline: auto;
+@media only screen and (min-width: 980px) {
+
+    .user-hearing {
+        margin-top: 5em;
     }
     .cap__text {
         line-height: 1.9 !important;
     }
 
-    .hearing-aid-wrapper > button {
-        width: 30%;
+    .chart-wrapper {
+        width: 60%;
+        margin-inline: auto;
+        height: 70vh;
     }
+
+    .ad-section-wrapper p {
+        text-align: center;
+    }
+    
+   .eara-explainer__image-wrapper {
+        height: 70vh;
+        z-index: 1;
+   }
+
+   .explainer-banner {
+        width: 30%;
+        position: absolute;
+        top: 7%;
+        left: 35%;
+    }
+
+   .explainer__img__wrapper{
+        left: 15%;
+    }
+   .explainer__img__wrapper img {
+        width: 10%;
+    }
+    .eara-explainer > :first-child {
+        padding-block: 2em;
+    }
+
+    .eara-features-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 2em;
+    }
+    .eara-features__hearing-aid {
+        width: 50%;
+    }
+    .audiologist-consultation {
+        margin-top: 4em !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center
+    }
+
+    .consultation {
+        margin-bottom: 2em;
+    }
+    .consultation p {
+        font-size: 1.3em !important;
+    }
+
+    .consultation-img-wrapper {
+        width: 70%;
+    }
+
+    .eara-policy p {
+        line-height: 1.5 !important;
+
+   }
+
+
+
 }

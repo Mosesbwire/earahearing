@@ -1,11 +1,7 @@
-import moderateHearingChart from '../../assets/gauge-chart-mod.svg'
+
 import './hearing-capability.css'
 const Moderate = () => {
     return <div>
-        <h1 className='subheadline text-centered text-dark'>Moderate hearing loss</h1>
-        <div className="gauge-chart-img">
-            <img src={moderateHearingChart} alt="gauge chart indicating moderate hearing loss"/>
-        </div>
         <p className='text text-dark cap-text'>
         A moderate hearing loss indicates you have difficulty in many different listening situations like one-on-one conversations, group settings, television or phone calls. 
         Patients with moderate hearing loss will say that they can hear people talking, but they do not understand what they are saying.

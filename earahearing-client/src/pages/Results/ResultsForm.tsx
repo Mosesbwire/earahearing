@@ -76,7 +76,7 @@ const ResultsForm = () => {
             }
 
             setIsLoading(true)
-            document.title = 'Loading'
+            
             try {
 
                 const resp = await createUser(data)
@@ -131,7 +131,7 @@ const ResultsForm = () => {
             <div className="results-form-text text-centered">
                 <h1 className="headline text-bold banner-text">Congratulations !</h1>
                 <p className="text text-dark ">You have completed the hearing test.</p>
-                <p className="text text-dark create-txt">Let's create a quick profile so you can keep record of your hearing test results</p>
+                <p className="text text-dark create-txt">Let's create a quick profile so you can keep record of your hearing test results.</p>
             </div>
             <div className="result-form-element">
                 <Form onSubmit={submit}>
@@ -160,7 +160,7 @@ const ResultsForm = () => {
                         <Button className="btn-primary-rounded btn-md" type={'submit'}>Get Results</Button>
                     </div>
                 </Form>
-                <small className="text-dark disclaimer-results">By clicking the button above, you are providing consent to display the results of your hearing test, provide explanation about your hearing ability and present the information that will help you choose the care option best for you. Read our Privacy <a href="">Policy here</a>.</small>
+                <small className="text-dark disclaimer-results">By clicking the button above, you are providing consent to display the results of your hearing test, provide explanation about your hearing ability and present the information that will help you choose the care option best for you. Read our Privacy <a href="">Policy</a>.</small>
             </div>
         </div>
     )
