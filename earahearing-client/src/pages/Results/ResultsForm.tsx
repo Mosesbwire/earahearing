@@ -96,7 +96,7 @@ const ResultsForm = () => {
                 }
                 setIsLoading(false)
                 resetForm()
-                navigate('/results')
+                navigate('/hearing-test-results')
             } catch (err) {
                 document.title = 'error'
                 setIsLoading(false)
