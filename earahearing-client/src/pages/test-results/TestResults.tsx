@@ -3,6 +3,8 @@ import { hearingFrequenciesData } from "../../lib/utils"
 import { Button } from "../../components/button/Button"
 import HearingCapability from "../../components/hearing-capability/HearingCapability"
 import hearingAid from "../../assets/hearing-aids.png"
+import hearingAid_2 from "../../assets/hearing_aid-bg.png"
+import manWearingAids from "../../assets/man_wearing_ha.jpeg"
 import bluetoothIcon from "../../assets/bluetooth-ic.svg"
 import batteryIcon from "../../assets/battery-ic.svg"
 import selfFittingAppIcon from "../../assets/self-fitting-app.svg"
@@ -80,6 +82,9 @@ const TestResults = () => {
                 <div className="ad-section-wrapper container">
                     <p className="text text-light">So why not keep your brain strong and your mind healthy? It’s easy to hear better.</p>
                     <p className="text text-light"><span className="text-bold text-accented">Eara Explore Li+</span> hearing aids are the answer.</p>
+                    <div className="ad-section-img-wrapper">
+                        <img src={hearingAid} alt="rechargeable eara hearing aids with their charging case"/>
+                    </div>
                 </div>
             </div>
             <div className="eara-explainer">
@@ -87,14 +92,14 @@ const TestResults = () => {
                     <p className="text text-dark cap__text">Eara Explore Li+ are the first Self-Fitting, Bluetooth hearing aids available! These small devices are crafted for clarity thanks to advanced AI technology and dome construction. They boast new features that enhance fit and sound quality. Similar to expensive $4000 hearing aids, Eara Explore Li+ also features an open-fit style, providing users with natural, crystal-clear sound quality at the touch of a button. Users can easily take a quick 3-minute hearing test, allowing Eara Explore Li+ to automatically program itself. Additionally, users can independently adjust one or both ears at any frequency. Learn more about them here!</p>
                 </div>
                 <div className="eara-explainer__image-wrapper">
-                    
+                    <img src={manWearingAids} alt="old man wearing aids playing with family" />
                 </div>
             </div>
             <div className="eara-features">
                 <h1 className="headline text-centered text-bold">Eara Explore Li+</h1>
                 <div className="eara-features-wrapper">
                     <div className="eara-features__hearing-aid">
-                        <img src={hearingAid} alt="hearing aid with is battery charging case" />
+                        <img src={hearingAid_2} alt="hearing aid with is battery charging case" />
                     </div>
                     <div className="features-list container">
                         <div className="row hearing-aid-feature">
@@ -156,7 +161,7 @@ const TestResults = () => {
             </div>
             <div className="eara-policy container">
                 <p className="text text-dark">At Eara Hearing, your hearing health is our priority. If you have any questions or concerns about your hearing test or your results, don't hesitate to reach out to us.</p>
-                <p className="text text-dark">Our dedicated team of proffesionals is here to assist you.</p>
+                <p className="text text-dark">Our dedicated team of professionals is here to assist you.</p>
                 <p className="text text-dark">Feel free to email us at <span className="underline">info@earahearing.com</span></p>
                 <p className="text text-dark">Our experienced doctors will be happy to address any inquiries you may have. Your satisfaction and comfort are important to us, and we're committed to providing you with the best possible care.</p>
             </div>

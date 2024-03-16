@@ -32,7 +32,7 @@ const Navigation = () => {
                         <div className="nav-logo">
                             <Logo logoType={isScrolled ? 'light' : 'dark'}/>
                         </div>
-                        <div className="menu-btn" onClick={toggleMenu}>
+                        <div className={`menu-btn ${isScrolled ? 'menu-btn-scrolled' : ''}`} onClick={toggleMenu}>
                             <img src={mobileMenu} alt="mobile menu icon" />
                         </div>
                     </div>

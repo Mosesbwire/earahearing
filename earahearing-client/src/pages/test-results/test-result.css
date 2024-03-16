@@ -11,13 +11,17 @@
     margin-bottom: 1em;
 }
 
+.results-page-headline {
+    padding-top: 3.5em;
+}
+
 .results-page-headline > * {
-    line-height: 1.5 !important;
+    line-height: 1.9 !important;
     
 }
 
 .cap__text {
-    line-height: 1.5 !important;
+    line-height: 1.9 !important;
 }
 
 .user-hearing {
@@ -25,16 +29,24 @@
 }
 
 .ad-section {
-    background:linear-gradient(90deg, #3C3D3F, #515254,#424344);
+    background:linear-gradient( #3C3D3F, #97999b);
     margin-top: 2em;
 }
 
 .ad-section-wrapper {
     padding-block: 1em;
 }
+.ad-section-img-wrapper {
+    width: 100%;
+}
+
+.ad-section-img-wrapper img {
+    width: 100%;
+}
 
 .ad-section-wrapper p {
     line-height: 1.5 !important;
+    margin-bottom: 1em;
 }
 
 .ad-section-wrapper > :last-child span {
@@ -47,13 +59,12 @@
 
 .eara-explainer__image-wrapper {
     width: 100%;
-    height: 40vh;
-    position: relative;
-    background-image: url('../../assets/man_wearing_ha.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
     margin-top: 1em;
+}
+
+.eara-explainer__image-wrapper img {
+    width: 100%;
 }
 
 .explainer-banner {
@@ -149,31 +160,32 @@
     padding-bottom: 2em;
 }
 
+.eara-policy p {
+    line-height: 1.9 !important;
+}
+
 @media only screen and (min-width: 760px) {
     .results-page-headline {
         padding-top: 5em;
         
+
+    }
+    .cap__text {
+        line-height: 2.5 !important;
     }
    .ad-section-wrapper {
         padding-block: 3em;
    }
+   .ad-section-img-wrapper {
+        width: 60%;
+        margin-inline: auto;
+    }
 
    .ad-section-wrapper p {
         font-size: 1.2em !important;
+        text-align: center;
    }
 
-   .eara-explainer__image-wrapper {
-        height: 60vh;
-   }
-
-   .explainer-banner {
-        width: 50%;
-        position: absolute;
-        top: 7%;
-        left: 25%;
-   }
-
-   
    .eara-features__hearing-aid {
         width: 60%;
         margin-inline: auto;
@@ -190,6 +202,11 @@
         padding-inline: 2em;
    }
 
+   .consultation-img-wrapper {
+    width: 60%;
+    margin-inline: auto;
+   }
+
    .consultation {
         column-gap: .5em;
    }
@@ -203,51 +220,33 @@
 
    .eara-policy p {
         font-size: 1.2em !important;
-
    }
 }
 
 
 
 @media only screen and (min-width: 980px) {
+    .results-page {
+        margin-bottom: 5em;
+    }
 
     .user-hearing {
         margin-top: 5em;
     }
-    .cap__text {
-        line-height: 1.9 !important;
-    }
+    
 
     .chart-wrapper {
         width: 60%;
         margin-inline: auto;
         height: 70vh;
     }
-
-    .ad-section-wrapper p {
-        text-align: center;
-    }
-    
-   .eara-explainer__image-wrapper {
-        height: 70vh;
-        z-index: 1;
-   }
-
-   .explainer-banner {
+    .ad-section-img-wrapper {
         width: 30%;
-        position: absolute;
-        top: 7%;
-        left: 35%;
+        margin-inline: auto;
     }
 
-   .explainer__img__wrapper{
-        left: 15%;
-    }
-   .explainer__img__wrapper img {
-        width: 10%;
-    }
     .eara-explainer > :first-child {
-        padding-block: 2em;
+        margin-block: 2em;
     }
 
     .eara-features-wrapper {
@@ -276,8 +275,18 @@
         width: 70%;
     }
 
+    .eara-policy {
+        background-color: var(--main-color);
+        padding-inline: 2em;
+        padding-block: 2em;
+        border-radius: 5px;
+        margin-bottom: 4em;
+    }
+
     .eara-policy p {
-        line-height: 1.5 !important;
+        line-height: 2 !important;
+        text-align: center;
+        color: var(--main-light);
 
    }
 

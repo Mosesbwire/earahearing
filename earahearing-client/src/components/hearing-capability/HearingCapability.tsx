@@ -24,14 +24,14 @@ const HearingCapability = ({right, left, isSameHearingCapability}: propType) => 
     return <div className="hearing-capability">
         <div className="hearing-capability-wrapper">
             <div className="right-ear-capability">
-                <h1 className="headline text-centered">Right Ear</h1>
-                {hearingCapability[right].gauge()}
-                {isSameHearingCapability ? null : <div>{hearingCapability[right].text()}</div>}
-            </div>
-            <div className="left-ear-capability">
                 <h1 className="headline text-centered">Left Ear</h1>
                 {hearingCapability[left].gauge()}
                 {isSameHearingCapability ? null : <div>{hearingCapability[left].text()}</div>}
+            </div>
+            <div className="left-ear-capability">
+                <h1 className="headline text-centered">Right Ear</h1>
+                {hearingCapability[right].gauge()}
+                {isSameHearingCapability ? null : <div>{hearingCapability[right].text()}</div>}
             </div>
         </div>
         {isSameHearingCapability ? <div>{hearingCapability[right].text()}</div> : null}

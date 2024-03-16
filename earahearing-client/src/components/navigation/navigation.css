@@ -4,6 +4,21 @@ nav {
     
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    transition: background-color 500ms ease;
+    z-index: 99;
+}
+
+.scrolled {
+    background-color: var(--main-color);
+}
+
+.scrolled-nav {
+    color: var(--main-light) !important;
+}
+
 li {
     list-style: none;
 }
@@ -13,13 +28,16 @@ a {
 }
 
 .nav-wrapper {
-   margin-bottom: 2em;
+   margin-bottom: 1em;
 }
 
 .nav-logo-container {
     display: flex;
     justify-content: space-between;
+    
+    padding-top: .5em;
 }
+
 
 .nav-logo {
     
@@ -41,6 +59,13 @@ a {
 .menu-btn > img {
     width: 30%;
     float: right;
+    
+}
+
+.menu-btn-scrolled > img {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    padding-inline:.5em ;
 }
 
 .nav {
@@ -95,21 +120,6 @@ a {
 }
 
 @media only screen and (min-width: 760px) {
-
-    nav {
-        position: fixed;
-        top: 0;
-        transition: background-color 500ms ease;
-        z-index: 99;
-    }
-
-    .scrolled {
-        background-color: var(--main-color);
-    }
-
-    .scrolled-nav {
-        color: var(--main-light) !important;
-    }
 
     .menu-btn {
         display: none;
