@@ -78,7 +78,7 @@ const TestResults = () => {
 
                 
             </div>
-            {rightEarCapability !== 'normal' && leftEarCapability !== 'normal' ? <>
+            {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
             <div className="ad-section">
                 <div className="ad-section-wrapper container">
                     <p className="text text-light">So why not keep your brain strong and your mind healthy? It’s easy to hear better.</p>
@@ -135,7 +135,7 @@ const TestResults = () => {
                     </a>
                 </div>
             </div>
-            </> : null}
+            </>}
             <div className="audiologist-consultation container">
                 <div className="consultations-wrapper">
                     <div className="consultation">

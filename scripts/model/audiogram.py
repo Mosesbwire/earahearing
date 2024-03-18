@@ -68,7 +68,10 @@ class Audiogram:
         self.plot.ylabel(ylabel)
         self.plot.yticks(
             range(Audiogram.MIN_RANGE, Audiogram.MAX_RANGE + 5, 5))
-        self.plot.xscale('linear')
+        self.plot.xscale('log')
+        xticks = [500, 1000, 2000, 4000, 8000]
+        xtickLables = ['{}Hz'.format(i) for i in xticks]
+        self.plot.xticks(xticks, xtickLables)
         self.plot.gca().invert_yaxis()
         self.plot.tick_params(axis='x', top=True, labeltop=True,
                               bottom=False, labelbottom=False)
