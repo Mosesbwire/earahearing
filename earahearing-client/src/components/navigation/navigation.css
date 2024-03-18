@@ -50,12 +50,6 @@ a {
 .nav-logo > :first-child {
     width: 40%;
 }
-.scroll-cta {
-    position: relative;
-    left: -5%;
-    width: 110%;
-}
-
 
 .menu-btn {
     width: 40%;
@@ -129,6 +123,10 @@ a {
 @media only screen and (min-width: 760px) {
 
     .menu-btn {
+        display: none;
+    }
+
+    .scroll-cta {
         display: none;
     }
 

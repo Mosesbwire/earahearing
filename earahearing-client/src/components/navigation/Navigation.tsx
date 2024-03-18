@@ -32,24 +32,25 @@ const Navigation = () => {
                         <div className="nav-logo">
                             <Logo logoType={isScrolled ? 'light' : 'dark'}/>
                         </div>
-                        <div className="menu-btn"  onClick={toggleMenu}>
-                            {isScrolled ? <div className="scroll-cta">
+                        {isScrolled ? <div className="scroll-cta">
                                 <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
                                     <Button className="btn-primary-rounded-scale btn-sm">Shop Now</Button>
                                 </a>
-                            </div> :<img src={mobileMenu} alt="mobile menu icon" />}
-                        </div>
+                            </div> : <div className="menu-btn"  onClick={toggleMenu}>
+                             <img src={mobileMenu} alt="mobile menu icon" />
+                        </div>}
+                        
                     </div>
                     <div className={`nav ${isMenuOpen ? 'open' : 'close'}`}>
                         <div className="menu-close-btn-wrapper" onClick={toggleMenu}>
                             <img className='menu-close-btn' src={closeBtn} alt="cross button"/>
                         </div>
-                        <div className="nav_links">
-                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">Hearing Aids</a></li>
-                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="https://earahearing.com/explore-li/">Self-fitting App</a></li>
-                            <li><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="/">Hearing Test</a></li>
+                        <div className="nav_links" onClick={toggleMenu}>
+                            <li onClick={toggleMenu}><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">Hearing Aids</a></li>
+                            <li onClick={toggleMenu}><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="https://earahearing.com/explore-li/">Self-fitting App</a></li>
+                            <li onClick={toggleMenu}><a className={`${isScrolled ? 'scrolled-nav': ''}`} href="/">Hearing Test</a></li>
                             <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
-                                <Button className="btn-primary-rounded-scale btn-sm">Shop Now</Button>
+                                <Button className="btn-primary-rounded-scale btn-sm" onClick={toggleMenu}>Shop Now</Button>
                             </a>
                         </div>
                     </div>
