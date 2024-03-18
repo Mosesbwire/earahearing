@@ -32,8 +32,12 @@ const Navigation = () => {
                         <div className="nav-logo">
                             <Logo logoType={isScrolled ? 'light' : 'dark'}/>
                         </div>
-                        <div className="menu-btn" onClick={toggleMenu}>
-                            <img src={mobileMenu} alt="mobile menu icon" />
+                        <div className="menu-btn"  onClick={toggleMenu}>
+                            {isScrolled ? <div className="scroll-cta">
+                                <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
+                                    <Button className="btn-primary-rounded-scale btn-sm">Shop Now</Button>
+                                </a>
+                            </div> :<img src={mobileMenu} alt="mobile menu icon" />}
                         </div>
                     </div>
                     <div className={`nav ${isMenuOpen ? 'open' : 'close'}`}>
