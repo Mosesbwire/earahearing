@@ -4,7 +4,7 @@ import './hearing-capability.css'
 const Normal = () => {
     return <div>
 
-        <p className="text text-dark cap-text">
+        <p className="text text-dark text-centered cap-text">
         The test indicates you may have normal hearing. This is great news! 
         Make sure to always wear hearing protection when you’re in a lot of noise, otherwise, exposing your ears to loud sounds overtime can cause hearing loss.
         If you’re surprised to see that the results are normal, there are explanations for how this can happen. 

@@ -2,7 +2,7 @@
 import './hearing-capability.css'
 const Severe = () => {
     return <div>
-        <p className="text text-dark cap-text">
+        <p className="text text-dark text-centered cap-text">
         A severe hearing loss indicates you have difficulty in many different listening situations like one-on-one conversations, group settings, television or phone calls.  
         Patients with severe hearing loss will miss conversation at a normal volume, the telephone ringing at a normal volume or the doorbell should someone knock on the front door. 
         Severe hearing loss can happen for many different reasons. The most common reasons for severe hearing loss are: noise exposures and family history of hearing loss.

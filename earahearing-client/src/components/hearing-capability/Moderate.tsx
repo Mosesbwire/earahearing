@@ -2,7 +2,7 @@
 import './hearing-capability.css'
 const Moderate = () => {
     return <div>
-        <p className='text text-dark cap-text'>
+        <p className='text text-dark text-centered cap-text'>
         A moderate hearing loss indicates you have difficulty in many different listening situations like one-on-one conversations, group settings, television or phone calls. 
         Patients with moderate hearing loss will say that they can hear people talking, but they do not understand what they are saying.
         For example: you may hear the word “cat” instead of the word “cap”. This happens because the clarity of speech is missing in a moderate hearing loss. 
