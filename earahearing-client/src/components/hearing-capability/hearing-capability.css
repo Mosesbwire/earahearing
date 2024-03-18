@@ -26,12 +26,17 @@
 
 @media only screen and (min-width: 980px) {
     .hearing-capability-wrapper {
-        display: flex;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         column-gap: 4em;
+        justify-content: space-around;    
     }
+
     .gauge-chart-img > img{
-        
         width: 350px;
+    }
+
+    .right-ear-capability > :nth-child(2) img{
+        padding-bottom: 1em;
     }
 }
