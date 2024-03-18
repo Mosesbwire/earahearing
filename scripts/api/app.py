@@ -12,7 +12,9 @@ from model.process import process_uploads
 app = Flask(__name__)
 
 app.url_map.strict_slashes = False
-CORS(app, origins=["https://hearingtest.earahearing.com"])
+CORS(app, origins=["https://hearingtest.earahearing.com",
+     "http://localhost:5173"])
+
 
 thread_pool = ThreadPoolExecutor(max_workers=5)
 
