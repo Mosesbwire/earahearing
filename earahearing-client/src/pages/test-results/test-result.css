@@ -59,8 +59,11 @@
 
 .eara-explainer__image-wrapper {
     width: 100%;
-    
     margin-top: 1em;
+    background:linear-gradient(#3C3D3F, #97999b);
+
+    
+
 }
 
 .eara-explainer__image-wrapper img {
@@ -75,18 +78,6 @@
     width: 80%;
     margin-inline: auto;
 }
-
-.explainer__img__wrapper {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 5%;
-}
-
-.explainer__img__wrapper img {
-    width: 20%;
-}
-
 
 
 .eara-features {
@@ -256,7 +247,7 @@
     .eara-explainer__image-wrapper img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     .eara-features-wrapper {
