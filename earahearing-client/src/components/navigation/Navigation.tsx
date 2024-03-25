@@ -11,7 +11,6 @@ const Navigation = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const nav = useRef<HTMLElement>(null)
     
-
     const toggleMenu = () => {
         toggleOpenMenu(!isMenuOpen)
     }

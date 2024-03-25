@@ -1,0 +1,39 @@
+
+.nav-min {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: .5em;
+    padding-top: .75em;
+    margin-bottom: 1em;
+    
+}
+
+.nav-logo-min {
+    
+    width: 40%;
+}
+
+.nav-logo-min > :first-child {
+    width: 40%;
+}
+
+@media only screen and (min-width: 760px) {
+    .nav-min {
+        padding-inline: 2em;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .nav-min {
+        padding-inline: 3em;
+    }
+    .nav-logo-min {
+        
+        width: 15%;
+    }
+    
+    .nav-logo-min > :first-child {
+        width: 40%;
+    }
+
+}
