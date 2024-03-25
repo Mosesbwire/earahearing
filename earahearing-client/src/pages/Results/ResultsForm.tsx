@@ -9,6 +9,7 @@ import { getTestQuizData, hearingFrequenciesData } from "../../lib/utils";
 import { createUser } from "../../services/apiService";
 import Loading from "../../components/loading/Loading";
 import ServerError from "../../components/error/ServerError";
+import PrivacyPolicy from "../../components/privacy-policy/PrivacyPolicy";
 
 import './results.css'
 export const TOTAL_RESULT_PAGES = 1
@@ -49,6 +50,11 @@ const ResultsForm = () => {
 
     const [values, handleChange, resetForm] = useForm<Inputs>(initialValues)
     const [formErrors, setFormErrors] = useState(validationErrors)
+    const [openPrivacyPolicy, setOpenPrivacyPolicy] = useState(false)
+
+    const privacyPolicyClickHandler = () => {
+        setOpenPrivacyPolicy(!openPrivacyPolicy)
+    }
 
     const onInputChange = (e: React.FormEvent<HTMLInputElement>) => {
         handleChange(e)
@@ -128,6 +134,9 @@ const ResultsForm = () => {
                 <p className="close-btn" onClick={() => setClientError(false)}>x</p>
                 <p className="text text-dark">Hearing test data or biometric quiz data is missing or answers are invalid. <a href="/">Click here to start test.</a></p>
             </div>: null}
+            { openPrivacyPolicy ? <div className="privacy-policy-results-form-container">
+                <PrivacyPolicy clickHandler={privacyPolicyClickHandler}/>
+            </div>: null}
             <div className="results-form-text text-centered">
                 <h1 className="headline text-bold banner-text">Congratulations !</h1>
                 <p className="text text-dark ">You have completed the hearing test.</p>
@@ -160,7 +169,7 @@ const ResultsForm = () => {
                         <Button className="btn-primary-rounded btn-md" type={'submit'}>Get Results</Button>
                     </div>
                 </Form>
-                <small className="text-dark disclaimer-results">By clicking the button above, you are providing consent to display the results of your hearing test, provide explanation about your hearing ability and present the information that will help you choose the care option best for you. Read our Privacy <a href="">Policy</a>.</small>
+                <small className="text-dark disclaimer-results">By clicking the button above, you are providing consent to display the results of your hearing test, provide explanation about your hearing ability and present the information that will help you choose the care option best for you. Read our Privacy <span className="underline privacy-link" onClick={privacyPolicyClickHandler}>Policy</span>.</small>
             </div>
         </div>
     )
