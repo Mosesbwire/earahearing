@@ -78,6 +78,16 @@ class Pdf:
                            "enable-local-file-access": ""})
         return fullname
 
+    async def create_privacy_policy(self):
+        template_dir = os.path.abspath('./templates')
+        try:
+            data = pdfkit.from_file(
+                f'{template_dir}/privacy_policy_template.html', '/')
+
+            return 'privacy_policy.pdf'
+        except Exception as e:
+            print(e)
+
     def remove_files(self, files: list[str]):
 
         for file in files:
