@@ -16,9 +16,7 @@
 	--font-family-sub-headlines: 'Lora', serif; 
 }
 
-body {
-	/* overflow: hidden; */
-}
+
 
 .headline {
 	font-family: var(--font-family-headlines);
@@ -71,6 +69,10 @@ body {
 
 .underline {
 	text-decoration: underline;
+}
+
+.privacy-link {
+	cursor: pointer;
 }
 
 
