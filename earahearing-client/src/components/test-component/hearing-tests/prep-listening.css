@@ -139,6 +139,7 @@
         height: 55px;
     }
     .prep-listening-cta > :last-child {
+        padding: 0em;
         width: 15%;
         height: 50px;
     }
