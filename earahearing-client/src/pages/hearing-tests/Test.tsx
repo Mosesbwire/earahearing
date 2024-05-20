@@ -125,7 +125,7 @@ const Test = () => {
                     <p className="text text-dark">Then click Next.</p>
                 </div>
                 <div className="instruction-desktop">
-                    <p className="text text-dark">Select the headphones with the <span className="emphasis text-bold">lowest number</span> that you can <span className="emphasis text-bold">just barely</span> hear the sound in your <span className="empahasis text-bold">{ear}</span> ear.</p>
+                    <p className="text text-dark">Select the headphones with the <span className="emphasis text-bold">lowest number</span> that you can <span className="emphasis text-bold">just barely</span> hear the sound.</p>
                     <p className="text text-dark">If you do not hear any sound, select the highest number headphone.</p>
                 </div>
             </div>

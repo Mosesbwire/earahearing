@@ -12,7 +12,7 @@ type svgstyleType = Record<string, {fontsize: number, x: number, y:number}>
 const svgTextStyle: svgstyleType = {
     tspan_1: {
         fontsize: 45,
-        x: 70,
+        x: 68.5,
         y: 85
     },
     tspan_2: {
