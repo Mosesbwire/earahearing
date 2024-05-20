@@ -9,7 +9,7 @@ import { clearTestFrequencyResults } from "../../lib/utils"
 import './start-page.css'
 const Start = () => {
     const [openPrivacyPolicy, setOpenPrivacyPolicy] = useState(false)
-    const [openTermsConditions, setOpenTermsConditions] = useState(true)
+    const [openTermsConditions, setOpenTermsConditions] = useState(false)
     const nextPage = usePageContextNext()
     clearTestFrequencyResults()
 

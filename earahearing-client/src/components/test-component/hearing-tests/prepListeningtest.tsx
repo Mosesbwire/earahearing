@@ -47,10 +47,10 @@ export const PrepareListeningTest = ({ear}: listeningProps) => {
                         <div className="prep-instructions">
                             <h1 className="headline text-light">Prepare for the test</h1>
                             <h2 className="subheadline text-light">Let's make sure everything is working <span className="text-bold">correctly</span>.</h2>
-                            <h2 className="subheadline text-light">Click <span className="text-btn-display">Play Sound</span> to test the {ear} ear</h2>
+                            <h2 className="subheadline text-light">Click <span className="text-btn-display">Play Sound</span> to test the {ear} ear.</h2>
                             {ear === 'Left' ?<div className="caution">
                                 <p className="text text-light">Don't hear the sound? </p>
-                                <p className="text text-light">Your media volume may be low. </p>
+                                <p className="text text-light">Your volume may be low. </p>
                                 <p className="text text-light">Play the sound and then try increasing the volume on your device.</p>
                                 </div> : ''}
                         </div>
