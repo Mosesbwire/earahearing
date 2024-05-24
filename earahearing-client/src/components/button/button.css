@@ -27,6 +27,13 @@
     width: fit-content;
     transition: all 500ms;
 }
+.btn-secondary-rounded-ns {
+    color: var(--main-light);
+    background-color: var(--main-color);
+    border-radius: 4.375em;
+    width: fit-content;
+    transition:  all 500ms;
+}
 
 .btn-primary-rounded-disabled {
     background-color: var(--light-background-400);
@@ -124,6 +131,9 @@
     .btn-secondary-rounded:hover {
         color: var(--accent-color);
         scale: 1.1;
+    }
+    .btn-secondary-rounded-ns:hover {
+        color: var(--accent-color);
     }
     .btn-primary-outline:hover {
         background-color: var(--accent-color);

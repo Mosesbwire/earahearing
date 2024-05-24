@@ -5,11 +5,25 @@
 }
 .cap-text {
     line-height: 1.9 !important;
+    border: 2px solid var(--main-color);
+    width: 85%;
+    margin-inline: auto;
+    margin-bottom: 1em;
+    font-size: 1em !important;
+    line-height: 1 !important;
 }
 
 .hearing-capability {
     padding-block: 2em;
 }
+
+.right-ear-capability, .left-ear-capability {
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    padding-block: 1em;
+
+}
+
 @media only screen and (min-width: 760px) {
     .gauge-chart-img {
         margin-block: 1em;
