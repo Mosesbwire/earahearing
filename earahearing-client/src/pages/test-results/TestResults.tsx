@@ -5,14 +5,17 @@ import HearingCapability from "../../components/hearing-capability/HearingCapabi
 import hearingAid from "../../assets/hearing-aids.png"
 import hearingAid_2 from "../../assets/hearing_aid-bg.png"
 import manWearingAids from "../../assets/man_wearing_ha.jpeg"
-import bluetoothIcon from "../../assets/bluetooth-ic.svg"
-import batteryIcon from "../../assets/battery-ic.svg"
-import selfFittingAppIcon from "../../assets/self-fitting-app.svg"
-import audiologistIcon from "../../assets/audiologist-ic.svg" 
+import bluetoothIcon from "../../assets/bluetooth.png"
+import batteryIcon from "../../assets/battery.png"
+import selfFittingAppIcon from "../../assets/application.png"
+import audiologistIcon from "../../assets/audiologist.png"
+import customerAgent from "../../assets/customer agent.png"
+import hearingAid_ic from "../../assets/hearing aid.png" 
+import ear from "../../assets/ear.png"
 import docImg from "../../assets/audiologist-doc.png"
 import phoneIcon from "../../assets/phone.svg"
 import questionMark from "../../assets/question-mark-dark.svg"
-import Navigation from "../../components/navigation/Navigation"
+import NavigationMin from "../../components/navigation/NavigationMin"
 import './test-result.css'
 
 const TestResults = () => {
@@ -55,7 +58,7 @@ const TestResults = () => {
     const rightEarCapability = hearingCapability(calculateHearingScore(right))
     const leftEarCapability = hearingCapability(calculateHearingScore(left))
     return <div className="results-page">
-            <Navigation/>
+            <NavigationMin/>
             <div className="container results-page-headline">
                 <h1 className="headline text-centered">Results</h1>
                 <p className="text text-dark text-centered">Please be aware that this test is based on the user's response. <span className="underline">This is not a diagnostic test.</span></p>
@@ -70,68 +73,96 @@ const TestResults = () => {
 
                     <HearingCapability right={rightEarCapability} left={leftEarCapability} isSameHearingCapability={rightEarCapability === leftEarCapability}/>
                 </div>
-                {rightEarCapability !== 'normal' || leftEarCapability !== 'normal' ? <div className="capability-wrapper">
-                    <p className="text text-dark cap__text">
-                    <span className="emphasized-text">More</span> recently, research is demonstrating the need to urgently intervene when hearing loss is indicated. Research has shown a strong relationship between hearing loss that is not treated and cognitive decline. This means that if you do not treat your hearing loss with hearing aids, then it can lead to memory problems, problems with balance, focus, comprehension, attention, concentration and much more. In addition, newer research has recently published that hearing aids have been proven to slow the effects of cognitive decline immediately! 
-                    </p>
-                    </div> : null}
 
                 
+            </div>
+            <div className="container">
+                <div className="capability-wrapper">
+                        <p className="text text-dark cap__text">
+                        Many people ignore hearing loss beacause they don't want to use hearing aids or spend a lot of money.
+                        </p>
+                        <p className="text text-dark cap__text">
+                        But it's important to take care of hearing loss right away.
+                        </p>
+                </div>
+                <div>
+                    <p className="text text-dark text-bold text-centered subheadline">Learn more about how mild hearing loss happens</p>
+                </div>
             </div>
             {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
             <div className="ad-section">
                 <div className="ad-section-wrapper container">
-                    <p className="text text-light">So why not keep your brain strong and your mind healthy? It’s easy to hear better.</p>
-                    <p className="text text-light"><span className="text-bold text-accented">Eara Explore Li+</span> hearing aids are the answer.</p>
-                    <div className="ad-section-img-wrapper">
-                        <img src={hearingAid} alt="rechargeable eara hearing aids with their charging case"/>
-                    </div>
+                    <h1 className="text-light text-centered headline">Questions about your results?</h1>
+                    <p className="text text-light text-centered">Schedule a complimentary appointment with our doctor</p>
+                    <Button className="btn-secondary-rounded-ns btn-sm">Schedule your appointment here</Button>
                 </div>
             </div>
             <div className="eara-explainer">
-                <div className="container">
-                    <p className="text text-dark cap__text">Eara Explore Li+ are the first Self-Fitting, Bluetooth hearing aids available! These small devices are crafted for clarity thanks to advanced AI technology and dome construction. They boast new features that enhance fit and sound quality. Similar to expensive $4000 hearing aids, Eara Explore Li+ also features an open-fit style, providing users with natural, crystal-clear sound quality at the touch of a button. Users can easily take a quick 3-minute hearing test, allowing Eara Explore Li+ to automatically program itself. Additionally, users can independently adjust one or both ears at any frequency. Learn more about them here!</p>
+                <div className="container eara-explainer-headline">
+                    <h1 className="headline text-bold text-accented text-centered">We understand how important hearing clearly is for enjoying life's special moments.</h1>
                 </div>
                 <div className="eara-explainer__image-wrapper">
                     <img src={manWearingAids} alt="old man wearing aids playing with family" />
                 </div>
             </div>
             <div className="eara-features">
-                <h1 className="headline text-centered text-bold">Eara Explore Li+</h1>
+                <div className="features-header">
+                    <h1 className="headline text-centered text-bold">Eara Explore Li+</h1>
+                    <p className="text text-dark text-centered ">Keep your brain healthy</p>
+                    <p className="text text-accented text-centered text-bold">Hear the difference</p>
+                </div>
                 <div className="eara-features-wrapper">
                     <div className="eara-features__hearing-aid">
-                        <img src={hearingAid_2} alt="hearing aid with is battery charging case" />
+                        <img src={hearingAid} alt="hearing aid with battery charging case" />
                     </div>
                     <div className="features-list container">
-                        <div className="row hearing-aid-feature">
+                        <div className="hearing-aid-feature">
                             <div className="image_ic_wrapper">
                                 <img src={batteryIcon} alt="" />
                             </div>
-                            <p className="text text-dark">Rechargable batteries</p>
+                            <p className="text text-dark text-bold text-centered card-title">Portable rechargeability</p>
+                            <p className="text text-dark text-centered">20 hour battery life with compact portable charger.</p>
                         </div>
-                        <div className="row hearing-aid-feature">
+                        <div className="hearing-aid-feature">
                             <div className="image_ic_wrapper">
                                 <img src={bluetoothIcon} alt="" />
                             </div>
-                            <p className="text text-dark">Bluetooth compatibility 5.0</p>
+                            <p className="text text-dark text-bold text-centered card-title">5.0 Bluetooth compatible</p>
+                            <p className="text text-dark text-centered">Bluetooth connect any device, including iOS, android, Bluetooth tv and tablet</p>
                         </div>
-                        <div className="row hearing-aid-feature">
+                        <div className="hearing-aid-feature">
                             <div className="image_ic_wrapper">
                                 <img src={selfFittingAppIcon} alt="" />
                             </div>
-                            <p className="text text-dark">Self-fitting app</p>
+                            <p className="text text-dark text-bold text-centered card-title">Easy to use</p>
+                            <p className="text text-dark text-centered">Simply download, connect and take our in-APP hearing test. Explore Li+ hearing aids will instantly adjust the sound around you.</p>
                         </div>
-                        <div className="row hearing-aid-feature">
+                        <div className="hearing-aid-feature">
                             <div className="image_ic_wrapper">
-                                <img src={audiologistIcon} alt="" />
+                                <img src={customerAgent} alt="" />
                             </div>
-                            <p className="text text-dark">Step-by-step instructions from an audiologist</p>
+                            <p className="text text-dark text-bold text-centered card-title">24/7 customer support</p>
+                            <p className="text text-dark text-centered">We support you anytime you need us- for a lifetime.</p>
+                        </div>
+                        <div className="hearing-aid-feature">
+                            <div className="image_ic_wrapper">
+                                <img src={ear} alt="" />
+                            </div>
+                            <p className="text text-dark text-bold text-centered card-title">Crystal clear sound</p>
+                            <p className="text text-dark text-centered">Hear every word and sound clearly - even in noisy places.</p>
+                        </div>
+                        <div className="hearing-aid-feature">
+                            <div className="image_ic_wrapper">
+                                <img src={hearingAid_ic} alt="" />
+                            </div>
+                            <p className="text text-dark text-bold text-centered card-title">Comfortable fit</p>
+                            <p className="text text-dark text-centered">Designed to be worn all day, easily and effortless wearing.</p>
                         </div>
                 </div>
                 </div>
                 <div className="eara-features_cta">
                     <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
-                        <Button className="btn-secondary-rounded btn-md">Shop Now</Button>
+                        <Button className="btn-primary-rounded btn-md">Shop Now</Button>
                     </a>
                 </div>
             </div>
