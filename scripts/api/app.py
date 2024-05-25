@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 app.url_map.strict_slashes = False
 CORS(app, origins=["https://hearingtest.earahearing.com",
-     "http://localhost:5173"])
+     "http://localhost:5173", "https://earahearing.netlify.app/"])
 
 
 thread_pool = ThreadPoolExecutor(max_workers=5)
