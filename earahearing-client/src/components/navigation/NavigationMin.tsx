@@ -1,5 +1,5 @@
 import { Logo } from "../logo/Logo"
-import { Button } from "../button/Button"
+import backArrow from "../../assets/back-arrow.svg"
 import './nav.css'
 
 const Nav = () => {
@@ -9,8 +9,11 @@ const Nav = () => {
                 <Logo logoType="dark"/>
             </div>
             <div>
-            <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
-                <Button className="btn-primary-rounded-scale btn-sm">Shop Now</Button>
+            <a href="https://earahearing.com/">
+                <div className="back-indicator">
+                    <img src={backArrow} alt="back arrow" />
+                    <p className="text text-dark">BACK</p>
+                </div>
             </a>
             </div>
         </div>

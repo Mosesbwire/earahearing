@@ -2,24 +2,38 @@
 .nav-min {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-inline: .5em;
-    padding-top: .75em;
+    padding-block: .75em;
     margin-bottom: 1em;
-    
+   
 }
 
 .nav-logo-min {
     
-    width: 40%;
+    width: 50%;
 }
 
 .nav-logo-min > :first-child {
     width: 40%;
 }
 
+a {
+    text-decoration: none;
+}
+.back-indicator {
+    display: flex;
+    align-items: center;
+}
+.back-indicator > img {
+    width: 15px;
+    margin-right: .35em;
+}
+
 @media only screen and (min-width: 760px) {
     .nav-min {
         padding-inline: 2em;
+        padding-block: 1.5em;
     }
 }
 
@@ -31,9 +45,4 @@
         
         width: 15%;
     }
-    
-    .nav-logo-min > :first-child {
-        width: 40%;
-    }
-
 }
