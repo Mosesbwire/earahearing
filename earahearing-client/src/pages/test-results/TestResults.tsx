@@ -3,18 +3,15 @@ import { hearingFrequenciesData } from "../../lib/utils"
 import { Button } from "../../components/button/Button"
 import HearingCapability from "../../components/hearing-capability/HearingCapability"
 import hearingAid from "../../assets/hearing-aids.png"
-import hearingAid_2 from "../../assets/hearing_aid-bg.png"
 import manWearingAids from "../../assets/man_wearing_ha.jpeg"
 import bluetoothIcon from "../../assets/bluetooth.png"
 import batteryIcon from "../../assets/battery.png"
 import selfFittingAppIcon from "../../assets/application.png"
-import audiologistIcon from "../../assets/audiologist.png"
 import customerAgent from "../../assets/customer agent.png"
 import hearingAid_ic from "../../assets/hearing aid.png" 
 import ear from "../../assets/ear.png"
-import docImg from "../../assets/audiologist-doc.png"
-import phoneIcon from "../../assets/phone.svg"
-import questionMark from "../../assets/question-mark-dark.svg"
+import phoneIc from "../../assets/phone-ic.png"
+import email from "../../assets/Email.png"
 import NavigationMin from "../../components/navigation/NavigationMin"
 import './test-result.css'
 
@@ -162,41 +159,36 @@ const TestResults = () => {
                 </div>
                 <div className="eara-features_cta">
                     <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
-                        <Button className="btn-primary-rounded btn-md">Shop Now</Button>
+                        <Button className="btn-primary-rounded btn-md">SHOP NOW</Button>
                     </a>
                 </div>
             </div>
             </>}
-            <div className="audiologist-consultation container">
-                <div className="consultations-wrapper">
-                    <div className="consultation">
-                        <div className="consultation-icon-wrapper">
-                            <img src={questionMark} alt="" />
-                        </div>
-                        <p className="text text-dark">Questions about your results?</p>
+            <div className="banner-ad-section">
+                <div className="container banner-ad-wrapper">
+                    <div className="banner-ad">
+                        <p className="text"><span className="banner-dt">*Limited discount:</span>use code <span className="text-accented text-bold">HEARBETTER</span> at checkout to get <span className="text-accented text-bold">15%</span> off your first purchase</p>
                     </div>
-                    <div className="consultation">
-                        <div className="consultation-icon-wrapper">
-                            <img src={questionMark} alt="" />
-                        </div>
-                        <p className="text text-dark">Want to schedule a complimentary appointment with the doctor?</p>
-                    </div>
-                    <div className="consultation">
-                        <div className="consultation-icon-wrapper">
-                            <img src={phoneIcon} alt="" />
-                        </div>
-                        <p className="text text-dark">Call now for your <span className="underline">free consultation</span> <br /> (800) 933-0885</p>
+                    <p className="text-light text-bold text-centered banner-ad-copy">Hear the difference today! Don't let hearing loss hold you back.</p>
+                    <p className="text-light text-bold text-centered banner-ad-copy">Start enjoying clearer conversations and better sound quality now.</p>
+                    <div className="banner-ad-cta">
+                        <Button className="btn-primary-rounded-scale btn-md">SHOP NOW</Button>
                     </div>
                 </div>
-                <div className="consultation-img-wrapper">
-                    <img src={docImg} alt="doctor holding eara hearing aids" />
+                <div className="contact-info">
+                    <div className="contact-info-wrapper">
+                        <p className="text text-light text-centered">Need help choosing? Contact our friendly support team.</p>
+                        <div className="row contact-info-row">
+                            <img src={phoneIc} alt="phone icon" />
+                            <p className="text text-light">(800) 933-0885</p>
+                        </div>
+                        <div className="row contact-info-row">
+                            <img src={email} alt="email icon" />
+                            <p className="text text-light">info@earahearing.com</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="eara-policy container">
-                <p className="text text-dark">At Eara Hearing, your hearing health is our priority. If you have any questions or concerns about your hearing test or your results, don't hesitate to reach out to us.</p>
-                <p className="text text-dark">Our dedicated team of professionals is here to assist you.</p>
-                <p className="text text-dark">Feel free to email us at <span className="underline">info@earahearing.com</span></p>
-                <p className="text text-dark">Our experienced doctors will be happy to address any inquiries you may have. Your satisfaction and comfort are important to us, and we're committed to providing you with the best possible care.</p>
+
             </div>
         </div>
 }

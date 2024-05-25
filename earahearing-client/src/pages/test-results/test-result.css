@@ -111,50 +111,67 @@
     margin-top: 2em;
 }
 
-.audiologist-consultation {
-
-    margin-top: 2em !important;
-    margin-bottom: 2em !important;
-    border-radius: 20px;
-    background-color: var(--light-background-200);
+.banner-ad-section {
+    background-color: var(--main-color);
+    margin-top: 3em;
     padding-block: 2em;
-    padding-inline-start: .65em;
+
 }
 
+.banner-ad-wrapper {
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    padding-block: 2em;
 
-.consultation {
+}
+
+.banner-ad {
+    background-color: var(--main-light);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding-inline: 1em;
+    width: 80%;
+    margin-inline: auto;
+    margin-bottom: 2em;
+}
+
+.banner-dt {
+    display: none;
+}
+.banner-ad-copy {
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.banner-ad-cta {
+    margin-top: 2em;
     display: grid;
-    grid-template-columns: 12% 88%;
+    justify-content: center;
+}
+
+.contact-info {
+    padding-top: 5em;
+}
+
+.contact-info-wrapper  {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.contact-info-wrapper > :first-child {
+    margin-bottom: 1.5em;
+}
+
+.contact-info-row {
     align-items: center;
-    column-gap: 1em;
     margin-bottom: 1em;
 }
-
-
-
-.consultation-icon-wrapper {
-
-    width: 100%;
-}
-.consultation-icon-wrapper img {
-    width: 100%;
+.contact-info-row > img {
+    min-width: 50px;
+    max-width: 50px;
 }
 
-
-.consultation-img-wrapper {
-    width: 100%;
-} 
-.consultation-img-wrapper img {
-    width: 100%;
-}
-
-.eara-policy {
-    padding-bottom: 2em;
-}
-
-.eara-policy p {
-    line-height: 1.9 !important;
-}
 
 @media only screen and (min-width: 760px) {
     .results-page-headline {
@@ -190,29 +207,6 @@
         font-size: 1.2em !important;
    }
 
-   .audiologist-consultation {
-        padding-inline: 2em;
-   }
-
-   .consultation-img-wrapper {
-    width: 60%;
-    margin-inline: auto;
-   }
-
-   .consultation {
-        column-gap: .5em;
-   }
-
-   .consultation-icon-wrapper {
-        width: 50%;
-   }
-   .consultation p {
-        font-size: 1.2em !important;
-   }
-
-   .eara-policy p {
-        font-size: 1.2em !important;
-   }
 }
 
 
@@ -326,44 +320,34 @@
         width: 100%;
         margin-bottom: 0;
     }
-    
-    .audiologist-consultation {
-        margin-top: 4em !important;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center
+
+    .banner-ad-wrapper {
+        padding-block: 2.5em;
     }
 
-    .consultation {
+    .banner-ad {
+        padding-block: 1em;
+    }
+
+    .banner-ad > p {
+        text-align: center;
+    }
+
+    .banner-dt {
+        display: inline-block;
+    }
+
+    .banner-ad-copy {
+        font-size: 1.7em;
+    }
+
+    .contact-info-wrapper {
+        display: grid;
+        justify-content: center;
+    }
+
+    .contact-info-row {
         margin-bottom: 2em;
     }
-    .consultation p {
-        font-size: 1.3em !important;
-    }
-
-    .consultation-img-wrapper {
-        width: 70%;
-    }
-
-    .eara-policy {
-        background-color: var(--main-color);
-        padding-inline: 2em;
-        padding-block: 2em;
-        border-radius: 5px;
-        margin-bottom: 4em;
-    }
-
-    .eara-policy p {
-        line-height: 2 !important;
-        text-align: center;
-        color: var(--main-light);
-        max-width: 80%;
-        margin-inline: auto;
-        margin-bottom: .75em;
-
-   }
-
-  
-
-
+    
 }
