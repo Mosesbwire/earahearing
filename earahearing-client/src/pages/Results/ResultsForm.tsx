@@ -86,7 +86,7 @@ const ResultsForm = () => {
             try {
 
                 const resp = await createUser(data)
-
+                
                 if (resp.status === 400) {
                     
                     setIsLoading(false)

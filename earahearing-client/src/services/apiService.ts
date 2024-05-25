@@ -32,13 +32,14 @@ export async function createUser(data: Record<string, unknown>) {
         const response = await sendRequest(BASE_URL, options)
         if (response.status !== 201) {
             const err = await response.json()
+            console.log(err)
             return {
                 status: response.status,
                 data: null,
                 error: err
             }
         }
-
+       
         return {
             status: response.status,
             data: await response.json(),
