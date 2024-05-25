@@ -12,7 +12,7 @@
 }
 
 .results-page-headline {
-    padding-top: 3.5em;
+    padding-top: .75em;
 }
 
 .results-page-headline > * {
@@ -35,6 +35,13 @@
     margin-bottom: 3em;
 }
 
+.learn-more {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+}
 .ad-section {
     background-color: var(--accent-color);
     margin-top: 3em;
@@ -175,7 +182,7 @@
 
 @media only screen and (min-width: 760px) {
     .results-page-headline {
-        padding-top: 5em;
+        padding-top: 1.5em;
         
 
     }
@@ -219,8 +226,17 @@
     .user-hearing {
         margin-top: 5em;
     }
-    
-
+    .same_cap_wrapper{
+        border: 2px solid var(--accent-color);
+        border-radius: 10px;
+        width: 70%;
+        margin-inline: auto;
+        margin-bottom: 3em;
+    }
+    .capability-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     .chart-wrapper {
         width: 60%;
         margin-inline: auto;

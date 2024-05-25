@@ -65,25 +65,35 @@ const TestResults = () => {
             <div className="chart-wrapper">
                 <StackedAreaChart right={right} left={left}/>
             </div>
-            <div className="container ">
+            <div className="">
                 <div className="user-hearing">
-
-                    <HearingCapability right={rightEarCapability} left={leftEarCapability} isSameHearingCapability={rightEarCapability === leftEarCapability}/>
-                </div>
-
-                
+                    {rightEarCapability === leftEarCapability ? <>
+                        <div className="same_cap_wrapper">
+                            <HearingCapability capability={rightEarCapability}/>
+                        </div>
+                    </> : <div className="capability-row">
+                                <div className="left">
+                                    <p className="text-dark headline text-centered">Left Ear</p>
+                                    <HearingCapability capability={leftEarCapability}/>
+                                </div>
+                            <div className="right">
+                                <p className="text-dark headline text-centered">Right Ear</p>
+                                <HearingCapability capability={rightEarCapability}/>
+                            </div>
+                        </div>}
+                </div>                
             </div>
             <div className="container">
                 <div className="capability-wrapper">
                         <p className="text text-dark cap__text">
-                        Many people ignore hearing loss beacause they don't want to use hearing aids or spend a lot of money.
+                            Many people ignore hearing loss beacause they don't want to use hearing aids or spend a lot of money.
                         </p>
                         <p className="text text-dark cap__text">
-                        But it's important to take care of hearing loss right away.
+                            But it's important to take care of hearing loss right away.
                         </p>
                 </div>
                 <div>
-                    <p className="text text-dark text-bold text-centered subheadline">Learn more about how mild hearing loss happens</p>
+                    <p className="text text-dark text-bold text-centered subheadline learn-more">Learn more about how mild hearing loss happens</p>
                 </div>
             </div>
             {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
