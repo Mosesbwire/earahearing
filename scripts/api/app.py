@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 app.url_map.strict_slashes = False
 CORS(app, origins=["https://hearingtest.earahearing.com",
-     "http://localhost:5173", "https://earahearing.netlify.app/"])
+     "http://localhost:5173", "https://earahearing.netlify.app"])
 
 
 thread_pool = ThreadPoolExecutor(max_workers=5)
@@ -30,11 +30,11 @@ def create_user_record():
     # return process_request(request)
 
 
-@app.after_request
-def after_request(response):
-    data = response.get_json()
-    thread_pool.submit(process_uploads, data)
-    return response
+# @app.after_request
+# def after_request(response):
+#     data = response.get_json()
+#     thread_pool.submit(process_uploads, data)
+#     return response
 
 
 if __name__ == "__main__":
