@@ -2,7 +2,7 @@
 import './hearing-capability.css'
 const Moderate = () => {
     return <div>
-         <p className="text-dark text-centered cap-text">
+         <p className="text text-dark text-centered cap-text">
          Trouble hearing in some situations, especially in noisy places like crowded areas
          </p>
          <p className="text text-dark text-centered cap-text">
