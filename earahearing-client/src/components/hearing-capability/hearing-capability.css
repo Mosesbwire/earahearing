@@ -5,16 +5,27 @@
 }
 .cap-text {
     line-height: 1.2 !important;
-    border: 1px solid var(--main-color);
-    border-radius: 10px;
     padding-block: 1em;
     padding-inline: .5em;
     width: 85%;
     margin-inline: auto;
     margin-bottom: 1em;
     font-size: 1em !important;
-    
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: outside;
+
 }
+/* .cap-text::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+    background-color: var(--accent-color);
+    vertical-align: middle;
+} */
 
 .hearing-capability {
     padding-block: 2em;

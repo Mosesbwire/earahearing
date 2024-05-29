@@ -2,21 +2,17 @@
 import './hearing-capability.css'
 const Severe = () => {
     return <div>
-         <p className="text text-dark text-centered cap-text">
-         Trouble hearing in some situations, especially in noisy places like crowded areas
+         <p className="text text-dark cap-text">
+         Trouble hearing conversations in any environment
          </p>
-         <p className="text text-dark text-centered cap-text">
-           TV volume tends to be turned-up
+         <p className="text text-dark cap-text">
+           TV volume will be very loud and you will have to have closed captions (CC) on to understand the TV
          </p>
-         <p className="text text-dark text-centered cap-text">
+         <p className="text text-dark cap-text">
             Using the speaker phone to hear better on the phone
          </p>
-         <p className="text text-dark text-centered cap-text">
-            Can hear people talking  but don't understand some words that are being said 
-         </p>
-         <p className="text text-dark text-centered cap-text">
-            "I can hear people talking, but I don't always understand what they're saying-- it's not clear".
-            For example, you might hear the word "cat" instead of "cap". This happens because the speech isn't clear.
+         <p className="text text-dark cap-text">
+            Communication will be very challenging, unless the conversation is held in a quiet place with only one speaker at a time
          </p>
     </div>
 }

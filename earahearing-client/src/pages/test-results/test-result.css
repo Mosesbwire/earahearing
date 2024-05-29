@@ -28,11 +28,12 @@
     margin-top: 2em;
 }
 .capability-wrapper {
-    border: 2px solid var(--main-color);
-    border-radius: 10px;
     text-align: center;
-    padding-block: 1.5em;
-    margin-bottom: 3em;
+    padding-block: .5em;
+    margin-bottom: 1em;
+}
+.capability-wrapper > p {
+    font-size: 1.5em;
 }
 
 .learn-more {
@@ -41,11 +42,12 @@
     text-decoration-skip-ink: none;
     text-decoration-thickness: 2px;
     cursor: pointer;
+    font-size: 1.25em !important;
 }
 .ad-section {
     background-color: var(--accent-color);
     margin-top: 3em;
-    padding-block: 3.5em;
+    padding-block: 1em;
 }
 
 .ad-section-wrapper {
@@ -117,11 +119,38 @@
     justify-content: center;
     margin-top: 2em;
 }
+.eara_guarantees {
+    background-color: var(--accent-color);
+    padding-inline: 1em;
+    padding-block: 3em;
+}
 
+.guarantee_header h1 {
+    margin-bottom: 1em;
+}
+.guarantees {
+    margin-top: 1em;
+}
+.guarantee {
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+.guarantee_ic {
+    max-width: 30px;
+    min-width: 30px;
+
+}
+
+.guarantee_ic img {
+    width: 100%;
+}
 .banner-ad-section {
     background-color: var(--main-color);
     margin-top: 3em;
-    padding-block: 2em;
+    padding-top: 4em;
 
 }
 
@@ -158,7 +187,10 @@
 }
 
 .contact-info {
-    padding-top: 5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid white;
 }
 
 .contact-info-wrapper  {
@@ -173,10 +205,24 @@
 .contact-info-row {
     align-items: center;
     margin-bottom: 1em;
+    border: 1px solid var(--main-color);
+    border-radius: 35px;
 }
-.contact-info-row > img {
-    min-width: 50px;
-    max-width: 50px;
+.contact-info-ic{
+    
+    min-width: 65px;
+    max-width: 65px;
+    min-height: 65px;
+    max-height: 65px;
+    border-radius: 50%;
+    display: grid;
+    align-items: center;
+    background-color: var(--main-color);
+}
+.contact-info-ic > img {
+    width: 50%;
+    margin-inline: auto;
+    
 }
 
 
@@ -247,8 +293,9 @@
     .eara-explainer {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-top: 0;
+        margin-top: 5em;
         padding-top: 0;
+
     }
     .eara-explainer-headline {
         display: grid;
@@ -273,7 +320,18 @@
     .eara-features {
         margin-top: 3em;
     }
-
+    .eara-features__hearing-aid {
+        height: 400px;
+    }
+    .eara-features__hearing-aid > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    .features-header {
+        margin-top: 3em;
+    }
     .features-header > * + * {
         margin-top: .75em;
     }
@@ -283,8 +341,6 @@
     }
 
     .eara-features-wrapper {
-        display: grid;
-        grid-template-columns: 40% 60%;
         padding-top: 2em;
     }
     .features-list {
@@ -294,21 +350,26 @@
     }
     .hearing-aid-feature {
         
-        min-width: 200px;
-        min-height: 200px;
-        max-width: 200px;
-        max-height: 200px;
+        min-width: 300px;
+        min-height: 300px;
+        max-width: 300px;
+        max-height: 300px;
         margin-top: 0;
-        padding-top: .5em;
+        padding-top: .95em;
+        display: grid;
+        align-items: center;
+        border-width: 2px;
+        border-radius: 10px;
     }
 
     .hearing-aid-feature > * + * {
         margin-top: 0;
     }
 
-    .hearing-aid-feature > :last-child {
+    .hearing-aid-feature > div > :last-child {
 
         font-size: .9em !important;
+        line-height: 1.5 !important;
     }
     .image_ic_wrapper {
         max-width: 50px;
@@ -341,6 +402,38 @@
         padding-block: 2.5em;
     }
 
+    .eara_guarantees {
+        padding-inline: 3em;
+    }
+    
+    .guarantee_header p {
+        text-align: center;
+    }
+    .guarantees {
+        margin-top: 2em;
+        display: flex;
+        column-gap: 2em;
+        justify-content: center;
+        width: 80%;
+        margin-inline: auto;
+    }
+    .guarantee {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        column-gap: .5em
+    }
+    
+    .guarantee_ic {
+        max-width: 30px;
+        min-width: 30px;
+    
+    }
+    
+    .guarantee_ic img {
+        width: 100%;
+    }
+
     .banner-ad {
         padding-block: 1em;
     }
@@ -355,6 +448,10 @@
 
     .banner-ad-copy {
         font-size: 1.7em;
+    }
+
+    .ad-section {
+        padding-block: 2.5em;
     }
 
     .contact-info-wrapper {

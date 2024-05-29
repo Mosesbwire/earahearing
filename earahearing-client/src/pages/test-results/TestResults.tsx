@@ -2,14 +2,14 @@ import { StackedAreaChart } from "../../components/charts/areaChart"
 import { hearingFrequenciesData } from "../../lib/utils"
 import { Button } from "../../components/button/Button"
 import HearingCapability from "../../components/hearing-capability/HearingCapability"
-import hearingAid from "../../assets/hearing-aids.png"
-import manWearingAids from "../../assets/man_wearing_ha.jpeg"
-import bluetoothIcon from "../../assets/bluetooth.png"
-import batteryIcon from "../../assets/battery.png"
-import selfFittingAppIcon from "../../assets/application.png"
-import customerAgent from "../../assets/customer agent.png"
-import hearingAid_ic from "../../assets/hearing aid.png" 
-import ear from "../../assets/ear.png"
+import hearingAid from "../../assets/hearing-aid-app.jpg"
+import manWearingAids from "../../assets/wearing-HA.jpeg"
+import callCenter from "../../assets/icons/customer agent call center.svg"
+import customerAgentHeadphones from "../../assets/icons/customer agen headphones.svg"
+import truck from "../../assets/icons/truck.png"
+import piggyBank from "../../assets/icons/piggy bank.svg"
+import shield from "../../assets/icons/shield.svg"
+import hearingAidIcon from "../../assets/icons/hearing aid ear.png"
 import phoneIc from "../../assets/phone-ic.png"
 import email from "../../assets/Email.png"
 import NavigationMin from "../../components/navigation/NavigationMin"
@@ -85,85 +85,56 @@ const TestResults = () => {
             </div>
             <div className="container">
                 <div className="capability-wrapper">
-                        <p className="text text-dark cap__text">
-                            Many people ignore hearing loss beacause they don't want to use hearing aids or spend a lot of money.
-                        </p>
-                        <p className="text text-dark cap__text">
-                            But it's important to take care of hearing loss right away.
-                        </p>
+                    <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>
                 </div>
                 <div>
                     <p className="text text-dark text-bold text-centered subheadline learn-more">Learn more about how mild hearing loss happens</p>
                 </div>
             </div>
             {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
-            <div className="ad-section">
-                <div className="ad-section-wrapper container">
-                    <h1 className="text-light text-centered headline">Questions about your results?</h1>
-                    <p className="text text-light text-centered">Schedule a complimentary appointment with our doctor</p>
-                    <Button className="btn-secondary-rounded-ns btn-sm">Schedule your appointment here</Button>
-                </div>
-            </div>
             <div className="eara-explainer">
                 <div className="container eara-explainer-headline">
                     <h1 className="headline text-bold text-accented text-centered">We understand how important hearing clearly is for enjoying life's special moments.</h1>
                 </div>
                 <div className="eara-explainer__image-wrapper">
-                    <img src={manWearingAids} alt="old man wearing aids playing with family" />
+                    <img src={manWearingAids} alt="old man wearing hearing aids playing with family" />
                 </div>
             </div>
             <div className="eara-features">
+                <div className="eara-features__hearing-aid">
+                    <img src={hearingAid} alt="hearing aid with battery charging case" />
+                </div>
                 <div className="features-header">
-                    <h1 className="headline text-centered text-bold">Eara Explore Li+</h1>
-                    <p className="text text-dark text-centered ">Keep your brain healthy</p>
-                    <p className="text text-accented text-centered text-bold">Hear the difference</p>
+                    <h1 className="headline text-centered text-bold">What you get with Eara Explore Li+</h1>
                 </div>
                 <div className="eara-features-wrapper">
-                    <div className="eara-features__hearing-aid">
-                        <img src={hearingAid} alt="hearing aid with battery charging case" />
-                    </div>
                     <div className="features-list container">
                         <div className="hearing-aid-feature">
-                            <div className="image_ic_wrapper">
-                                <img src={batteryIcon} alt="" />
+                            <div>
+                                <div className="image_ic_wrapper">
+                                    <img src={hearingAidIcon} alt="" />
+                                </div>
+                                <p className="text text-dark text-bold text-centered card-title">High-tech hearing aids</p>
+                                <p className="text text-dark text-centered">Nearly invisible, Explore Li+ hearing aids are bluetooth-enabled and offer 360-degree sound and complete APP support with self-fitting technology.</p>
                             </div>
-                            <p className="text text-dark text-bold text-centered card-title">Portable rechargeability</p>
-                            <p className="text text-dark text-centered">20 hour battery life with compact portable charger.</p>
                         </div>
                         <div className="hearing-aid-feature">
-                            <div className="image_ic_wrapper">
-                                <img src={bluetoothIcon} alt="" />
+                            <div>
+                                <div className="image_ic_wrapper">
+                                    <img src={callCenter} alt="" />
+                                </div>
+                                <p className="text text-dark text-bold text-centered card-title">Lifetime support</p>
+                                <p className="text text-dark text-centered">Our customer service team is here to support you 24 hours a day 7 days a week.</p>
                             </div>
-                            <p className="text text-dark text-bold text-centered card-title">5.0 Bluetooth compatible</p>
-                            <p className="text text-dark text-centered">Bluetooth connect any device, including iOS, android, Bluetooth tv and tablet</p>
                         </div>
                         <div className="hearing-aid-feature">
-                            <div className="image_ic_wrapper">
-                                <img src={selfFittingAppIcon} alt="" />
+                            <div>
+                                <div className="image_ic_wrapper">
+                                    <img src={piggyBank} alt="" />
+                                </div>
+                                <p className="text text-dark text-bold text-centered card-title">Incredible value</p>
+                                <p className="text text-dark text-centered">Everything you need for better hearing- all for as low as $499 per pair. Financing also available.</p>
                             </div>
-                            <p className="text text-dark text-bold text-centered card-title">Easy to use</p>
-                            <p className="text text-dark text-centered">Simply download, connect and take our in-APP hearing test. Explore Li+ hearing aids will instantly adjust the sound around you.</p>
-                        </div>
-                        <div className="hearing-aid-feature">
-                            <div className="image_ic_wrapper">
-                                <img src={customerAgent} alt="" />
-                            </div>
-                            <p className="text text-dark text-bold text-centered card-title">24/7 customer support</p>
-                            <p className="text text-dark text-centered">We support you anytime you need us- for a lifetime.</p>
-                        </div>
-                        <div className="hearing-aid-feature">
-                            <div className="image_ic_wrapper">
-                                <img src={ear} alt="" />
-                            </div>
-                            <p className="text text-dark text-bold text-centered card-title">Crystal clear sound</p>
-                            <p className="text text-dark text-centered">Hear every word and sound clearly - even in noisy places.</p>
-                        </div>
-                        <div className="hearing-aid-feature">
-                            <div className="image_ic_wrapper">
-                                <img src={hearingAid_ic} alt="" />
-                            </div>
-                            <p className="text text-dark text-bold text-centered card-title">Comfortable fit</p>
-                            <p className="text text-dark text-centered">Designed to be worn all day, easily and effortless wearing.</p>
                         </div>
                 </div>
                 </div>
@@ -173,31 +144,68 @@ const TestResults = () => {
                     </a>
                 </div>
             </div>
+            <div className="eara_guarantees">
+                <div className="guarantee_header">
+                    <h1 className="headline text-bold text-centered text-light">45-day risk-free-trial</h1>
+                    <p className="text text-dark">Try Eara Explore Li+ hearing aids for 45 days. If you are not fully satisfied, we'll refund your entire order.</p>
+                </div>
+                <div className="guarantees">
+                    <div className="guarantee">
+                        <div className="guarantee_ic">
+                            <img src={shield} alt="" />
+                        </div>
+                        <p className="text-dark text">1 year warranty</p>
+                    </div>
+                    <div className="guarantee">
+                        <div className="guarantee_ic">
+                            <img src={customerAgentHeadphones} alt="" />
+                        </div>
+                        <p className="text-dark text">Customer support 7 days a week</p>
+                    </div>
+                    <div className="guarantee">
+                        <div className="guarantee_ic">
+                            <img src={truck} alt="" />
+                        </div>
+                        <p className="text-dark text">Free shipping and returns</p>
+                    </div>
+                </div>
+            </div>
             </>}
             <div className="banner-ad-section">
                 <div className="container banner-ad-wrapper">
                     <div className="banner-ad">
-                        <p className="text"><span className="banner-dt">*Limited discount:</span>use code <span className="text-accented text-bold">HEARBETTER</span> at checkout to get <span className="text-accented text-bold">15%</span> off your first purchase</p>
+                        <p className="text">Use discount code <span className="text-accented text-bold">HEARBETTER</span> at checkout to get <span className="text-accented text-bold">15%</span> off your first purchase</p>
                     </div>
-                    <p className="text-light text-bold text-centered banner-ad-copy">Hear the difference today! Don't let hearing loss hold you back.</p>
+                    <p className="text-light text-bold text-centered banner-ad-copy">Don't let hearing loss hold you back.</p>
                     <p className="text-light text-bold text-centered banner-ad-copy">Start enjoying clearer conversations and better sound quality now.</p>
                     <div className="banner-ad-cta">
-                        <Button className="btn-primary-rounded-scale btn-md">SHOP NOW</Button>
+                        <Button className="btn-primary-rounded-scale btn-md">Start hearing better now</Button>
                     </div>
                 </div>
+                <div className="ad-section">
                 <div className="contact-info">
                     <div className="contact-info-wrapper">
-                        <p className="text text-light text-centered">Need help choosing? Contact our friendly support team.</p>
+                        <p className="text text-light text-centered"><span className="headline">Need help deciding?</span> <br />Contact our friendly Eara experts.</p>
                         <div className="row contact-info-row">
-                            <img src={phoneIc} alt="phone icon" />
+                            <div className="contact-info-ic">
+                                <img src={phoneIc} alt="phone icon" />
+                            </div>
                             <p className="text text-light">(800) 933-0885</p>
                         </div>
                         <div className="row contact-info-row">
-                            <img src={email} alt="email icon" />
+                            <div className="contact-info-ic">
+                                <img src={email} alt="email icon" />
+                            </div>
                             <p className="text text-light">info@earahearing.com</p>
                         </div>
                     </div>
                 </div>
+                <div className="ad-section-wrapper container">
+                    <h1 className="text-light text-centered headline">Questions about your results?</h1>
+                    <p className="text text-light text-centered">Schedule a complimentary appointment with our doctor</p>
+                    <Button className="btn-secondary-rounded-ns btn-sm">Schedule your appointment here</Button>
+                </div>
+            </div>
 
             </div>
         </div>
