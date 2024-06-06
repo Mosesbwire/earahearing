@@ -26,8 +26,8 @@ def status():
 
 @app.route('/', methods=["POST"])
 def create_user_record():
-    return make_response(jsonify({"data": "ok"}), 201)
-    # return process_request(request)
+    # return make_response(jsonify({"data": "ok"}), 201)
+    return process_request(request)
 
 
 # @app.after_request

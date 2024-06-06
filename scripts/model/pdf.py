@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import base64
 from datetime import datetime
 import jinja2
 from matplotlib.backends.backend_pdf import PdfPages
@@ -27,6 +28,8 @@ class Pdf:
 
     async def create_audiogram_pdf(self, file_name: str, plt):
         fullname = self.file_name(file_name)
+        logoImg = os.path.abspath('./assets/logo.png')
+        print(logoImg)
         with PdfPages(fullname) as pdf:
             pdf.savefig()
             plt.close()
@@ -87,6 +90,12 @@ class Pdf:
             return 'privacy_policy.pdf'
         except Exception as e:
             print(e)
+
+    def pdf_to_base64(self,file_name):
+        path = os.path.abspath(f'./{file_name}')
+        with open(path, 'rb') as file:
+            pdf_data = file.read()
+            return base64.b64encode(pdf_data).decode("utf-8")
 
     def remove_files(self, files: list[str]):
 
