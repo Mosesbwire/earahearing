@@ -103,9 +103,7 @@
     padding-inline: .85em;
     padding-block: 1.5em;
     min-width: 250px;
-    min-height: 250px;
     max-width: 250px;
-    max-height: 250px;
     margin-inline: auto;
     margin-bottom: 1em;
     border: 1px solid var(--accent-color);
@@ -342,6 +340,8 @@
 
     .eara-features-wrapper {
         padding-top: 2em;
+        display: grid;
+        grid-template-columns: 40% 60%;
     }
     .features-list {
         display: grid;
@@ -349,21 +349,11 @@
         gap: .5em;
     }
     .hearing-aid-feature {
-        
-        min-width: 300px;
-        min-height: 300px;
-        max-width: 300px;
-        max-height: 300px;
-        margin-top: 0;
-        padding-top: .95em;
-        display: grid;
-        align-items: center;
-        border-width: 2px;
+        min-width: 200px;
+        max-width: 200px;
+        border-width: 1.5px;
         border-radius: 10px;
-    }
-
-    .hearing-aid-feature > * + * {
-        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .hearing-aid-feature > div > :last-child {
@@ -376,18 +366,14 @@
         max-height: 50px;
         min-width: 50px;
         min-height: 50px;
-        margin-bottom: .85em;
-        display: grid;
-        align-items: center;
-        justify-content: center;
     }
     .image_ic_wrapper > img {
         width: 80%;
+        height: 100%;
         
     }
 
     .card-title {
-       
         display: block;
         min-height: 50px;
         max-height: 50px;
@@ -396,6 +382,10 @@
     .eara-features__hearing-aid {
         width: 100%;
         margin-bottom: 0;
+    }
+    .eara-features__hearing-aid img {
+        width: 100%;
+        object-fit: cover;
     }
 
     .banner-ad-wrapper {
@@ -452,6 +442,10 @@
 
     .ad-section {
         padding-block: 2.5em;
+    }
+
+    .ad-section-wrapper a {
+        text-align: center;
     }
 
     .contact-info-wrapper {

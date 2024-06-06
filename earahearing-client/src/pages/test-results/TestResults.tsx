@@ -101,14 +101,14 @@ const TestResults = () => {
                 </div>
             </div>
             <div className="eara-features">
-                <div className="eara-features__hearing-aid">
-                    <img src={hearingAid} alt="hearing aid with battery charging case" />
-                </div>
                 <div className="features-header">
                     <h1 className="headline text-centered text-bold">What you get with Eara Explore Li+</h1>
                 </div>
                 <div className="eara-features-wrapper">
-                    <div className="features-list container">
+                    <div className="eara-features__hearing-aid">
+                        <img src={hearingAid} alt="hearing aid with mobile phone showing self fitting app" />
+                    </div>
+                    <div className="features-list">
                         <div className="hearing-aid-feature">
                             <div>
                                 <div className="image_ic_wrapper">
@@ -203,7 +203,10 @@ const TestResults = () => {
                 <div className="ad-section-wrapper container">
                     <h1 className="text-light text-centered headline">Questions about your results?</h1>
                     <p className="text text-light text-centered">Schedule a complimentary appointment with our doctor</p>
-                    <Button className="btn-secondary-rounded-ns btn-sm">Schedule your appointment here</Button>
+                    <a href="https://calendly.com/sarah-smiley/30min" target="_blank">
+
+                        <Button className="btn-secondary-rounded-ns btn-sm">Schedule your appointment here</Button>
+                    </a>
                 </div>
             </div>
 
