@@ -11,12 +11,28 @@ class MailchimpEmailProvider(EmailProvider):
     def __init__(self, api_key):
         self.client = MailchimpTransactional.Client(api_key)
 
+
+    def build_message(self, message_components:dict):
+        sign_off = ''
+        if message_components["symmetrical"] == True and message_components["level"] == 'normal':
+            sign_off = "Schedule a consultation to learn more about your hearing and explore options for maintaining optimal hearing throughout your life."
+        elif message_components["symmetrical"] == True and message_components["level"] != 'normal':
+            sign_off = "Schedule a consultation to receive personalized advice on how to address your hearing loss and improve your listening experience."
+        else:
+            sign_off = "Schedule a consultation to receive personalized advice on addressing your hearing loss and improving your listening experience in both ears."
+        
+        return {
+            "sign_off": sign_off,
+            "description": message_components["description"]
+        }
+
     def send_email_with_attachment(self, recipient_data, attachment_string, document_name):
 
         first_name = recipient_data.get("first_name")
         last_name = recipient_data.get("last_name")
         email = recipient_data.get("email")
         current_year = datetime.now().year
+        email_body_components = self.build_message(recipient_data.get("hearing_capability"))
         message = {
             
             "attachments": [
@@ -46,7 +62,11 @@ class MailchimpEmailProvider(EmailProvider):
                          },
                          {
                              "name": "TEST_RESULTS",
-                             "content": "THIS PART WILL BE WILL VARY ACCORDING TO SEVERITY OF HEARING LOSS. MILD/MODERATE/SEVERE."
+                             "content": email_body_components["description"]
+                         },
+                         {
+                             "name": "CLOSE_EMAIL",
+                             "content": email_body_components["sign_off"]
                          },
                          {
                              "name": "CURRENT_YEAR",
