@@ -185,24 +185,24 @@ const TestResults = () => {
                 <div className="ad-section">
                 <div className="contact-info">
                     <div className="contact-info-wrapper">
-                        <p className="text text-light text-centered"><span className="headline">Need help deciding?</span> <br />Contact our friendly Eara experts.</p>
+                        <p className="text text-dark text-centered"><span className="headline">Need help deciding?</span> <br />Contact our friendly Eara experts.</p>
                         <div className="row contact-info-row">
                             <div className="contact-info-ic">
                                 <img src={phoneIc} alt="phone icon" />
                             </div>
-                            <p className="text text-light">(800) 933-0885</p>
+                            <p className="text text-dark">(800) 933-0885</p>
                         </div>
                         <div className="row contact-info-row">
                             <div className="contact-info-ic">
                                 <img src={email} alt="email icon" />
                             </div>
-                            <p className="text text-light">info@earahearing.com</p>
+                            <p className="text text-dark">info@earahearing.com</p>
                         </div>
                     </div>
                 </div>
                 <div className="ad-section-wrapper container">
-                    <h1 className="text-light text-centered headline">Questions about your results?</h1>
-                    <p className="text text-light text-centered">Schedule a complimentary appointment with our doctor</p>
+                    <h1 className="text-dark text-centered headline">Questions about your results?</h1>
+                    <p className="text text-dark text-centered">Schedule a complimentary appointment with our doctor</p>
                     <a href="https://calendly.com/sarah-smiley/30min" target="_blank">
 
                         <Button className="btn-secondary-rounded-ns btn-sm">Schedule your appointment here</Button>

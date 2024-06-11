@@ -45,7 +45,7 @@
     font-size: 1.25em !important;
 }
 .ad-section {
-    background-color: var(--accent-color);
+    background-color: var(--main-light);
     margin-top: 3em;
     padding-block: 1em;
 }
