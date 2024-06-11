@@ -4,6 +4,7 @@ import asyncio
 from hubspot.crm.contacts import ApiException
 import json
 from model.audiogram import Audiogram
+
 from model.user import User
 from model.pdf import Pdf
 from lib import HubspotClient

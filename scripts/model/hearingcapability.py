@@ -33,12 +33,17 @@ class HearingCapability:
     
         return total / items
 
-
+    def isNormalHearing(self,data: dict):
+        for i in data.values():
+            if int(i) > 25:
+                return False
+        return True
+        
     def hearing_loss_level(self,hearing_test_data: dict):
         level = self.calculate_hearing_score(hearing_test_data)
 
         if level <= 25:
-            return NORMAL
+            return NORMAL if self.isNormalHearing(hearing_test_data) else MILD
         elif level > 25 and level <= 35:
             return MILD
         elif level > 35 and level <= 64:
