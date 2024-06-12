@@ -39,10 +39,16 @@ const TestResults = () => {
         }, 0)
     }
 
+    const isNormalHearing = (data: typeof right) => {
+        return Object.values(data).every((el)=> {
+            return el.y <= 25
+        })
+    }
    
-    const hearingCapability = (hearingScore: number) => {
+    const hearingCapability = (data: typeof right) => {
+        const hearingScore = calculateHearingScore(data)
         if (hearingScore <= 25) {
-            return 'normal'
+            return isNormalHearing(data) ?  'normal' : 'mild'
         } else if (hearingScore > 25 && hearingScore <= 35) {
             return 'mild'
         } else if (hearingScore > 35 && hearingScore <= 64) {
@@ -52,8 +58,9 @@ const TestResults = () => {
         }
     }
 
-    const rightEarCapability = hearingCapability(calculateHearingScore(right))
-    const leftEarCapability = hearingCapability(calculateHearingScore(left))
+    const rightEarCapability = hearingCapability(right)
+    const leftEarCapability = hearingCapability(left)
+
     return <div className="results-page">
             <NavigationMin/>
             <div className="container results-page-headline">

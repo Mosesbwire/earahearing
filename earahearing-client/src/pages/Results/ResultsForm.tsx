@@ -82,7 +82,7 @@ const ResultsForm = () => {
             }
 
             setIsLoading(true)
-            console.log(data)
+            
             try {
 
                 const resp = await createUser(data)
