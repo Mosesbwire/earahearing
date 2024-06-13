@@ -16,6 +16,16 @@
     list-style-position: outside;
 
 }
+
+.cap-text-nrm {
+    line-height: 1.2 !important;
+    padding-block: 0em;
+    padding-inline: .5em;
+    width: 85%;
+    margin-inline: auto;
+    margin-bottom: 0em;
+    font-size: 1em !important;
+}
 /* .cap-text::before {
     content: "";
     width: 8px;
@@ -47,7 +57,7 @@
         width: 300px;
     }
 
-    .cap-text {
+    .cap-text, .cap-text-nrm {
         line-height: 1.5 !important;
     }
 }

@@ -3,21 +3,23 @@ import './hearing-capability.css'
 
 const Normal = () => {
     return <div>
-         <p className="text text-dark cap-text">
-         Trouble hearing in some situations, especially in noisy places like crowded areas
+         <p className='text text-dark cap-text-nrm'>
+         Congratulations on your hearing test results! It's fantastic to know that your hearing is in great shape. To keep it that way, here are some tips for maintaining excellent aural health
          </p>
          <p className="text text-dark cap-text">
-           TV volume tends to be turned-up
+            Limit your time in loud environments like concerts or nightclubs. If you must be around loud noises, wear earplugs or noise-canceling headphones.
          </p>
          <p className="text text-dark cap-text">
-            Using the speaker phone to hear better on the phone
+         Be mindful of volume levels on your headphones, TVs, and radios.
          </p>
          <p className="text text-dark cap-text">
-            Can hear people talking  but don't understand some words that are being said 
+         Clean your outer ears with a washcloth during your regular shower routine. 
          </p>
          <p className="text text-dark cap-text">
-            "I can hear people talking, but I don't always understand what they're saying-- it's not clear".
-            For example, you might hear the word "cat" instead of "cap". This happens because the speech isn't clear.
+         Maintaining a healthy lifestyle benefits your entire body, including your ears.
+         </p>
+         <p className="text text-dark cap-text">
+         Give your ears breaks from headphones and earphones. Avoid using them at high volumes for extended periods.
          </p>        
     </div>
 }
