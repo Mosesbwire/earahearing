@@ -3,6 +3,26 @@
     
 }
 
+.capability-title {
+    
+    justify-content: space-between;
+    padding-block: 1em;
+}
+.title-left {
+    color: blue;
+    font-size: 1.5em !important;
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-decoration-line: underline;
+}
+
+.title-right {
+    color: red;
+    font-size: 1.5em !important;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-line: underline;
+}
 .chart {
     /* height: 60vh; */
 }
@@ -43,7 +63,11 @@
     text-decoration-skip-ink: none;
     text-decoration-thickness: 2px;
     cursor: pointer;
-    font-size: 1.25em !important;
+    font-size: 1em !important;
+}
+
+.learn-more > a {
+    color: var(--main-color);
 }
 .ad-section {
     background-color: var(--main-light);
@@ -270,6 +294,10 @@
 
     .user-hearing {
         margin-top: 5em;
+    }
+    .capability-title {
+        width: 60% !important;
+        padding-bottom: 0;
     }
     .same_cap_wrapper{
         border: 2px solid var(--accent-color);

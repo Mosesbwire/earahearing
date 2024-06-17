@@ -2,7 +2,7 @@ import { StackedAreaChart } from "../../components/charts/areaChart"
 import { hearingFrequenciesData } from "../../lib/utils"
 import { Button } from "../../components/button/Button"
 import HearingCapability from "../../components/hearing-capability/HearingCapability"
-import hearingAid from "../../assets/hearing-aid-app.jpg"
+import hearingAid from "../../assets/hearing-aid-case-in-background.jpg"
 import manWearingAids from "../../assets/wearing-HA.jpeg"
 import callCenter from "../../assets/icons/customer agent call center.svg"
 import customerAgentHeadphones from "../../assets/icons/customer agen headphones.svg"
@@ -68,7 +68,16 @@ const TestResults = () => {
                 <p className="text text-dark text-centered">Please be aware that this test is based on the user's response. <span className="underline">This is not a diagnostic test.</span></p>
                 <p className="text text-dark text-centered">If you suspect you have a hearing loss, it is suggested to have an audiological evaluation by an audiologist.</p>
             </div>
-
+            <div className="container row capability-title">
+                <div>
+                    <p className="text subheadline text-centered text-bold title-left">Left</p>
+                    <p className="text text-dark text-centered">{leftEarCapability} hearing loss</p>
+                </div>
+                <div>
+                    <p className="text subheadline text-centered text-bold title-right">Right</p>
+                    <p className="text text-dark text-centered">{rightEarCapability} hearing loss</p>
+                </div>
+            </div>
             <div className="chart-wrapper">
                 <StackedAreaChart right={right} left={left}/>
             </div>
@@ -95,7 +104,7 @@ const TestResults = () => {
                     <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>
                 </div>
                 <div>
-                    <p className="text text-dark text-bold text-centered subheadline learn-more">Learn more about how mild hearing loss happens</p>
+                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blog/news">Learn more about hearing loss, its causes, preventive precautions, and the importance of wearing hearing aids</a>.</p>
                 </div>
             </div>
             {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
@@ -147,7 +156,7 @@ const TestResults = () => {
                 </div>
                 <div className="eara-features_cta">
                     <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
-                        <Button className="btn-primary-rounded btn-md">SHOP NOW</Button>
+                        <Button className="btn-primary-rounded btn-md">Learn More</Button>
                     </a>
                 </div>
             </div>
@@ -183,7 +192,7 @@ const TestResults = () => {
                     <div className="banner-ad">
                         <p className="text">Use discount code <span className="text-accented text-bold">HEARBETTER</span> at checkout to get <span className="text-accented text-bold">15%</span> off your first purchase</p>
                     </div>
-                    <p className="text-light text-bold text-centered banner-ad-copy">Don't let hearing loss hold you back.</p>
+                    
                     <p className="text-light text-bold text-centered banner-ad-copy">Start enjoying clearer conversations and better sound quality now.</p>
                     <div className="banner-ad-cta">
                         <Button className="btn-primary-rounded-scale btn-md">Start hearing better now</Button>
@@ -192,7 +201,7 @@ const TestResults = () => {
                 <div className="ad-section">
                 <div className="contact-info">
                     <div className="contact-info-wrapper">
-                        <p className="text text-dark text-centered"><span className="headline">Need help deciding?</span> <br />Contact our friendly Eara experts.</p>
+                        <p className="text text-dark text-centered"><span className="headline">Need help deciding?</span> <br /><br/>Contact our friendly Eara experts and they'd be happy to walk you through.</p>
                         <div className="row contact-info-row">
                             <div className="contact-info-ic">
                                 <img src={phoneIc} alt="phone icon" />
