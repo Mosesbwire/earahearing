@@ -69,13 +69,18 @@ const TestResults = () => {
                 <p className="text text-dark text-centered">If you suspect you have a hearing loss, it is suggested to have an audiological evaluation by an audiologist.</p>
             </div>
             <div className="container row capability-title">
+                
                 <div>
                     <p className="text subheadline text-centered text-bold title-left">Left</p>
-                    <p className="text text-dark text-centered">{leftEarCapability} hearing loss</p>
+                    {leftEarCapability !== 'normal' ? 
+                    <p className="text text-dark text-centered txt-cap">{leftEarCapability} Hearing Loss</p> :
+                    <p className="text text-dark text-centered txt-cap">{leftEarCapability} Hearing</p>}
                 </div>
                 <div>
                     <p className="text subheadline text-centered text-bold title-right">Right</p>
-                    <p className="text text-dark text-centered">{rightEarCapability} hearing loss</p>
+                    {rightEarCapability !== 'normal' ? 
+                    <p className="text text-dark text-centered txt-cap">{rightEarCapability} Hearing Loss</p> :
+                    <p className="text text-dark text-centered txt-cap">{rightEarCapability} Hearing</p>}
                 </div>
             </div>
             <div className="chart-wrapper">
@@ -104,7 +109,7 @@ const TestResults = () => {
                     <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>
                 </div>
                 <div>
-                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blog/news">Learn more about hearing loss, its causes, preventive precautions, and the importance of wearing hearing aids</a>.</p>
+                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blogs/news">Learn more about hearing loss, its causes, preventive precautions, and the importance of wearing hearing aids</a>.</p>
                 </div>
             </div>
             {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
@@ -155,7 +160,7 @@ const TestResults = () => {
                 </div>
                 </div>
                 <div className="eara-features_cta">
-                    <a href="https://earahearing.com/product/ai-self-fitting-otc-hearing-aids/">
+                    <a href="https://www.earahearing.com/products/eara-hearing-explore-li-copy">
                         <Button className="btn-primary-rounded btn-md">Learn More</Button>
                     </a>
                 </div>
@@ -195,7 +200,9 @@ const TestResults = () => {
                     
                     <p className="text-light text-bold text-centered banner-ad-copy">Start enjoying clearer conversations and better sound quality now.</p>
                     <div className="banner-ad-cta">
-                        <Button className="btn-primary-rounded-scale btn-md">Start hearing better now</Button>
+                        <a href="https://www.earahearing.com/products/eara-hearing-explore-li-copy">
+                            <Button className="btn-primary-rounded-scale btn-md">Start hearing better now</Button>
+                        </a>
                     </div>
                 </div>
                 <div className="ad-section">

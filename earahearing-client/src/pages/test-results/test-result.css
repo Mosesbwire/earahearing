@@ -26,7 +26,9 @@
 .chart {
     /* height: 60vh; */
 }
-
+.txt-cap {
+    text-transform: capitalize;
+}
 .chart-wrapper {
     height: 60vh;
     margin-bottom: 1em;
