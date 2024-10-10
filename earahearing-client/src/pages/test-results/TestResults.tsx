@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { StackedAreaChart } from "../../components/charts/areaChart"
 import { hearingFrequenciesData } from "../../lib/utils"
 import { Button } from "../../components/button/Button"
@@ -16,6 +17,11 @@ import NavigationMin from "../../components/navigation/NavigationMin"
 import './test-result.css'
 
 const TestResults = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+        console.log('useEffect running')
+    }, [])
     
     const labels = ['500Hz', '1000Hz', '2000Hz','4000Hz','8000Hz', '8500Hz'];
     
@@ -195,7 +201,7 @@ const TestResults = () => {
             <div className="banner-ad-section">
                 <div className="container banner-ad-wrapper">
                     <div className="banner-ad">
-                        <p className="text">Use discount code <span className="text-accented text-bold">HEARBETTER</span> at checkout to get <span className="text-accented text-bold">15%</span> off your first purchase</p>
+                        <p className="text">Use discount code <span className="text-accented text-bold">HEARBETTER</span> at checkout to get <span className="text-accented text-bold">$20</span> off your first purchase.</p>
                     </div>
                     
                     <p className="text-light text-bold text-centered banner-ad-copy">Start enjoying clearer conversations and better sound quality now.</p>

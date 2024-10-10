@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect}from "react";
 import { TestQuietPlace } from "../../components/test-component/hearing-tests/QuietInstruction"
 import { PrepareListeningTest } from "../../components/test-component/hearing-tests/prepListeningtest"
 import { ConfrimDevice } from "../../components/test-component/hearing-tests/confirm-devices"
@@ -20,6 +20,10 @@ const pages: pagesType = {
 }
 const HearingTest = () => {
     const currentPage = usePageContextCurrentPage()
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    }, [currentPage])
+   
     return (
         <div>
             <div className="hearing-test-page container">

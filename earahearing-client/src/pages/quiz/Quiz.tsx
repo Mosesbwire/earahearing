@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { About } from "../../components/about/About";
 import { usePageContextCurrentPage } from "../../hooks/usePageContext";
 import { useSessionStorage } from "../../hooks/useSessionStorage";
@@ -71,6 +71,9 @@ const Quiz = () => {
     const data = questions[currentPage.toString()]
     const [sessionData ,storeDataSessionStorage] = useSessionStorage<answerType>('test_data', {} as answerType)
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    }, [currentPage])
     const getUserAnswer = (answer: string) => {
         
         sessionData[`qn_${current_qna}`] = data.question
