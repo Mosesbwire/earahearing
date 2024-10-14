@@ -164,6 +164,17 @@ const ResultsForm = () => {
                            {formErrors.email && <small className="error-msg">{formErrors.email}</small>}
                        </div>
                    </div>
+                   <div className="consent-box">
+                        <div className=""><Input type="checkbox" name="consent" label="By checking the box you are consenting to receive promotional and transactional messages (including texts) from Eara Hearing." /></div>
+                        <div className="consent-agreement text-dark text">
+                            <small>Message and data rates may apply.</small>
+                            <small>If the checkbox is left unchecked, you will not receive text messages.</small> 
+                            <small>Text “HELP” to 63607 for assistance or “STOP” to opt out.</small>
+                            <small>Message frequency is recurring. </small>
+                            <small>Eara Hearing may send an abandoned cart notification to the number provided, if applicable.</small>
+                            <small>Click here for <a href="">Terms & Conditions.</a></small>
+                        </div>
+                   </div>
                     
                     <div className="form-btn">
                         <Button className="btn-primary-rounded btn-md" type={'submit'}>Get Results</Button>

@@ -7,7 +7,8 @@ export type inputProps = React.ComponentProps<'input'> & {
 }
 export const Input = ({type, name, label, ...rest}: inputProps) => {
     return (
-        <div>
+
+        <div className={type === 'checkbox' ? 'consent-checkbox': ''}>
             <label htmlFor={name} className="label text text-dark">{label}</label>
             <input {...rest} type={type} name={name} autoComplete="true" className="input" id={name}/>
         </div>
