@@ -175,6 +175,9 @@
         margin-inline: auto;
         font-size: .75em !important;
     }
+    .consent-agreement ul {
+        list-style:disc;
+    }
     .consent-box {
         width: 50%;
         margin-inline: auto;

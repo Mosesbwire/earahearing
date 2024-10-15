@@ -167,20 +167,25 @@ const ResultsForm = () => {
                    <div className="consent-box">
                         <div className=""><Input type="checkbox" name="consent" label="By checking the box you are consenting to receive promotional and transactional messages (including texts) from Eara Hearing." /></div>
                         <div className="consent-agreement text-dark text">
-                            <small>Message and data rates may apply.</small>
-                            <small>If the checkbox is left unchecked, you will not receive text messages.</small> 
-                            <small>Text “HELP” to 63607 for assistance or “STOP” to opt out.</small>
-                            <small>Message frequency is recurring. </small>
-                            <small>Eara Hearing may send an abandoned cart notification to the number provided, if applicable.</small>
-                            <small>Click here for <a href="">Terms & Conditions.</a></small>
+                            <ul>
+                                <li><small>Message and data rates may apply.</small></li>
+                                <li><small>If the checkbox is left unchecked, you will not receive text messages.</small></li>
+                                <li><small>Text “HELP” to 63607 for assistance or “STOP” to opt out.</small></li>
+                                <li><small>Message frequency is recurring. </small></li>
+                                <li><small>Eara Hearing may send an abandoned cart notification to the number provided, if applicable.</small></li>
+                                <li>
+                                <small>Click here for <a href="">Terms & Conditions.</a></small>
+                                </li>
+                                
+                            </ul>
                         </div>
                    </div>
-                    
+                   <small className="text-dark disclaimer-results">By clicking the button below, you are providing consent to display the results of your hearing test, provide explanation about your hearing ability and present the information that will help you choose the care option best for you. Read our <span className="underline privacy-link" onClick={privacyPolicyClickHandler}>Privacy Policy</span>.</small>
                     <div className="form-btn">
                         <Button className="btn-primary-rounded btn-md" type={'submit'}>Get Results</Button>
                     </div>
                 </Form>
-                <small className="text-dark disclaimer-results">By clicking the button above, you are providing consent to display the results of your hearing test, provide explanation about your hearing ability and present the information that will help you choose the care option best for you. Read our Privacy <span className="underline privacy-link" onClick={privacyPolicyClickHandler}>Policy</span>.</small>
+                
             </div>
         </div>
     )
