@@ -14,13 +14,19 @@ import hearingAidIcon from "../../assets/icons/hearing aid ear.png"
 import phoneIc from "../../assets/phone-ic.png"
 import email from "../../assets/Email.png"
 import NavigationMin from "../../components/navigation/NavigationMin"
+import facebookLogo from "../../assets/facebook-logo.svg"
+import instagramLogo from "../../assets/instagram-logo.svg"
+import pintrestLogo from "../../assets/pinterest-logo.svg"
+import youtubeLogo from "../../assets/youtube-logo.svg"
+import twitterLogo from "../../assets/twitter.png"
+import infographic from "../../assets/infographic.png"
 import './test-result.css'
 
 const TestResults = () => {
 
     useEffect(()=>{
         window.scrollTo(0,0)
-        console.log('useEffect running')
+
     }, [])
     
     const labels = ['500Hz', '1000Hz', '2000Hz','4000Hz','8000Hz', '8500Hz'];
@@ -75,7 +81,6 @@ const TestResults = () => {
                 <p className="text text-dark text-centered">If you suspect you have a hearing loss, it is suggested to have an audiological evaluation by an audiologist.</p>
             </div>
             <div className="container row capability-title">
-                
                 <div>
                     <p className="text subheadline text-centered text-bold title-left">Left</p>
                     {leftEarCapability !== 'normal' ? 
@@ -114,14 +119,16 @@ const TestResults = () => {
                 <div className="capability-wrapper">
                     <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>
                 </div>
-                <div>
-                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blogs/news">Learn more about hearing loss, its causes, preventive precautions, and the importance of wearing hearing aids</a>.</p>
+                <div className="infographic__container">
+                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blogs/news">Learn about hearing loss and why it's important to treat it quickly with hearing aids</a>.</p>
+                    <img src={infographic} className="infographic"/>
                 </div>
             </div>
             {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
             <div className="eara-explainer">
                 <div className="container eara-explainer-headline">
-                    <h1 className="headline text-bold text-accented text-centered">We understand how important hearing clearly is for enjoying life's special moments.</h1>
+                    <h1 className="headline text-bold text-centered">We understand how important hearing clearly is for enjoying life's special moments.</h1>
+                    <Button className="btn-primary-rounded btn-md">Start hearing clearly today!</Button>
                 </div>
                 <div className="eara-explainer__image-wrapper">
                     <img src={manWearingAids} alt="old man wearing hearing aids playing with family" />
@@ -142,7 +149,7 @@ const TestResults = () => {
                                     <img src={hearingAidIcon} alt="" />
                                 </div>
                                 <p className="text text-dark text-bold text-centered card-title">High-tech hearing aids</p>
-                                <p className="text text-dark text-centered">Nearly invisible, Explore Li+ hearing aids are bluetooth-enabled and offer 360-degree sound and complete APP support with self-fitting technology.</p>
+                                <p className="text text-dark text-centered">Nearly invisible, Explore Li+ hearing aids are bluetooth-enabled and offer 360-degree sound with complete APP support and self-fitting technology.</p>
                             </div>
                         </div>
                         <div className="hearing-aid-feature">
@@ -167,7 +174,7 @@ const TestResults = () => {
                 </div>
                 <div className="eara-features_cta">
                     <a href="https://www.earahearing.com/products/eara-hearing-explore-li-copy">
-                        <Button className="btn-primary-rounded btn-md">Learn More</Button>
+                        <Button className="btn-primary-rounded btn-lg">Learn More</Button>
                     </a>
                 </div>
             </div>
@@ -204,34 +211,36 @@ const TestResults = () => {
                         <p className="text">Use discount code <span className="text-accented text-bold">HEARBETTER</span> at checkout to get <span className="text-accented text-bold">$20</span> off your first purchase.</p>
                     </div>
                     
-                    <p className="text-light text-bold text-centered banner-ad-copy">Start enjoying clearer conversations and better sound quality now.</p>
+                    <p className="text-light text-bold text-centered banner-ad-copy">Enjoy clearer conversations and better sound quality now.</p>
                     <div className="banner-ad-cta">
                         <a href="https://www.earahearing.com/products/eara-hearing-explore-li-copy">
-                            <Button className="btn-primary-rounded-scale btn-md">Start hearing better now</Button>
+                            <Button className="btn-primary-rounded-scale btn-lg">Shop Now</Button>
                         </a>
                     </div>
                 </div>
                 <div className="ad-section">
                 <div className="contact-info">
                     <div className="contact-info-wrapper">
-                        <p className="text text-dark text-centered"><span className="headline">Need help deciding?</span> <br /><br/>Contact our friendly Eara experts and they'd be happy to walk you through.</p>
+                        <p className="text text-dark text-centered"><span className="headline">Need help deciding?</span> <br /><br/>Reach out to our friendly Eara experts, and they'll be happy to guide you through the process.</p>
                         <div className="row contact-info-row">
                             <div className="contact-info-ic">
                                 <img src={phoneIc} alt="phone icon" />
                             </div>
-                            <p className="text text-dark">(800) 933-0885</p>
+                            <p className="text text-dark">800-933-0885</p>
                         </div>
-                        <div className="row contact-info-row">
+                        <a href="https://www.earahearing.com/pages/contact">
+                            <div className="row contact-info-row contact-info-email">
                             <div className="contact-info-ic">
                                 <img src={email} alt="email icon" />
                             </div>
-                            <p className="text text-dark">info@earahearing.com</p>
-                        </div>
+                                <p className="text text-dark">info@earahearing.com</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div className="ad-section-wrapper container">
                     <h1 className="text-dark text-centered headline">Questions about your results?</h1>
-                    <p className="text text-dark text-centered">Schedule a complimentary appointment with our doctor</p>
+                    <p className="text text-dark text-centered">Schedule a complimentary appointment with our audiologist.</p>
                     <a href="https://calendly.com/sarah-smiley/30min" target="_blank">
 
                         <Button className="btn-secondary-rounded-ns btn-sm">Schedule your appointment here</Button>
@@ -240,6 +249,15 @@ const TestResults = () => {
             </div>
 
             </div>
+                <div className="res-footer">
+                    <div className="res-footer-wrapper container">
+                        <a href=""><img src={facebookLogo} alt="facebook logo"/></a>
+                        <a href=""><img src={twitterLogo} alt="twitter logo"/></a>
+                        <a href=""><img src={instagramLogo} alt="instagram logo"/></a>
+                        <a href=""><img src={youtubeLogo} alt="youtube logo"/></a>
+                        <a href=""><img src={pintrestLogo} alt="pinterest logo"/></a>
+                    </div>
+                </div>
         </div>
 }
 

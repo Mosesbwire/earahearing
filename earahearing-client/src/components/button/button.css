@@ -3,6 +3,7 @@
     cursor: pointer;
     padding: .5em 1em;
     border: none;
+    text-wrap: nowrap;
 }
 
 .btn-primary-rounded {
@@ -12,6 +13,7 @@
     width: fit-content;
     transition: all 500ms;
 }
+
 .btn-primary-rounded-scale {
     color: var(--dark-text);
     background-color: var(--accent-color);
@@ -92,15 +94,15 @@
 }
 
 .btn-lg {
-    font-size: 1.5em;
-    padding: .55em 4em;
+    font-size: 1.5em !important;
+    padding: .55em 4em !important;
     width: auto;
 
 }
 
 .btn-md {
-    font-size: 1.35em;
-    padding: .5em 2em;
+    font-size: 1.35em !important;
+    padding: .5em 2em !important;
     width: auto;
 }
 
@@ -125,12 +127,12 @@
         color: var(--accent-color);
     }
     .btn-primary-rounded-scale:hover {
-        scale: 1.1;
+        scale: 1.02;
     }
 
     .btn-secondary-rounded:hover {
         color: var(--accent-color);
-        scale: 1.1;
+        scale: 1.02;
     }
     .btn-secondary-rounded-ns:hover {
         color: var(--accent-color);
@@ -149,6 +151,11 @@
     .btn-dark:hover {
         background-color: var(--accent-color);
         color: var(--dark-text);
+    }
+
+    .btn-primary-rounded-lg {
+        padding: .75em 1.5em !important;
+        font-size: 1.5em !important;
     }
 
 }

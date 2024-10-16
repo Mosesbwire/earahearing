@@ -9,10 +9,10 @@
     padding-inline: .5em;
     width: 85%;
     margin-inline: auto;
-    margin-bottom: .25em;
-    font-size: 1em !important;
+    margin-bottom: 1.2em;
+    font-size: 1.1em !important;
     display: list-item;
-    list-style-type: disc;
+    list-style-type: '\2713';
     list-style-position: outside;
 
 }
@@ -23,8 +23,8 @@
     padding-inline: .5em;
     width: 85%;
     margin-inline: auto;
-    margin-bottom: 0em;
-    font-size: 1em !important;
+    margin-bottom: .65em;
+    font-size: 1.1em !important;
 }
 /* .cap-text::before {
     content: "";
@@ -46,6 +46,11 @@
     border-radius: 10px;
     padding-block: 1em;
 
+}
+.lg-subheadline {
+    font-size: 1.75em !important;
+    font-weight: 500;
+    
 }
 
 @media only screen and (min-width: 760px) {
