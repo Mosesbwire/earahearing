@@ -19,6 +19,7 @@ import instagramLogo from "../../assets/instagram-logo.svg"
 import pintrestLogo from "../../assets/pinterest-logo.svg"
 import youtubeLogo from "../../assets/youtube-logo.svg"
 import twitterLogo from "../../assets/twitter.png"
+import tiktokLogo from "../../assets/tiktok-logo.svg"
 import infographic from "../../assets/infographic.png"
 import './test-result.css'
 
@@ -251,11 +252,12 @@ const TestResults = () => {
             </div>
                 <div className="res-footer">
                     <div className="res-footer-wrapper container">
-                        <a href=""><img src={facebookLogo} alt="facebook logo"/></a>
-                        <a href=""><img src={twitterLogo} alt="twitter logo"/></a>
-                        <a href=""><img src={instagramLogo} alt="instagram logo"/></a>
-                        <a href=""><img src={youtubeLogo} alt="youtube logo"/></a>
-                        <a href=""><img src={pintrestLogo} alt="pinterest logo"/></a>
+                        <a href="https://m.facebook.com/p/Eara-Hearing-61561645984123/" target="_blank"><img src={facebookLogo} alt="facebook logo"/></a>
+                        <a href="https://x.com/EaraHearing" target="_blank"><img src={twitterLogo} alt="twitter logo"/></a>
+                        <a href="https://www.instagram.com/earahearing/" target="_blank"><img src={instagramLogo} alt="instagram logo"/></a>
+                        <a href="https://youtube.com/@earahearing?si=fY9YKRQBX_LXzTy2" target="_blank"><img src={youtubeLogo} alt="youtube logo"/></a>
+                        <a href="https://pin.it/3dIoReXwC" target="_blank"><img src={pintrestLogo} alt="pinterest logo"/></a>
+                        <a href="https://www.tiktok.com/@earahearing?_t=8qb0Ny0azOx&_r=1" target="_blank"><img src={tiktokLogo} alt="tiktok logo"/></a>
                     </div>
                 </div>
         </div>
