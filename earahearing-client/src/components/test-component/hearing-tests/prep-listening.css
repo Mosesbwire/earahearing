@@ -90,7 +90,7 @@
     }
 
     .prep-listening-cta > :first-child {
-        width: 40%;
+        width: 40% !important;
         padding-top: .75em;
         padding-bottom: .75em;
     }

@@ -8,3 +8,4 @@ export const Button = ({children, className, ...rest}: buttonProps) => {
         <button {...rest} className={`btn ${className}`}>{children}</button>
     )
 }
+ 

@@ -38,7 +38,7 @@ export const About = (props: aboutProps) => {
         
         timeOut()
     }
-
+ 
     const onClickHandlerBtn = (e: React.MouseEvent) => {
         setSelectedBtn(e.currentTarget.id)
         props.handler(e.currentTarget.id)
@@ -49,7 +49,7 @@ export const About = (props: aboutProps) => {
             <Questionnaire question={props.question}>
                 {props.isMultipleChoice ? <div className="about--btn_choices">
                     {props.choices.map(choice => (
-                        <Button className={`btn-primary-outline btn-lg btn-txt ${choice === selectedChoice ? 'btn-selected' : ''}`} key={choice} onClick={()=> onClickHandlerChoice(choice)}>{choice}</Button>
+                        <div className={`choice text-dark ${choice === selectedChoice ? 'btn-selected' : ''}`} key={choice} onClick={()=> onClickHandlerChoice(choice)}>{choice}</div>
                     ))}
                 </div> : 
                 <>

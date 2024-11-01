@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup'
 import { useForm } from "../../hooks/useForm";
@@ -55,6 +55,10 @@ const ResultsForm = () => {
     const privacyPolicyClickHandler = () => {
         setOpenPrivacyPolicy(!openPrivacyPolicy)
     }
+
+    useEffect(()=> {
+        window.scrollTo(0,0)
+    }, [])
 
     const onInputChange = (e: React.FormEvent<HTMLInputElement>) => {
         handleChange(e)
@@ -168,13 +172,13 @@ const ResultsForm = () => {
                         <div className=""><Input type="checkbox" name="consent" label="By checking the box you are consenting to receive promotional and transactional messages (including texts) from Eara Hearing." /></div>
                         <div className="consent-agreement text-dark text">
                             <ul>
-                                <li><small>Message and data rates may apply.</small></li>
-                                <li><small>If the checkbox is left unchecked, you will not receive text messages.</small></li>
-                                <li><small>Text “HELP” to 63607 for assistance or “STOP” to opt out.</small></li>
-                                <li><small>Message frequency is recurring. </small></li>
-                                <li><small>Eara Hearing may send an abandoned cart notification to the number provided, if applicable.</small></li>
+                                <li><small>- Message and data rates may apply.</small></li>
+                                <li><small>- If the checkbox is left unchecked, you will not receive text messages.</small></li>
+                                <li><small>- Text “HELP” to 63607 for assistance or “STOP” to opt out.</small></li>
+                                <li><small>- Message frequency is recurring. </small></li>
+                                <li><small>- Eara Hearing may send an abandoned cart notification to the number provided, if applicable.</small></li>
                                 <li>
-                                <small>Click here for <a href="">Terms & Conditions.</a></small>
+                                <small >Click here for <a href="https://www.earahearing.com/policies/terms-of-service" target="_blank" className="tos">Terms & Conditions.</a></small>
                                 </li>
                                 
                             </ul>

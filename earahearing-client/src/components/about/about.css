@@ -1,9 +1,26 @@
 .about {
-    
+    overflow: hidden;
+    padding-bottom: 2em;
+   
 }
 .about--btn_choices {
     display: grid;  
-    gap: 2em;
+    row-gap: 2em;
+    justify-content: center;
+    /* border: 2px solid red; */
+
+}
+.choice {
+    font-size: 1.35em;
+    border: 1px solid var(--dark-text);
+    padding-block: .5em;
+    padding-inline: .55em;
+    border-radius: 4.75em;
+    text-align: center;
+    line-height: 1.3;
+    min-width: 300px;
+    max-width: 310px;
+    justify-self: center;
 }
 
 .about--btn_bool {
@@ -22,8 +39,9 @@
         width: 80%;
         margin: 0 auto;
     }
-    .about--btn_choices > button {
-        padding: .85em 0;
+    .choice {
+        min-width: 400px;
+        max-width: 450px;
     }
     .about--btn_bool > * {
         width: 20%;
@@ -40,9 +58,16 @@
         width: 50%;
         margin-top: 2em;
     }
-    .about--btn_choices button {
-        font-size: 1.25rem;
-        padding: 1em 2em
+    .choice {
+        cursor: pointer;
+        transition: all 350ms ease-in-out;
+        font-size: 1.35em;
+        padding-inline: 1.5em;
+        padding-block: .65em;
+    }
+    .choice:hover {
+        background-color: var(--accent-color);
+        color: #000;
     }
 
     .about--btn_bool {

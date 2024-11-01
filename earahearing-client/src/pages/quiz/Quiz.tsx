@@ -80,7 +80,7 @@ const Quiz = () => {
         sessionData[`ans_${current_qna}`] = answer
         storeDataSessionStorage(sessionData)
         setCurrent_qns(curr => curr += 1)
-    }
+    } 
     return (
         <>
             {currentPage >= 1 && currentPage < 4 && data.choices ? <About choices={data.choices} question={data.question} isMultipleChoice={true} handler={getUserAnswer}/> : 

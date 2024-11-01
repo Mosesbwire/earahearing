@@ -2,6 +2,7 @@
 
 html, body {
 	scroll-behavior: auto;
+	/* border: 2px solid red !important; */
 }
 :root {
 	--main-color: #01556A;

@@ -9,7 +9,9 @@ export const Questionnaire = ({children, question, ...rest}: questionnaireProps)
     return (
         <div {...rest} className="questionnaire">
             <h1 className="subheadline text-dark">{question}</h1>
-            {children}
+            <div className="q-children">
+                {children}
+            </div>
         </div>
     )
-}
+} 

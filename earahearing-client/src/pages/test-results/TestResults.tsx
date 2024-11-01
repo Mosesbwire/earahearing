@@ -121,7 +121,7 @@ const TestResults = () => {
                     <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>
                 </div>
                 <div className="infographic__container">
-                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blogs/news">Learn about hearing loss and why it's important to treat it quickly with hearing aids</a>.</p>
+                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blogs/news">It's not <span className="underline">just</span> hearing loss</a>.</p>
                     <img src={infographic} className="infographic"/>
                 </div>
             </div>

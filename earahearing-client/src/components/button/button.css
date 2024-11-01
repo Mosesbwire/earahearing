@@ -94,16 +94,16 @@
 }
 
 .btn-lg {
-    font-size: 1.5em !important;
-    padding: .55em 4em !important;
+    font-size: 1.3em !important;
+    padding: .65em 2em !important;
     width: auto;
-
 }
 
 .btn-md {
     font-size: 1.35em !important;
     padding: .5em 2em !important;
-    width: auto;
+
+
 }
 
 .btn-sm {
@@ -158,4 +158,4 @@
         font-size: 1.5em !important;
     }
 
-}
+} 

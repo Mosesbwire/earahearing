@@ -78,12 +78,15 @@
     margin-bottom: .65em;
 }
 
+
 .form-btn {
     margin-top: 2.5em;
     display: grid;
     justify-content: center;
 }
-
+.tos {
+    text-decoration: underline;
+}
 .disclaimer-results {
     display: block;
     margin-inline: auto;
@@ -176,7 +179,7 @@
         font-size: .75em !important;
     }
     .consent-agreement ul {
-        list-style:disc;
+        list-style: none;
     }
     .consent-box {
         width: 50%;
