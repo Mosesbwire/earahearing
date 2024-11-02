@@ -29,6 +29,7 @@
 .txt-cap {
     text-transform: capitalize;
     margin-top: .75em;
+    font-size: 1.5em !important;
 }
 .chart-wrapper {
     height: 60vh;
@@ -62,7 +63,6 @@
 
 .infographic__container {
     display: grid;
-    
 }
 
 .infographic__container p {
@@ -72,7 +72,6 @@
 .infographic__container img {
     justify-self: center;
     width: 100%;
-
 
 }
 .features-header {
@@ -102,9 +101,10 @@
 
 .ad-section-wrapper {
     display: grid;
+    justify-content: center;
 }
-
-.ad-section-wrapper > button {
+.ad-section-wrapper a {
+    display: block;
     justify-self: center;
 }
 
@@ -118,6 +118,14 @@
     margin-top: 2em;
     display: flex;
     flex-direction: column;
+}
+.eara-explainer-headline {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.eara-explainer-headline button {
+    justify-self: center;
 }
 
 .eara-explainer-headline h1 {
@@ -340,8 +348,7 @@
 @media only screen and (min-width: 980px) {
    
     .results-page-headline {
-        
-        padding-bottom: 3em;
+        padding-bottom: 1em;
     }
 
     .user-hearing {
@@ -350,6 +357,9 @@
     .capability-title {
         width: 60% !important;
         padding-bottom: 0;
+    }
+    .title-left, .title-right {
+        font-size: 2em !important;
     }
     .same_cap_wrapper{
         border: 2px solid var(--accent-color);
@@ -377,8 +387,7 @@
 
     }
     .eara-explainer-headline {
-        display: grid;
-        align-items: center;
+       
     }
     .eara-explainer-headline > h1 {
         line-height: 1.5 !important;
@@ -405,12 +414,12 @@
     } */
     
     .infographic__container p {
-        margin-bottom: 2em;
+        margin-bottom: .5em;
     }
     
     .infographic__container img {
         justify-self: center;
-        width: 70%;
+        width: 50%;
     
     }
 

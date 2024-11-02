@@ -142,9 +142,9 @@
 
         padding-top: 3em;    
     }
-
     .results-form-text  h1 {
         margin-bottom: .75em;
+        padding-block: .15em;
     }
 
     .results-form-text > p {

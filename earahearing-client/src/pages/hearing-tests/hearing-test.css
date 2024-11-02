@@ -87,7 +87,7 @@
     .test {
         padding-top: 3em;
         padding-bottom: 3em;
-        margin-top: 2em;
+        margin-top: 1em;
         box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
         border-radius: 15px;
 
@@ -98,8 +98,8 @@
     }
 
     .instruction-desktop p {
-        font-size: 1.5rem;
-        margin-bottom: 1em;
+        font-size: 1.35rem;
+        margin-bottom: .5em;
     }
 
     .instruction-mobile {
@@ -150,7 +150,9 @@
     }
     .test-instruction-test {
         max-width: 80%;
-        margin: 2em auto;
+        margin-inline:auto;
+        margin-bottom: 0;
+        
     }
 
     .test-direction {
@@ -166,16 +168,18 @@
 @media only screen and (min-width: 980px) {
     .hearing-test-page {
         align-items: normal;
-        padding-bottom: 3em;
+        padding-bottom: 1em;
+        
     }
     .test {
-        padding-top: 1.5em;
+        padding-top: 1em;
     }
 
     .instruction-desktop {
         text-align: center;
         max-width: 80%;
         margin: 0 auto;
+        
     }
     .instruction-desktop > p {
         line-height: 1.5;
@@ -185,7 +189,8 @@
         row-gap: 0;
         grid-template-columns: repeat(10, 1fr);
         margin-top: 0;
-        margin-bottom: 4em;
+        margin-bottom: 2em;
+       
     }
 
     .start-arrow {

@@ -1,6 +1,7 @@
 .check-devices {
     padding: 1em 1em;
     margin-top: 1em;
+    
 }
 
 .explainer-wrapper {
@@ -93,6 +94,7 @@
         padding-top: 2em;
         padding-bottom: 2em;
         margin-bottom: 1em;    
+    
     }
 
     .check-devices {
@@ -114,11 +116,15 @@
         width: 15%;
 
     }
+    .devices {
+        position: relative;
+        width: 15%;
+        right: -10px;
+    }
     
     .earbuds {
-        position: relative;
-        left: 60%;
-        width: 10%;
+        width: 15%;
+        position: absolute;
     }
 
     .volume-bars {

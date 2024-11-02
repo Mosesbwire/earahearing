@@ -75,7 +75,7 @@
     }   
 
     .prep-instructions {
-        padding-bottom: 2.5em;
+        /* padding-bottom: 2.5em; */
     }
     .caution {
         width: 80%;
@@ -98,7 +98,7 @@
 
 @media only screen and (min-width: 980px) {
     .caution {
-        margin-top: 6rem;
+        margin-top: 5rem;
         width: 95%;
     }
     .caution p {
@@ -107,12 +107,12 @@
     .test-prep-wrapper {
         display: grid;
         grid-template-columns: 55% 45%;
-    
-
+        
     }
 
     .prep-instructions {
-        padding-top: 4em;
+        padding-top: 2em;
+       
     }
 
     .prep-instructions h1 {
@@ -126,8 +126,7 @@
         margin-bottom: 2em;
     }
     .prep-img {
-        padding-top: 4em;
-
+        padding-top: 2em;
     }
     .ear-img {
         width: 40%;

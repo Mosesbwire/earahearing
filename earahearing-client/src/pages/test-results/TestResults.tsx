@@ -20,7 +20,7 @@ import pintrestLogo from "../../assets/pinterest-logo.svg"
 import youtubeLogo from "../../assets/youtube-logo.svg"
 import twitterLogo from "../../assets/twitter.png"
 import tiktokLogo from "../../assets/tiktok-logo.svg"
-import infographic from "../../assets/infographic.png"
+import infographic from "../../assets/infographic-rbg.png"
 import './test-result.css'
 
 const TestResults = () => {
@@ -121,7 +121,7 @@ const TestResults = () => {
                     <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>
                 </div>
                 <div className="infographic__container">
-                    <p className="text text-dark text-centered subheadline learn-more"><a href="https://www.earahearing.com/blogs/news">It's not <span className="underline">just</span> hearing loss</a>.</p>
+                    <p className="text text-dark text-centered subheadline learn-more"><a target="_blank" href="https://www.earahearing.com/blogs/news">It's not <span className="underline">just</span> hearing loss</a>.</p>
                     <img src={infographic} className="infographic"/>
                 </div>
             </div>

@@ -17,8 +17,6 @@ export const ConfrimDevice = () => {
                         <div className="grid-row">
                             <p className="numbered-step">1</p>
                             <p className="text text-dark instruction instruction-earbud">You will need headphones or earbuds to listen.</p>
-                            
-
                         </div>
                         <div className="devices explainer-img">
                             <img src={earbud} alt="earbuds" className="earbuds"/>

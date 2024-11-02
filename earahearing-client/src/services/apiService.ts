@@ -6,7 +6,7 @@ const BASE_URL = 'https://earahearing-backend-api.onrender.com'
 async function sendRequest(url: string, options: RequestInit) {
     const response = await fetch(url, options)
     return response
-}
+} 
 
 
 type methodType = 'POST' | 'GET' | 'PUT' | 'DELETE'
