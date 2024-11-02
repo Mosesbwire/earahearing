@@ -58,6 +58,7 @@ def process_request(request):
         pdf.remove_files([file_name])
         return make_response(jsonify({"data": 'sent'}), 201)
     except ClientInputError as e:
+        print(e)
         if e.message == 'InputValidationFailed':
             return make_response(jsonify({"error": {
                 "message": 'User input validation error',

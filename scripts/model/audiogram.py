@@ -2,6 +2,9 @@
 
 """Audiogram class"""
 
+import matplotlib
+
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 from model.pdf import Pdf
 from utils.exception import ClientInputError
@@ -90,8 +93,11 @@ class Audiogram:
 
             plot = self.create_audiogram_plot('Frequency(Hz)', 'Decibel (db)', 'Frequency(Hz)')
             audiogram_pdf_name = await pdf_generator.create_audiogram_pdf(f'{uuid4()}.pdf', plot)
+            plot.close()
             return audiogram_pdf_name
         except ValueError as error:
+            print('Printing error')
+            print(error)
             print(error.args)
             raise ClientInputError('InvalidHearingTestData')
     
