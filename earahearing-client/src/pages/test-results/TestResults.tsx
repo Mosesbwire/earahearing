@@ -129,7 +129,9 @@ const TestResults = () => {
             <div className="eara-explainer">
                 <div className="container eara-explainer-headline">
                     <h1 className="headline text-bold text-centered">We understand how important hearing clearly is for enjoying life's special moments.</h1>
-                    <Button className="btn-primary-rounded btn-md">Start hearing clearly today!</Button>
+                    <a href="https://www.earahearing.com/products/eara-hearing-explore-li-copy" target="_blank">
+                        <Button className="btn-primary-rounded btn-md">Start hearing clearly today!</Button>
+                    </a>
                 </div>
                 <div className="eara-explainer__image-wrapper">
                     <img src={manWearingAids} alt="old man wearing hearing aids playing with family" />
@@ -174,7 +176,7 @@ const TestResults = () => {
                 </div>
                 </div>
                 <div className="eara-features_cta">
-                    <a href="https://www.earahearing.com/products/eara-hearing-explore-li-copy">
+                    <a href="https://www.earahearing.com/blogs/news" target="_blank">
                         <Button className="btn-primary-rounded btn-lg">Learn More</Button>
                     </a>
                 </div>
