@@ -176,7 +176,7 @@ const TestResults = () => {
                 </div>
                 </div>
                 <div className="eara-features_cta">
-                    <a href="https://www.earahearing.com/blogs/news" target="_blank">
+                    <a href="https://www.earahearing.com/products/eara-hearing-explore-li-copy" target="_blank">
                         <Button className="btn-primary-rounded btn-lg">Learn More</Button>
                     </a>
                 </div>
