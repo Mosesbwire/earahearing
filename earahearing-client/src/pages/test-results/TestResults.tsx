@@ -106,11 +106,11 @@ const TestResults = () => {
                         </div>
                     </> : <div className="capability-row">
                                 <div className="left">
-                                    <p className="text-dark headline text-centered">Left Ear</p>
+                                    <p className="text-dark headline text-centered title-left">Left Ear</p>
                                     <HearingCapability capability={leftEarCapability}/>
                                 </div>
                             <div className="right">
-                                <p className="text-dark headline text-centered">Right Ear</p>
+                                <p className="text-dark headline text-centered title-right">Right Ear</p>
                                 <HearingCapability capability={rightEarCapability}/>
                             </div>
                         </div>}

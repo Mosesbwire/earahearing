@@ -9,7 +9,7 @@
     padding-block: 1em;
 }
 .title-left {
-    color: blue;
+    color: blue !important;
     font-size: 1.5em !important;
     text-decoration: underline;
     text-decoration-color: blue;
@@ -17,7 +17,7 @@
 }
 
 .title-right {
-    color: red;
+    color: red !important;
     font-size: 1.5em !important;
     text-decoration: underline;
     text-decoration-color: red;
@@ -29,7 +29,7 @@
 .txt-cap {
     text-transform: capitalize;
     margin-top: .75em;
-    font-size: 1.5em !important;
+    font-size: 1.35em !important;
 }
 .chart-wrapper {
     height: 60vh;
@@ -75,7 +75,12 @@
 
 }
 .features-header {
-    padding-block: 2em;
+    padding-block: 1.25em;
+}
+
+.features-header .headline {
+    font-size: 1.35em;
+    text-wrap: nowrap;
 }
 
 .learn-more {
@@ -102,6 +107,7 @@
 .ad-section-wrapper {
     display: grid;
     justify-content: center;
+    padding-bottom: 1.5em;
 }
 .ad-section-wrapper a {
     display: block;
@@ -124,8 +130,12 @@
     align-items: center;
     justify-content: center;
 }
+.eara-explainer-headline a {
+    display: block;
+}
 .eara-explainer-headline button {
-    justify-self: center;
+    margin-inline: auto;
+    width: 100%;
 }
 
 .eara-explainer-headline h1 {
@@ -290,9 +300,9 @@
 }
 
 .res-footer{
-    padding-top: 3em;
+    padding-top: 1em;
     padding-bottom: 1em;
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 .res-footer-wrapper {

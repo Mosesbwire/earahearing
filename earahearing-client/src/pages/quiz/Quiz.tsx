@@ -26,20 +26,20 @@ const age: questionnaireFormat = {
 const interest: questionnaireFormat = {
     question: 'What interests you in taking a hearing test today?',
     choices: [
-        'I am curious about my hearing',
-        'I suspect I have a hearing loss',
-        'I have hearing loss and I do not wear hearing aids',
-        'I have hearing loss and I wear hearing aids'
+        'I am curious about my hearing.',
+        'I suspect I have a hearing loss.',
+        'I have hearing loss and I do not wear hearing aids.',
+        'I have hearing loss and I wear hearing aids.'
     ]
 }
 const hearingLevel: questionnaireFormat = {
     question: 'How do you hear?',
     choices: [
-        'I have excellent hearing',
-        'I have good hearing',
-        'I have a little trouble hearing',
-        'I have a lot of trouble hearing',
-        'I do not hear well'
+        'I have excellent hearing.',
+        'I have good hearing.',
+        'I have a little trouble hearing.',
+        'I have a lot of trouble hearing.',
+        'I do not hear well.'
     ]
 }
 
