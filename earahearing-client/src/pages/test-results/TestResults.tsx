@@ -116,6 +116,7 @@ const TestResults = () => {
                         </div>}
                 </div>                
             </div>
+            {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
             <div className="container">
                 <div className="capability-wrapper">
                     <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>
@@ -125,7 +126,6 @@ const TestResults = () => {
                     <img src={infographic} className="infographic"/>
                 </div>
             </div>
-            {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
             <div className="eara-explainer">
                 <div className="container eara-explainer-headline">
                     <h1 className="headline text-bold text-centered">We understand how important hearing clearly is for enjoying life's special moments.</h1>
@@ -207,7 +207,6 @@ const TestResults = () => {
                     </div>
                 </div>
             </div>
-            </>}
             <div className="banner-ad-section">
                 <div className="container banner-ad-wrapper">
                     <div className="banner-ad">
@@ -252,6 +251,7 @@ const TestResults = () => {
             </div>
 
             </div>
+            </>}
                 <div className="res-footer">
                     <div className="res-footer-wrapper container">
                         <a href="https://m.facebook.com/p/Eara-Hearing-61561645984123/" target="_blank"><img src={facebookLogo} alt="facebook logo"/></a>
@@ -262,7 +262,7 @@ const TestResults = () => {
                         <a href="https://www.tiktok.com/@earahearing?_t=8qb0Ny0azOx&_r=1" target="_blank"><img src={tiktokLogo} alt="tiktok logo"/></a>
                     </div>
                 </div>
-        </div>
+            </div>
 }
 
 export default TestResults

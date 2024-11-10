@@ -4,22 +4,20 @@ import './hearing-capability.css'
 const Normal = () => {
     return <div>
          <p className='text text-dark cap-text-nrm'>
-         Congratulations on your hearing test results! It's fantastic to know that your hearing is in great shape. To keep it that way, here are some tips for maintaining excellent aural health.
+         Congratulations on your hearing test results! It's fantastic to know that your hearing is in great shape. To keep it that way, here are some tips for maintaining excellent health.
          </p>
          <p className="text text-dark cap-text">
-            Limit your time in loud environments like concerts or nightclubs. If you must be around loud noises, wear earplugs or noise-canceling headphones.
+            Limit your time in loud environments like concerts. If you are in those environment, always wear hearing protection such as earplugs or earmuffs to protect your ears.
          </p>
          <p className="text text-dark cap-text">
-         Be mindful of volume levels on your headphones, TVs, and radios.
+         Be mindful of volume levels on your headphones or earbuds.
+         </p>
+         
+         <p className="text text-dark cap-text">
+         Maintain a healthy lifestyle by drinking plenty of fluids and eating a well-balanced diet.
          </p>
          <p className="text text-dark cap-text">
-         Clean your outer ears with a washcloth during your regular shower routine. 
-         </p>
-         <p className="text text-dark cap-text">
-         Maintaining a healthy lifestyle benefits your entire body, including your ears.
-         </p>
-         <p className="text text-dark cap-text">
-         Give your ears breaks from headphones and earphones. Avoid using them at high volumes for extended periods.
+         Give your ears a rest from headphones and earbuds.
          </p>        
     </div>
 }
