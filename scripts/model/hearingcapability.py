@@ -2,6 +2,7 @@
 
 """Calculate the hearing loss in each ear"""
 hearing_loss = {
+    "normal": ["your hearing appears to be normal. This means you can detect a wide range of sounds at low volumes. While your hearing seems healthy, a consultation with our audiologist can provide further insights and answer any questions you may have. They can also discuss preventative measures to maintain good hearing health"],
     "mild": [
         
         "Trouble hearing in some situations, especially in noisy places like crowded areas.",
