@@ -10,8 +10,17 @@ class MailchimpEmailProvider(EmailProvider):
 
     def __init__(self, api_key):
         self.client = MailchimpTransactional.Client(api_key)
+        self._default_template = True
 
 
+    @property
+    def default_template(self):
+        return self._default_template
+    
+    @default_template.setter
+    def default_template(self, value):
+        self._default_template = value
+        
     def build_message(self, message_components:dict):
         sign_off = ''
         if message_components["symmetrical"] == True and message_components["level"] == 'normal':
@@ -32,7 +41,10 @@ class MailchimpEmailProvider(EmailProvider):
         last_name = recipient_data.get("last_name")
         email = recipient_data.get("email")
         current_year = datetime.now().year
-        email_body_components = self.build_message(recipient_data.get("hearing_capability"))
+        # email_body_components = self.build_message(recipient_data.get("hearing_capability"))
+        email_body_components = recipient_data.get("hearing_capability")
+        hearing_loss_level = email_body_components["level"]
+        description = email_body_components["description"]
         message = {
             
             "attachments": [
@@ -62,11 +74,15 @@ class MailchimpEmailProvider(EmailProvider):
                          },
                          {
                              "name": "TEST_RESULTS",
-                             "content": email_body_components["description"]
+                             "content": description
                          },
                          {
-                             "name": "CLOSE_EMAIL",
-                             "content": email_body_components["sign_off"]
+                             "name": "RIGHT",
+                             "content": hearing_loss_level["right"]
+                         },
+                         {
+                             "name": "LEFT",
+                             "content": hearing_loss_level["left"]
                          },
                          {
                              "name": "CURRENT_YEAR",
@@ -86,8 +102,12 @@ class MailchimpEmailProvider(EmailProvider):
         }
 
         try:
-            response = self.client.messages.send_template({"template_name": "results-template", "template_content": {},"message": message})
-            print('Api called successfully: {}'.format(response))
+            
+            template_name = 'hearing-loss'
+            if not self.default_template:
+                template_name = 'normal-hearing'
+            response = self.client.messages.send_template({"template_name": template_name, "template_content": {},"message": message})
+            print('Api called successfully')
         except ApiClientError as error:
             print('An exception occured: {}'.format(error.text))
 

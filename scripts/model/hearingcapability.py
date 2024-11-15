@@ -1,7 +1,30 @@
 #!/usr/bin/env python3
 
 """Calculate the hearing loss in each ear"""
-
+hearing_loss = {
+    "mild": [
+        
+        "Trouble hearing in some situations, especially in noisy places like crowded areas.",
+        "TV volume tends to be turned up.",
+        "Using the speaker phone to hear better during phone calls.",
+        "Can hear people talking but don't understand some words that are being said.",
+         "You may misunderstand word. For example, you might hear the word \"cat\" instead of \"cap\". This happens because the speech is not clear."  
+    ],
+    "moderate": [
+        "Difficulty hearing conversations even in quiet environments.",
+        "The TV volume may be louder than you notice; you may also use closed captions.",
+        "Using the speakerphone to hear better on the phone.",
+        "When people are talking in a group, it is hard to hear more than one person.",
+        "You may find that instead of asking for repetition, you tend to not be involved in the conversation."
+    ],
+    "severe": [
+        "Trouble hearing conversations in any environment.",
+        "TV volume will be very loud and you will need closed captions (CC) to understand the TV.",
+        "Using the speakerphone to hear better during phone calls.",
+        "Communication will be very challenging unless the conversation is held in a quiet place with only one speaker at a time."
+       
+    ]
+}
 
 hearing_loss_description = {
     "normal": "your hearing appears to be normal. This means you can detect a wide range of sounds at low volumes. While your hearing seems healthy, a consultation with our audiologist can provide further insights and answer any questions you may have. They can also discuss preventative measures to maintain good hearing health",
@@ -51,9 +74,11 @@ class HearingCapability:
         else:
             return SEVERE
 
-
+    def normalHearing(self):
+        return self.isNormalHearing(self.left_ear_data) and self.isNormalHearing(self.right_ear_data)
+      
     def get_hearing_loss_description(self, hearing_loss_level):
-        return hearing_loss_description[hearing_loss_level]
+        return hearing_loss[hearing_loss_level]
 
     def get_assymetrical_hearing_loss_description(self, right_hearing_loss_level, left_hearing_loss_level):
         right_description = self.get_hearing_loss_description(right_hearing_loss_level)

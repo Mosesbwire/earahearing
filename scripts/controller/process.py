@@ -37,23 +37,33 @@ def process_request(request):
         hearingCapability = HearingCapability(data.get("right"), data.get("left"))
         capability_data = {}
 
-        if hearingCapability.is_symmetrical_hearing_loss():
-            hearing_loss_level = hearingCapability.right_hearing_capability()
-            description = hearingCapability.get_hearing_loss_description(hearing_loss_level)
-            capability_data["symmetrical"] = True
-            capability_data["level"] = hearing_loss_level
-            capability_data["description"] = description
-        else:
-            hearing_loss_right = hearingCapability.right_hearing_capability()
-            hearing_loss_left = hearingCapability.left_hearing_capability()            
-            description = hearingCapability.get_assymetrical_hearing_loss_description(hearing_loss_right, hearing_loss_left)
-            capability_data["symmetrical"] = False
-            capability_data["level"] = None
-            capability_data["description"] = description
-
+        # if hearingCapability.is_symmetrical_hearing_loss():
+        #     hearing_loss_level = hearingCapability.right_hearing_capability()
+        #     description = hearingCapability.get_hearing_loss_description(hearing_loss_level)
+        #     capability_data["symmetrical"] = True
+        #     capability_data["level"] = hearing_loss_level
+        #     capability_data["description"] = description
+        # else:
+        #     hearing_loss_right = hearingCapability.right_hearing_capability()
+        #     hearing_loss_left = hearingCapability.left_hearing_capability()            
+        #     description = hearingCapability.get_assymetrical_hearing_loss_description(hearing_loss_right, hearing_loss_left)
+        #     capability_data["symmetrical"] = False
+        #     capability_data["level"] = None
+        #     capability_data["description"] = description
+        hearing_loss_right = hearingCapability.right_hearing_capability()
+        hearing_loss_left = hearingCapability.left_hearing_capability()
+        description = hearingCapability.get_hearing_loss_description(hearing_loss_right)  
+        capability_data["level"] = {
+            "left": hearing_loss_left,
+            "right": hearing_loss_right
+        }
+        capability_data["description"] = description  
             
         user_data = data.get("user")
         user_data["hearing_capability"] = capability_data
+        if hearingCapability.normalHearing():
+            email_provider.default_template = False
+        
         email.send_email_with_attachment(user_data, pdf_string,'Audiogram')
         pdf.remove_files([file_name])
         return make_response(jsonify({"data": 'sent'}), 201)
