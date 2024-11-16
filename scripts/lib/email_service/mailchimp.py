@@ -106,6 +106,8 @@ class MailchimpEmailProvider(EmailProvider):
             template_name = 'hearing-loss'
             if not self.default_template:
                 template_name = 'normal-hearing'
+
+            # print(f'using template: {template_name}')
             response = self.client.messages.send_template({"template_name": template_name, "template_content": {},"message": message})
             print('Api called successfully')
         except ApiClientError as error:

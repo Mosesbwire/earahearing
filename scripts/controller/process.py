@@ -61,7 +61,9 @@ def process_request(request):
             
         user_data = data.get("user")
         user_data["hearing_capability"] = capability_data
+        # print(f'HEARING_CAPABILITY {hearingCapability.normalHearing()}')
         if hearingCapability.normalHearing():
+            
             email_provider.default_template = False
         
         email.send_email_with_attachment(user_data, pdf_string,'Audiogram')
