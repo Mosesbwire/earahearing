@@ -41,10 +41,13 @@ class MailchimpEmailProvider(EmailProvider):
         last_name = recipient_data.get("last_name")
         email = recipient_data.get("email")
         current_year = datetime.now().year
-        # email_body_components = self.build_message(recipient_data.get("hearing_capability"))
         email_body_components = recipient_data.get("hearing_capability")
         hearing_loss_level = email_body_components["level"]
-        description = email_body_components["description"]
+        description_left = email_body_components["description_left"]
+        description_right = email_body_components["description_right"]
+        symmetrical_hearing_loss = 1 if hearing_loss_level["right"] == hearing_loss_level["left"] else 0
+        print(symmetrical_hearing_loss)
+        print(recipient_data)
         message = {
             
             "attachments": [
@@ -73,10 +76,6 @@ class MailchimpEmailProvider(EmailProvider):
                             "content": last_name
                          },
                          {
-                             "name": "TEST_RESULTS",
-                             "content": description
-                         },
-                         {
                              "name": "RIGHT",
                              "content": hearing_loss_level["right"]
                          },
@@ -84,6 +83,15 @@ class MailchimpEmailProvider(EmailProvider):
                              "name": "LEFT",
                              "content": hearing_loss_level["left"]
                          },
+                         {
+                             "name": "DESCRIPTION_RIGHT",
+                             "content": description_right
+                         },
+                         {
+                             "name": "DESCRIPTION_LEFT",
+                             "content": description_left
+                         },
+
                          {
                              "name": "CURRENT_YEAR",
                              "content": current_year
@@ -95,6 +103,10 @@ class MailchimpEmailProvider(EmailProvider):
                          {
                              "name": "LIST_ADDRESS",
                              "content": "info@earahearing.com"
+                         },
+                         {
+                            "name": "SYMMETRICAL",
+                            "content": symmetrical_hearing_loss
                          }
                     ]
                 }

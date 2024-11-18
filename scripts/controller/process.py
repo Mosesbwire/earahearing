@@ -52,18 +52,19 @@ def process_request(request):
         #     capability_data["description"] = description
         hearing_loss_right = hearingCapability.right_hearing_capability()
         hearing_loss_left = hearingCapability.left_hearing_capability()
-        description = hearingCapability.get_hearing_loss_description(hearing_loss_right)  
+        description_right = hearingCapability.get_hearing_loss_description(hearing_loss_right)  
+        description_left = hearingCapability.get_hearing_loss_description(hearing_loss_left)  
+
         capability_data["level"] = {
             "left": hearing_loss_left,
             "right": hearing_loss_right
         }
-        capability_data["description"] = description  
-            
+        capability_data["description_right"] = description_right  
+        capability_data["description_left"] = description_left
         user_data = data.get("user")
         user_data["hearing_capability"] = capability_data
         # print(f'HEARING_CAPABILITY {hearingCapability.normalHearing()}')
         if hearingCapability.normalHearing():
-            
             email_provider.default_template = False
         
         email.send_email_with_attachment(user_data, pdf_string,'Audiogram')
