@@ -1,11 +1,27 @@
+import hmac
+import hashlib
+import os
+from dotenv import load_dotenv
 from flask import make_response, jsonify
 
-# HMACKEY = c3e71ab2e7724da4a357c36793e9685da2f88fbeda68bc33d3bbbc8a89a54a6a
+load_dotenv()
 def fulfilled_order(request):
-   
-    print("Request Object:", request)
+    SHOPIFY_WEBHOOK_SECRET = os.getenv("SHOPIFY_WEBHOOK_SECRET")
 
-    print("Headers:", request.headers)
-    print("Body:", request.data)
-    print("JSON Payload:", request.get_json())
+    shopify_hmac = request.headers.get('X-Shopify-Hmac-SHA256')
+    
+    payload = request.data
+    calculated_hmac = hmac.new(
+        key=SHOPIFY_WEBHOOK_SECRET.encode('utf-8'),
+        msg=payload,
+        digestmod=hashlib.sha256
+    ).hexdigest()
+
+    if not hmac.compare_digest(calculated_hmac, shopify_hmac):
+        print("Webhook verification failed.")
+        abort(401)  # Unauthorized
+
+    print("Webhook verified successfully!")
+    print("Payload:", request.json)  # Log the incoming payload
+    
     return make_response(jsonify({"response": "OK"}), 200)
