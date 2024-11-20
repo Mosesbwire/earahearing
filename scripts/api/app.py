@@ -3,7 +3,7 @@
 # app module
 from concurrent.futures import ThreadPoolExecutor
 from controller.process import process_request
-from concurrent.order import fulfilled_order
+from controller.order import fulfilled_order
 from flask import Flask, make_response, jsonify, request
 from flask_cors import CORS
 from model.process import process_uploads
