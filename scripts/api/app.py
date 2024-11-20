@@ -3,7 +3,7 @@
 # app module
 from concurrent.futures import ThreadPoolExecutor
 from controller.process import process_request
-
+from concurrent.order import fulfilled_order
 from flask import Flask, make_response, jsonify, request
 from flask_cors import CORS
 from model.process import process_uploads
@@ -27,6 +27,10 @@ def status():
 def create_user_record():
     # return make_response(jsonify({"data": "ok"}), 201)
     return process_request(request)
+
+@app.route('/order-fulfilled', methods=["POST"])
+def order_fullfiled():
+    return fulfilled_order(request)
 
 
 # @app.after_request
