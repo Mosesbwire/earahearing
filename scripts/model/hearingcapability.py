@@ -2,7 +2,13 @@
 
 """Calculate the hearing loss in each ear"""
 hearing_loss = {
-    "normal": ["your hearing appears to be normal. This means you can detect a wide range of sounds at low volumes. While your hearing seems healthy, a consultation with our audiologist can provide further insights and answer any questions you may have. They can also discuss preventative measures to maintain good hearing health"],
+    "normal": [
+         "Congratulations on your hearing test results! It's fantastic to know that your hearing is in great shape. To keep it that way, here are some tips for maintaining excellent health.", 
+        "Limit your time in loud environments like concerts. If you are in those environment, always wear hearing protection such as earplugs or earmuffs to protect your ears.",
+         "Be mindful of volume levels on your headphones or earbuds.",
+         "Maintain a healthy lifestyle by drinking plenty of fluids and eating a well-balanced diet.",
+         "Give your ears a rest from headphones and earbuds."
+    ],
     "mild": [
         
         "Trouble hearing in some situations, especially in noisy places like crowded areas.",

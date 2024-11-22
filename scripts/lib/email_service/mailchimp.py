@@ -46,8 +46,7 @@ class MailchimpEmailProvider(EmailProvider):
         description_left = email_body_components["description_left"]
         description_right = email_body_components["description_right"]
         symmetrical_hearing_loss = 1 if hearing_loss_level["right"] == hearing_loss_level["left"] else 0
-        print(symmetrical_hearing_loss)
-        print(recipient_data)
+        
         message = {
             
             "attachments": [
