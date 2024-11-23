@@ -116,7 +116,7 @@ const TestResults = () => {
                         </div>}
                 </div>                
             </div>
-            {rightEarCapability === 'normal' && leftEarCapability === 'normal' ?null: <>
+            {rightEarCapability === 'normal' && leftEarCapability === 'normal' ? null: <>
             <div className="container">
                 <div className="capability-wrapper">
                     <p className="text text-dark text-bold">Why does it matter to treat your hearing loss with hearing aids ?</p>

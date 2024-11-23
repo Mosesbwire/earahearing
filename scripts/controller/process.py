@@ -63,7 +63,7 @@ def process_request(request):
         capability_data["description_left"] = description_left
         user_data = data.get("user")
         user_data["hearing_capability"] = capability_data
-        # print(f'HEARING_CAPABILITY {hearingCapability.normalHearing()}')
+        print(f'HEARING_CAPABILITY {hearingCapability.normalHearing()}')
         if hearingCapability.normalHearing():
             email_provider.default_template = False
         
