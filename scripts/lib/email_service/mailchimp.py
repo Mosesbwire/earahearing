@@ -115,6 +115,7 @@ class MailchimpEmailProvider(EmailProvider):
         try:
             
             template_name = 'hearing-loss'
+            print(self.default_template)
             if not self.default_template:
                 template_name = 'normal-hearing'
 

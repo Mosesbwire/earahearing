@@ -67,6 +67,7 @@ def process_request(request):
         if hearingCapability.normalHearing():
             email_provider.default_template = False
         
+        print(email_provider.default_template)
         email.send_email_with_attachment(user_data, pdf_string,'Audiogram')
         pdf.remove_files([file_name])
         return make_response(jsonify({"data": 'sent'}), 201)
