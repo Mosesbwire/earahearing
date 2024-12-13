@@ -25,13 +25,15 @@ const ResultsForm = () => {
         firstName: Yup.string().trim().min(1, 'Name must be more than one character long').required('First Name is required'),
         lastName: Yup.string().trim().min(1, 'Name must be more than one character long ').required('Last Name is required'),
         email: Yup.string().trim().email('Enter a valid email').required('Email is required'),
-        phoneNumber: Yup.string().trim().matches(phoneRegExp, {message: 'Enter a valid phone number'}).required('Phone number is required')
+        phoneNumber: Yup.string().trim().matches(phoneRegExp, {message: 'Enter a valid phone number'}).required('Phone number is required'),
+        consent: Yup.string()
     })
     const initialValues: Inputs = {
         firstName: '',
         lastName: '',
         email: '',
-        phoneNumber: ''
+        phoneNumber: '',
+        consent: '0'
     }
 
     type validationErrorsType = {
@@ -61,6 +63,9 @@ const ResultsForm = () => {
     }, [])
 
     const onInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+        if (e.currentTarget.name === "consent" && e.currentTarget.checked){
+            e.currentTarget.value = "1"
+        }
         handleChange(e)
         const key = e.currentTarget.name
         setFormErrors({...formErrors, [key]: ''})
@@ -78,7 +83,8 @@ const ResultsForm = () => {
                     first_name: valid.firstName,
                     last_name: valid.lastName,
                     email: valid.email,
-                    phone_number: valid.phoneNumber
+                    phone_number: valid.phoneNumber,
+                    subscription_consent: valid.consent
                 },
                 test_data: testQUizData,
                 right: hearingTestData.right,
@@ -169,7 +175,7 @@ const ResultsForm = () => {
                        </div>
                    </div>
                    <div className="consent-box">
-                        <div className=""><Input type="checkbox" name="consent" label="By checking the box you are consenting to receive promotional and transactional messages (including texts) from Eara Hearing." /></div>
+                        <div className=""><Input type="checkbox" name="consent" label="By checking the box you are consenting to receive promotional and transactional messages (including texts) from Eara Hearing." value={values['consent']} onChange={onInputChange}/></div>
                         <div className="consent-agreement text-dark text">
                             <ul>
                                 <li><small>- Message and data rates may apply.</small></li>

@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from os import getenv
 from flask import make_response, jsonify
 from lib.email_service.mailchimp import MailchimpEmailProvider
+from lib.email_service.mailchimp_marketing import add_member_to_store_audience
 from model.process import process
 from model.audiogram import Audiogram
 from model.hearingcapability import HearingCapability
@@ -20,8 +21,9 @@ email_provider = MailchimpEmailProvider(MAILCHIMP_API_KEY)
 
 
 def process_request(request):
+    
     data = request.get_json()
-
+    print(data)
     if not data:
         return make_response(jsonify({"error": {
             "message": "request object is empty",
@@ -37,19 +39,6 @@ def process_request(request):
         hearingCapability = HearingCapability(data.get("right"), data.get("left"))
         capability_data = {}
 
-        # if hearingCapability.is_symmetrical_hearing_loss():
-        #     hearing_loss_level = hearingCapability.right_hearing_capability()
-        #     description = hearingCapability.get_hearing_loss_description(hearing_loss_level)
-        #     capability_data["symmetrical"] = True
-        #     capability_data["level"] = hearing_loss_level
-        #     capability_data["description"] = description
-        # else:
-        #     hearing_loss_right = hearingCapability.right_hearing_capability()
-        #     hearing_loss_left = hearingCapability.left_hearing_capability()            
-        #     description = hearingCapability.get_assymetrical_hearing_loss_description(hearing_loss_right, hearing_loss_left)
-        #     capability_data["symmetrical"] = False
-        #     capability_data["level"] = None
-        #     capability_data["description"] = description
         hearing_loss_right = hearingCapability.right_hearing_capability()
         hearing_loss_left = hearingCapability.left_hearing_capability()
         description_right = hearingCapability.get_hearing_loss_description(hearing_loss_right)  
@@ -61,6 +50,7 @@ def process_request(request):
         }
         capability_data["description_right"] = description_right  
         capability_data["description_left"] = description_left
+
         user_data = data.get("user")
         user_data["hearing_capability"] = capability_data
         print(f'HEARING_CAPABILITY {hearingCapability.normalHearing()}')
@@ -70,6 +60,8 @@ def process_request(request):
         print(email_provider.default_template)
         email.send_email_with_attachment(user_data, pdf_string,'Audiogram')
         pdf.remove_files([file_name])
+        print(user_data)
+        add_member_to_store_audience(user_data)
         return make_response(jsonify({"data": 'sent'}), 201)
     except ClientInputError as e:
         print(e)
