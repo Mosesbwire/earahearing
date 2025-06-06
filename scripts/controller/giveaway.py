@@ -1,11 +1,14 @@
+import base64
 from dotenv import load_dotenv
+import json
 from os import getenv
 from flask import request, make_response, jsonify
 from model.giveaway import Giveaway
 
 
 load_dotenv()
-EARA_GIVEAWAY_CREDENTIALS = getenv('EARA_GIVEAWAY_CREDENTIALS')
+credentials = getenv('EARA_GIVEAWAY_CREDENTIALS')
+EARA_GIVEAWAY_CREDENTIALS = json.loads(base64.b64decode(credentials).decode('utf-8'))
 BASE_URL = getenv('BASE_URL')
 EARA_SPREADSHEET_NAME = getenv('EARA_GIVEAWAY_SPREADSHEET_ID')
 

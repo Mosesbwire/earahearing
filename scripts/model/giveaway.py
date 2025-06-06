@@ -1,13 +1,13 @@
 import gspread
 import hashlib
 import re
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2 import service_account
 
 # This script manages a giveaway system using Google Sheets to store user data and generate referral links.
 class Giveaway:
     def __init__(self, credentials_file, spreadsheet_name, base_url):
         self.scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        self.credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials_file, self.scope)
+        self.credentials = service_account.Credentials.from_service_account_info(credentials_file, scopes=self.scope)
         self.client = gspread.authorize(self.credentials)
         self.spreadsheet = self.client.open(spreadsheet_name).sheet1
         self.base_url = base_url
