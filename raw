@@ -1,0 +1,29 @@
+{
+    "user": {
+        "first_name": "Moses",
+        "last_name": "Bwire",
+        "email": "moses@gmail.com",
+        "phone_number": "0712856738"
+    },
+    
+    "test_data": {"qn_1":"What is your age?","ans_1":"18 - 40 years old",
+    "qn_2":"What interests you in taking a hearing test today?","ans_2":"I am curious about my hearing",
+    "qn_3":"How do you hear?","ans_3":"I have excellent hearing",
+    "qn_4":"Do you sometimes feel like people mumble or speak softly?","ans_4":"NO",
+    "qn_5":"Do you have difficulty understanding speech in a crowd or a noisy resturant?","ans_5":"NO"},
+    "right": {
+        "Right_freq_0": 50,
+        "Right_freq_1": 45,
+        "Right_freq_2": 35,
+        "Right_freq_3": 65,
+        "Right_freq_4": 30
+    },
+    "left": {
+        "Left_freq_0": 45,
+        "Left_freq_1": 45,
+        "Left_freq_2": 60,
+        "Left_freq_3": 35,
+        "Left_freq_4": 45
+    }
+
+}

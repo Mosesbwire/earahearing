@@ -3,7 +3,7 @@
 from model.audiogram import Audiogram
 from model.pdf import Pdf
 from model.user import User
-
+from model.giveaway import Giveaway
 from utils.exception import ClientInputError
 from lib import HubspotClient
 import time
@@ -15,29 +15,25 @@ import threading
 
 
 if __name__ == "__main__":
+    print("Starting EARA Giveaway Script...")
+    giveaway = Giveaway(
+       credentials_file="eara-giveaway-90a9996989e9.json",
+       spreadsheet_name="EARA JULY GIVEAWAY",
+       base_url="https://www.earahearing.com/pages/explore-li-hearing-aid-giveaway-enter-to-win")
 
-    data = {
-        "a": "20",
-        "b": "25",
-        "c": "25",
-        "d": "25",
-        "e": "50"
-    }
-    data_ = {
-        "a": "20",
-        "b": "80",
-        "c": "25",
-        "d": "25",
-        "e": "20"
-    }
-    
-    hearing_capability = HearingCapability(data, data_)
+    # Example usage
+    # email = "moses@gmail.com"
+    # first_name = "Moses"
+    # last_name = "Musa"
+    # if giveaway.user_exists(email):
+    #     print(f"User with email {email} already exists.")
+    # else:
+    #     result = giveaway.add_user(email, first_name, last_name)
+    #     if result:
+    #         print("User added successfully.")
+    #     else:
+    #         print("Failed to add user.")
 
-    ans = hearing_capability.isNormalHearing(data)
-    ans2 = hearing_capability.hearing_loss_level(data)
-
-    print(ans)
-    print(ans2)
-
-
+    user = giveaway.update_user_referral_points("https://www.earahearing.com/pages/explore-li-hearing-aid-giveaway-enter-to-win?ref=3418c26400")  # Replace with an actual referral code to test
+    print(user)
     

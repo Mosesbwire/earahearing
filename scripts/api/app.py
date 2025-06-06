@@ -2,6 +2,7 @@
 
 # app module
 from concurrent.futures import ThreadPoolExecutor
+from controller.giveaway import create_user
 from controller.process import process_request
 from controller.order import fulfilled_order
 from flask import Flask, make_response, jsonify, request
@@ -50,6 +51,11 @@ def create_user_record():
 #     data = response.get_json()
 #     thread_pool.submit(process_uploads, data)
 #     return response
+
+@app.route('/giveaway/entries', methods=["POST"])
+def create_giveaway_entry():
+    
+    return create_user(request)   
 
 
 if __name__ == "__main__":
