@@ -2,9 +2,10 @@
 
 # app module
 from concurrent.futures import ThreadPoolExecutor
-from controller.giveaway import create_user
+from controller.giveaway import create_user, send_transactional_email
 from controller.process import process_request
 from controller.order import fulfilled_order
+from controller.csv import process_csv
 from flask import Flask, make_response, jsonify, request
 from flask_cors import CORS
 from model.process import process_uploads
@@ -56,6 +57,11 @@ def create_user_record():
 def create_giveaway_entry():
     
     return create_user(request)   
+
+@app.route('/giveaway/enter-giveaway', methods=["POST"])
+def send_giveaway_email():
+    return send_transactional_email(request)
+
 
 
 if __name__ == "__main__":

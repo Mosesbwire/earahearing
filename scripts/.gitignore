@@ -1,5 +1,6 @@
 __pycache__/
 venv
 *.pdf
+*.csv
 eara-giveaway-90a9996989e9.json
 credentials.b64

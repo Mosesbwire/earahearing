@@ -83,3 +83,52 @@ class Giveaway:
         except gspread.exceptions.APIError as e:
             print(f"Error updating referral points: {e}")
             return False
+        
+    def all_users(self):
+        """ Returns all users in the giveaway."""
+        try:
+            return self.spreadsheet.get_all_records()
+        except gspread.exceptions.APIError as e:
+            print(f"Error retrieving users: {e}")
+            return []
+    def prepare_email_data(self, recepient_data, template_name, referral_link=None):
+        """ Sends a thank you email to the recipient after they join the giveaway."""
+        first_name = recepient_data.get("first_name")
+        last_name = recepient_data.get("last_name")
+        email = recepient_data.get("email")
+        subject = recepient_data.get("subject")
+        message = {
+            "to": [
+                {
+                    "email": email,
+                    "type": "to"
+                }
+            ],
+            "merge_vars": [
+                {
+                    "rcpt": email,
+                    "vars": [
+                        {
+                            "name": "FNAME",
+                            "content": first_name
+                        },
+                        {
+                            "name": "LNAME",
+                            "content": last_name
+                        },
+                        {
+                            "name": "REFERRAL_LINK",
+                            "content": referral_link if referral_link else "#"
+                        },
+                        {
+                            "name": "SUBJECT",
+                            "content": subject if subject else "Thank you for joining our giveaway!"
+                        }
+                    ]
+                }
+            ]
+        }
+        return {
+            "template_name": template_name,
+            "message": message
+        }

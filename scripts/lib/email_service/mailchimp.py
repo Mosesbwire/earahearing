@@ -126,3 +126,23 @@ class MailchimpEmailProvider(EmailProvider):
             print('An exception occured: {}'.format(error.text))
 
 
+    def send_email(self, email_data):
+        print(f"sending Email with Mailchimp {email_data}")
+        message = email_data.get("message")
+        template_name = email_data.get("template_name", "default-template")
+        if not message: 
+            raise ValueError("Message data is required to send an email.")
+        if not template_name:
+            raise ValueError("Template name is required to send an email.") 
+        try:
+            response = self.client.messages.send_template({
+                "template_name": template_name,
+                "template_content": {},
+                "message": message
+            })
+            print('Email sent successfully:', response)
+            return response
+        except ApiClientError as error:
+            print('An exception occurred: {}'.format(error.text))
+            return None
+        
